@@ -3,20 +3,20 @@ project:
   output-dir: _site
 
 website:
-  title: "STAC67H3: Regression Analysis"
+  title: "STAC67: Regression Analysis"
   site-url: "https://igor-kan.github.io/stac67h3"
   repo-url: "https://github.com/igor-kan/stac67h3"
-  description: "Linear regression, matrix formulations, model diagnostics, ANOVA, multicollinearity, and generalized linear models."
+  description: "STAC67H3: Regression Analysis (Fall 2026) at UTSC."
   navbar:
     left:
       - href: index.qmd
         text: Home
+      - href: schedule.qmd
+        text: Schedule & Readings
       - href: notes/index.qmd
-        text: Lecture Notes
+        text: Notes & Materials
       - href: assignments/index.qmd
-        text: Assignments
-      - href: code/index.qmd
-        text: Statistical Code & Labs
+        text: Assignments & Project
 
 format:
   html:

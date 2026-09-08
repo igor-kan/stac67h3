@@ -1,28 +1,45 @@
 ---
-title: "STAC67H3: Regression Analysis"
-subtitle: "Theory and applications of linear statistical models, matrix methods, diagnostics, and inference."
+title: "STAC67: Regression Analysis"
+subtitle: "Fall 2026 | University of Toronto Scarborough"
 page-layout: full
 ---
 
 ::: {.hero-banner}
 # STAC67H3: Regression Analysis
-### Department of Computer and Mathematical Sciences — UTSC
-Comprehensive study hub for linear models, generalized least squares, model validation, and computational statistics in R and Python.
+### Theory and applications of linear statistical models, matrix methods, diagnostics, and inference.
 :::
+
+## 🏫 Time & Location
+| Section | Time | Location |
+| :--- | :--- | :--- |
+| **LEC01** | Wednesday, 4:00–5:00 PM | In person: IA 2021 |
+| **LEC01** | Friday, 1:00–3:00 PM | In person: IA 2021 |
+| **TUT0001** | Tuesday, 5:00–6:00 PM | In person: IA 3120 |
+| **TUT0002** | Wednesday, 3:00–4:00 PM | In person: IC 208 |
+
+*Tutorials start in Week 2 and run weekly. They are used for practical work in R and for the three quizzes. Note: tutorials take place before that week's lectures, so a tutorial only ever assumes material up to the previous Friday.*
+
+## 👨‍🏫 Office Hours & Contact
+- **Instructor:** Thibault Randrianarisoa
+- **Office:** IA 4064
+- **Email:** t.randrianarisoa@utoronto.ca (put `[STAC67]` in the subject, and your student number in the body)
+- **Office hours:** Wednesday 10–11 AM and Friday 3–4 PM, IA 4064
+
+*Please use [Piazza](https://piazza.com/) for course-content questions; email is for private matters.*
 
 ::: {.card-grid}
 ::: {.course-card}
-### 📊 [Lecture Notes](notes/index.qmd)
-Matrix derivations of OLS estimators $\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}$, Gauss-Markov theorem, hat matrix $\mathbf{H}$, and ANOVA decompositions.
+### 📅 [Schedule & Readings](schedule.qmd)
+Week-by-week timeline of topics, textbook reading assignments, and tutorial topics.
 :::
 
 ::: {.course-card}
-### 📝 [Assignments](assignments/index.qmd)
-Worked solutions to theoretical homework problems, mathematical proofs, and data analysis case studies.
+### 📚 [Notes & Materials](notes/index.qmd)
+Textbook details, R and R Markdown cheat sheets, and lecture resources.
 :::
 
 ::: {.course-card}
-### 💻 [Code & Labs](code/index.qmd)
-Diagnostic plotting scripts, multicollinearity VIF calculations, Cook's distance analysis, and LASSO/Ridge regularization.
+### 📝 [Assignments & Project](assignments/index.qmd)
+Information and deadlines for the three assignments, the three quizzes, and the final Case Study Project.
 :::
 :::

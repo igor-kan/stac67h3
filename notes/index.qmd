@@ -1,9 +1,20 @@
 ---
-title: "STAC67 Lecture Notes"
-description: "Statistical theory, matrix proofs, and regression fundamentals."
-listing:
-  contents: "*.qmd"
-  sort: "date desc"
-  type: default
-page-layout: full
+title: "Notes & Materials"
 ---
+
+## 📚 Course Materials
+
+**Required:**  
+*(Kutner)* Kutner, Nachtsheim & Neter, *Applied Linear Regression Models*, 4th edition (older editions are fine). 
+- Data sets and solution manual are available.
+
+**Sub-text:**  
+*(Sheather)* Simon J. Sheather (2009), *A Modern Approach to Regression with R* — available online through the UofT library.
+
+## 💻 Computational Tools
+
+All computation in this course is performed in **R**. 
+
+**Cheat Sheets:**
+- [R Markdown Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+- [ggplot2 Cheat Sheet](https://www.maths.usyd.edu.au/u/UG/SM/STAT3022/r/current/Misc/data-visualization-2.1.pdf)
