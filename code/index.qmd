@@ -1,9 +1,0 @@
----
-title: "Statistical Code & Diagnostic Labs"
-description: "R and Python scripts for diagnostic residual plots, Q-Q plots, and influence analysis."
-listing:
-  contents: "*.qmd"
-  sort: "date desc"
-  type: default
-page-layout: full
----

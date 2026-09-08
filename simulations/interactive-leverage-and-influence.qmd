@@ -1,0 +1,248 @@
+---
+title: "Interactive Leverage & Cook's Distance Simulation"
+subtitle: "Real-time OLS slope sensitivity, hat matrix diagonals, and influential outlier dynamics."
+date: "2026-09-08"
+categories: ["Simulations", "Regression", "Diagnostics", "Interactive"]
+format:
+  html:
+    math: true
+---
+
+## 🎯 Theoretical Framework: Leverage vs. Influence
+
+In Ordinary Least Squares (OLS) regression $\mathbf{Y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\varepsilon}$:
+
+### 1. The Hat Matrix & Leverage ($h_{ii}$)
+Fitted values are generated via the projection (hat) matrix $\mathbf{H} = \mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T$:
+$$\hat{\mathbf{Y}} = \mathbf{H}\mathbf{Y} \implies \hat{Y}_i = h_{ii} Y_i + \sum_{j \ne i} h_{ij} Y_j$$
+
+For a simple linear regression model, the diagonal element (leverage) is:
+$$h_{ii} = \frac{1}{n} + \frac{(x_i - \bar{x})^2}{\sum_{k=1}^n (x_k - \bar{x})^2}$$
+Points far from the predictor centroid $\bar{x}$ possess **high leverage** ($h_{ii} > 2p/n$ or $2/n$).
+
+### 2. Cook's Distance ($D_i$)
+Cook's distance quantifies the aggregate shift in all fitted values when observation $i$ is deleted:
+$$D_i = \frac{\sum_{j=1}^n (\hat{Y}_j - \hat{Y}_{j(i)})^2}{p \cdot \text{MSE}} = \frac{r_i^2}{p} \left( \frac{h_{ii}}{1 - h_{ii}} \right)$$
+where $r_i$ is the studentized residual. An observation is considered **influential** if $D_i > 0.5$ or $D_i > 1.0$ ($F_{p, n-p}(0.5)$ threshold).
+
+---
+
+## 🎮 Interactive Demonstration
+
+*Drag the highlighted red test point anywhere across the plot to see how its leverage ($h_{ii}$) and Cook's distance ($D_i$) instantly change, and watch the solid regression line rotate relative to the baseline (dashed line).*
+
+```{=html}
+<div style="background: #18222d; border: 1px solid #2d3e50; border-radius: 8px; padding: 20px; margin-bottom: 25px; color: #ecf0f1;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px; margin-bottom: 12px;">
+    <div>
+      <span style="font-weight: 600; color: #74c0fc;">Base Observations: $n = 20$</span>
+    </div>
+    <div style="display: flex; gap: 15px; font-size: 0.9rem;">
+      <div>Leverage $h_{ii}$: <strong id="lbl-hii" style="color: #ffd43b;">0.18</strong></div>
+      <div>Residual $e_i$: <strong id="lbl-ei" style="color: #ff8787;">0.00</strong></div>
+      <div>Cook's $D_i$: <strong id="lbl-cook" style="color: #ff6b6b;">0.00</strong></div>
+    </div>
+    <div>
+      <button id="btn-reset-pt" style="background: #2b3b4c; border: 1px solid #486581; color: #fff; padding: 4px 12px; border-radius: 4px; cursor: pointer;">Reset Test Point</button>
+    </div>
+  </div>
+
+  <div style="text-align: center;">
+    <canvas id="canvas-reg" width="600" height="380" style="background: #0f1720; border: 1px solid #233142; border-radius: 6px; width: 100%; max-width: 680px; height: auto; cursor: grab;"></canvas>
+    <div style="font-size: 0.8rem; color: #9fb3c8; margin-top: 8px;">
+      <span style="color: #4dabf7; font-weight: bold;">-- Dashed Blue:</span> Baseline OLS &nbsp;|&nbsp; 
+      <span style="color: #ff6b6b; font-weight: bold;">— Solid Red:</span> OLS with Influential Point &nbsp;|&nbsp;
+      <span style="color: #ffd43b; font-weight: bold;">● Yellow Drag Point:</span> Active Observation
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const canvas = document.getElementById('canvas-reg');
+  const ctx = canvas.getContext('2d');
+  const lblHii = document.getElementById('lbl-hii');
+  const lblEi = document.getElementById('lbl-ei');
+  const lblCook = document.getElementById('lbl-cook');
+  const btnReset = document.getElementById('btn-reset-pt');
+
+  // Baseline data points
+  const basePoints = [
+    {x: 1.2, y: 3.1}, {x: 1.8, y: 3.8}, {x: 2.3, y: 4.5}, {x: 2.7, y: 5.2},
+    {x: 3.1, y: 5.0}, {x: 3.5, y: 6.4}, {x: 4.0, y: 6.8}, {x: 4.4, y: 7.2},
+    {x: 4.8, y: 7.9}, {x: 5.2, y: 8.5}, {x: 5.6, y: 9.1}, {x: 6.0, y: 9.7},
+    {x: 6.4, y: 10.3}, {x: 6.8, y: 11.2}, {x: 7.2, y: 11.0}, {x: 7.6, y: 12.4},
+    {x: 8.0, y: 12.8}, {x: 8.5, y: 13.5}, {x: 9.0, y: 14.2}
+  ];
+
+  let testPt = {x: 9.5, y: 14.8}; // movable point
+
+  btnReset.addEventListener('click', () => {
+    testPt = {x: 9.5, y: 14.8};
+    draw();
+  });
+
+  const padL = 50, padR = 20, padT = 20, padB = 40;
+  const minX = 0, maxX = 11, minY = 0, maxY = 20;
+
+  function toPx(x, y) {
+    const px = padL + ((x - minX) / (maxX - minX)) * (canvas.width - padL - padR);
+    const py = canvas.height - padB - ((y - minY) / (maxY - minY)) * (canvas.height - padT - padB);
+    return { px, py };
+  }
+
+  function fromPx(px, py) {
+    const x = minX + ((px - padL) / (canvas.width - padL - padR)) * (maxX - minX);
+    const y = minY + ((canvas.height - padB - py) / (canvas.height - padT - padB)) * (maxY - minY);
+    return { x, y };
+  }
+
+  // OLS calculation
+  function calcOLS(pts) {
+    const n = pts.length;
+    let sumX = 0, sumY = 0, sumXX = 0, sumXY = 0;
+    for (let p of pts) {
+      sumX += p.x; sumY += p.y;
+      sumXX += p.x * p.x; sumXY += p.x * p.y;
+    }
+    const xbar = sumX / n;
+    const ybar = sumY / n;
+    const sxx = sumXX - n * xbar * xbar;
+    const sxy = sumXY - n * xbar * ybar;
+    const b1 = sxy / sxx;
+    const b0 = ybar - b1 * xbar;
+
+    let sse = 0;
+    for (let p of pts) {
+      const pred = b0 + b1 * p.x;
+      sse += (p.y - pred) * (p.y - pred);
+    }
+    const mse = sse / Math.max(1, n - 2);
+
+    return { b0, b1, xbar, sxx, mse };
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Axes
+    ctx.strokeStyle = '#334455';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(padL, padT);
+    ctx.lineTo(padL, canvas.height - padB);
+    ctx.lineTo(canvas.width - padR, canvas.height - padB);
+    ctx.stroke();
+
+    // Axis Ticks
+    ctx.fillStyle = '#8395a7';
+    ctx.font = '11px monospace';
+    for (let x = 0; x <= 10; x += 2) {
+      const { px, py } = toPx(x, 0);
+      ctx.fillText(x, px - 4, canvas.height - padB + 16);
+    }
+    for (let y = 0; y <= 20; y += 4) {
+      const { px, py } = toPx(0, y);
+      ctx.fillText(y, padL - 25, py + 4);
+    }
+
+    // Compute Base OLS
+    const baseFit = calcOLS(basePoints);
+
+    // Baseline Line (dashed blue)
+    ctx.strokeStyle = '#4dabf7';
+    ctx.lineWidth = 2;
+    ctx.setLineDash([6, 4]);
+    ctx.beginPath();
+    const p0 = toPx(0, baseFit.b0);
+    const p1 = toPx(10.5, baseFit.b0 + baseFit.b1 * 10.5);
+    ctx.moveTo(p0.px, p0.py);
+    ctx.lineTo(p1.px, p1.py);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Full points including test point
+    const allPoints = [...basePoints, testPt];
+    const fullFit = calcOLS(allPoints);
+
+    // Full regression line (solid red)
+    ctx.strokeStyle = '#ff6b6b';
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    const fp0 = toPx(0, fullFit.b0);
+    const fp1 = toPx(10.5, fullFit.b0 + fullFit.b1 * 10.5);
+    ctx.moveTo(fp0.px, fp0.py);
+    ctx.lineTo(fp1.px, fp1.py);
+    ctx.stroke();
+
+    // Draw baseline points
+    ctx.fillStyle = '#74c0fc';
+    for (let p of basePoints) {
+      const { px, py } = toPx(p.x, p.y);
+      ctx.beginPath();
+      ctx.arc(px, py, 4, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // Calculate diagnostics for test point
+    const n = allPoints.length;
+    const hii = (1 / n) + Math.pow(testPt.x - fullFit.xbar, 2) / fullFit.sxx;
+    const yHat = fullFit.b0 + fullFit.b1 * testPt.x;
+    const ei = testPt.y - yHat;
+    const ri = ei / Math.sqrt(Math.max(1e-5, fullFit.mse * (1 - hii)));
+    const cookD = (ri * ri / 2) * (hii / (1 - hii));
+
+    lblHii.textContent = hii.toFixed(3);
+    lblEi.textContent = ei.toFixed(2);
+    lblCook.textContent = cookD.toFixed(3);
+    lblCook.style.color = cookD > 0.5 ? '#ff4d4f' : (cookD > 0.2 ? '#faad14' : '#52c41a');
+
+    // Draw test point with halo
+    const { px: tpx, py: tpy } = toPx(testPt.x, testPt.y);
+    ctx.fillStyle = 'rgba(255, 212, 59, 0.3)';
+    ctx.beginPath();
+    ctx.arc(tpx, tpy, 12, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.fillStyle = '#ffd43b';
+    ctx.beginPath();
+    ctx.arc(tpx, tpy, 6, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = '#fff';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+  }
+
+  let isDragging = false;
+  canvas.addEventListener('mousedown', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const mx = e.clientX - rect.left;
+    const my = e.clientY - rect.top;
+    const { px, py } = toPx(testPt.x, testPt.y);
+    const dist = Math.sqrt((mx - px) * (mx - px) + (my - py) * (my - py));
+    if (dist < 20) {
+      isDragging = true;
+      canvas.style.cursor = 'grabbing';
+    }
+  });
+
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+    canvas.style.cursor = 'grab';
+  });
+
+  canvas.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const rect = canvas.getBoundingClientRect();
+    const mx = e.clientX - rect.left;
+    const my = e.clientY - rect.top;
+    const coords = fromPx(mx, my);
+    testPt.x = Math.max(0.5, Math.min(10.5, coords.x));
+    testPt.y = Math.max(0.5, Math.min(19.5, coords.y));
+    draw();
+  });
+
+  draw();
+})();
+</script>
+```

@@ -1,6 +1,6 @@
 ---
-title: "STAC67 Lecture Notes & Schedule"
-subtitle: "Matrix derivations, Gauss-Markov theorem, geometry of least squares, and model diagnostics."
+title: "STAC67 Reference & Mathematical Tools"
+subtitle: "Matrix algebra results, ANOVA decompositions, R Markdown cheat sheets, and literature bibliography."
 listing:
   contents: "*.qmd"
   sort:
@@ -19,4 +19,4 @@ listing:
 page-layout: full
 ---
 
-This section houses the course schedule and analytical lecture notes following Kutner et al.'s *Applied Linear Regression Models* for STAC67. Use the category filters below to locate specific theoretical derivations.
+Quick-reference toolkits, matrix identities, distribution properties of quadratic forms, and R programming cheatsheets for STAC67.

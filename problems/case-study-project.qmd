@@ -1,0 +1,27 @@
+---
+title: "Regression Case Study Project Guidelines"
+subtitle: "Real-world dataset analysis, exploratory data analysis, R Markdown report, and presentations."
+date: "2026-10-09"
+categories: ["Projects", "Case Study", "R Markdown"]
+---
+
+## 🎯 Overview & Objectives
+The Case Study Project challenges groups of at most four students to formulate an original research question, perform rigorous exploratory data analysis, build and validate multiple regression models, conduct diagnostic tests (outliers, multicollinearity, heteroskedasticity), and present statistical findings in an R Markdown report.
+
+---
+
+## 📅 Milestones & Deadlines
+| Milestone | Deadline | Deliverable |
+| :--- | :--- | :--- |
+| **Brief & Dataset List** | October 9 | Pre-approved dataset list released |
+| **Groups & Dataset Claimed** | November 6 | Binding group declaration via Quercus |
+| **Checkpoint Submission** | November 13 | Research question statement + initial EDA plots |
+| **Final Written Report** | November 27 (23:59) | Compiled PDF generated from `.Rmd` source |
+| **Group Presentations** | December 4 | 5-minute slide deck presentation |
+
+---
+
+## 📈 Non-Punitive Grading Formula
+Your final grade is computed both with and without the project, and you automatically receive whichever is higher. Specifically, the project replaces final exam weight only when your project score exceeds your final exam score:
+$$\text{Project Benefit} = \max\left(\text{Grade}_{\text{with project}}, \text{Grade}_{\text{without project}}\right)$$
+The project can significantly boost your final standing and can **never lower it**!

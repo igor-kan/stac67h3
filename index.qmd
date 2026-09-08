@@ -1,45 +1,68 @@
 ---
-title: "STAC67: Regression Analysis"
-subtitle: "Fall 2026 | University of Toronto Scarborough"
+title: "STAC67H3: Regression Analysis"
+subtitle: "Theory and applications of linear statistical models, matrix methods, diagnostics, and inference."
 page-layout: full
 ---
 
 ::: {.hero-banner}
 # STAC67H3: Regression Analysis
-### Theory and applications of linear statistical models, matrix methods, diagnostics, and inference.
+### University of Toronto Scarborough · Fall 2026
+Comprehensive course portal featuring the official course schedule, analytical lecture derivations, R Markdown case studies, interactive statistical simulations, and mathematical reference toolkits.
 :::
-
-## 🏫 Time & Location
-| Section | Time | Location |
-| :--- | :--- | :--- |
-| **LEC01** | Wednesday, 4:00–5:00 PM | In person: IA 2021 |
-| **LEC01** | Friday, 1:00–3:00 PM | In person: IA 2021 |
-| **TUT0001** | Tuesday, 5:00–6:00 PM | In person: IA 3120 |
-| **TUT0002** | Wednesday, 3:00–4:00 PM | In person: IC 208 |
-
-*Tutorials start in Week 2 and run weekly. They are used for practical work in R and for the three quizzes. Note: tutorials take place before that week's lectures, so a tutorial only ever assumes material up to the previous Friday.*
-
-## 👨‍🏫 Office Hours & Contact
-- **Instructor:** Thibault Randrianarisoa
-- **Office:** IA 4064
-- **Email:** t.randrianarisoa@utoronto.ca (put `[STAC67]` in the subject, and your student number in the body)
-- **Office hours:** Wednesday 10–11 AM and Friday 3–4 PM, IA 4064
-
-*Please use [Piazza](https://piazza.com/) for course-content questions; email is for private matters.*
 
 ::: {.card-grid}
 ::: {.course-card}
-### 📅 [Schedule & Readings](schedule.qmd)
-Week-by-week timeline of topics, textbook reading assignments, and tutorial topics.
+### 📊 [Lecture Notes & Schedule](notes/index.qmd)
+Course schedule, Gauss-Markov theorem, hat matrix $\mathbf{H}$, geometry of least squares, multicollinearity, and regularized regression (Ridge / LASSO).
 :::
 
 ::: {.course-card}
-### 📚 [Notes & Materials](notes/index.qmd)
-Textbook details, R and R Markdown cheat sheets, and lecture resources.
+### ✏️ [Problem Sets & Projects](problems/index.qmd)
+Assignments A1–A3, tutorial quizzes (Q1–Q3), and complete guidelines for the R Markdown Case Study Project.
 :::
 
 ::: {.course-card}
-### 📝 [Assignments & Project](assignments/index.qmd)
-Information and deadlines for the three assignments, the three quizzes, and the final Case Study Project.
+### 💻 [Code & Simulations](simulations/index.qmd)
+Interactive in-browser statistical simulations (dynamic OLS, leverage sensitivity, Cook's distance), R ggplot2 diagnostics, and Python models.
+:::
+
+::: {.course-card}
+### 📐 [Reference & Math](reference/index.qmd)
+Matrix algebra theorems (idempotent matrices, quadratic forms), ANOVA identities, R & R Markdown cheat sheets, and course bibliography.
 :::
 :::
+
+---
+
+## 📅 Course Roadmap & Calendar (Fall 2026)
+
+*Lectures: Wednesday 16:00–17:00 & Friday 13:00–15:00 in IA 2021*  
+*Tutorials: Tuesday 17:00–18:00 (IA 3120) or Wednesday 15:00–16:00 (IC 208)*
+
+| Week | Dates | Topics & Readings (Kutner et al.) | Tutorials & Assessments |
+| :--- | :--- | :--- | :--- |
+| **01** | Sep 08–13 | Intro to Regression, Correlation, Simple Linear Model (Ch 1.1–1.3, 2.11) | No Tutorials |
+| **02** | Sep 14–20 | Least Squares, Gauss-Markov Theorem, Residuals, Inference (Ch 1.4–1.7, 2.1–2.2) | **Assignment #1 Out (Sep 18)** |
+| **03** | Sep 21–27 | Estimator Distributions, Prediction Intervals, ANOVA & $R^2$ (Ch 2.3–2.9) | R Environment Setup |
+| **04** | Sep 28 – Oct 04 | F-tests, Model Assumptions, Matrix Formulation, Hat Matrix (Ch 3.1–3.3, 5.1–5.10) | **Assignment #1 Due (Sep 30)** |
+| **05** | Oct 05–11 | Matrix Results, Linear Functions of Random Vectors (Ch 5.11–5.13, 6.1–6.4) | **Quiz 1 (Oct 6/7)** · Project Brief |
+| **06** | Oct 12–18 | Geometry of Least Squares, Quadratic Forms, General F-test (Ch 6.5–6.8) | Midterm Review |
+| **07** | Oct 19–25 | General Linear Hypotheses, Extra SS, Multicollinearity (Ch 7.1–7.6, 8.3) | **Assignment #2 Due (Oct 21)** · **Midterm** |
+| **RW** | Oct 26–30 | *Reading Week (No Classes or Tutorials)* | Study Break |
+| **08** | Nov 02–08 | Categorical Predictors, Interaction Models (Ch 8.3–8.6) | **Quiz 2 (Nov 3/4)** · Groups Claimed |
+| **09** | Nov 09–15 | Polynomial Models, Centred Predictors, Box-Cox Transformations (Ch 8.1–8.2, 3.9) | **Project Checkpoint Due (Nov 13)** |
+| **10** | Nov 16–22 | Model Selection Criteria ($R_{\text{adj}}^2, AIC, BIC$), Outlier Diagnostics (Ch 9.1–9.6, 10.1–10.3) | **Assignment #3 Due (Nov 18)** |
+| **11** | Nov 23–29 | Cook's Distance, DFFITS, Weighted Least Squares (Ch 10.4–10.5, 11.1) | **Quiz 3 (Nov 24/25)** · **Report Due (Nov 27)** |
+| **12** | Nov 30 – Dec 06 | Bias-Variance Tradeoff, Ridge Regression & LASSO (Ch 11.2) | **Project Presentations (Dec 4)** |
+| **Final** | Dec 10–22 | **Comprehensive Final Examination** | Scheduled by Registrar |
+
+::: {.callout-note}
+### Course Schedule & Grading Notes
+Detailed policy on Quizzes (best 2 of 3 count), the non-punitive Case Study Project formula, and R Markdown submission guidelines are detailed in the official [Course Schedule & Reading Plan](notes/schedule.qmd).
+:::
+
+## 👨‍🏫 Office Hours & Contact
+- **Instructor:** Thibault Randrianarisoa (Office: IA 4064)
+  - Email: `t.randrianarisoa@utoronto.ca` (Subject MUST contain `[STAC67]` and body MUST contain your student number).
+  - Office Hours: Wednesday 10:00–11:00 AM and Friday 15:00–16:00 in IA 4064.
+- **Piazza:** Use Piazza for all course-content questions; email is reserved for personal administrative matters.

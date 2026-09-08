@@ -1,0 +1,26 @@
+---
+title: "Statistical Code & Simulations"
+subtitle: "Interactive regression models, live OLS playgrounds, R diagnostic scripts, and Python statistical libraries."
+listing:
+  contents: "*.qmd"
+  sort:
+    - "date desc"
+    - "title asc"
+  type: default
+  categories: true
+  sort-ui: [title, date, date-modified]
+  filter-ui: [title, date, categories]
+  fields: [date, date-modified, title, subtitle, categories, reading-time]
+  field-display-names:
+    date: "Created"
+    date-modified: "Modified"
+    reading-time: "Read Time"
+  page-size: 15
+page-layout: full
+---
+
+This section hosts all interactive computational tools, R diagnostic notebooks, and statistical simulators for STAC67:
+
+* **Interactive Regression Playground:** In-browser live OLS models exploring outlier influence, leverage points, and coefficient sensitivity in real time.
+* **R Statistical Labs:** Complete R scripts for diagnostic plotting (residuals vs. fitted, Q-Q plots, scale-location, residuals vs. leverage).
+* **Python Statistical Surrogates:** Statsmodels implementations for matrix verification and simulation checks.

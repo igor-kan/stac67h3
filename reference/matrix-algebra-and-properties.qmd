@@ -1,0 +1,45 @@
+---
+title: "Matrix Algebra, Idempotency & Quadratic Forms"
+subtitle: "Expectation and covariance of random vectors, projection matrices, and Cochran's theorem."
+date: "2026-09-08"
+categories: ["Reference", "Matrix Algebra", "Quadratic Forms", "Proofs"]
+---
+
+## 1. Random Vectors: Expectation & Covariance
+
+Let $\mathbf{Y}$ be an $n \times 1$ random vector with mean $\mathrm{E}[\mathbf{Y}] = \boldsymbol{\mu}$ and covariance matrix $\operatorname{Cov}(\mathbf{Y}) = \boldsymbol{\Sigma}$.
+
+For any constant $m \times n$ matrix $\mathbf{A}$:
+$$\mathrm{E}[\mathbf{A}\mathbf{Y}] = \mathbf{A}\boldsymbol{\mu}$$
+$$\operatorname{Cov}(\mathbf{A}\mathbf{Y}) = \mathbf{A} \boldsymbol{\Sigma} \mathbf{A}^T$$
+
+If $\mathbf{Y} \sim \mathcal{N}_n(\mathbf{X}\boldsymbol{\beta}, \sigma^2 \mathbf{I})$:
+$$\mathbf{A}\mathbf{Y} \sim \mathcal{N}_m(\mathbf{A}\mathbf{X}\boldsymbol{\beta}, \sigma^2 \mathbf{A}\mathbf{A}^T)$$
+
+---
+
+## 2. Properties of the Hat Matrix $\mathbf{H}$
+
+The hat (projection) matrix is defined as:
+$$\mathbf{H} = \mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T$$
+
+1. **Symmetric:** $\mathbf{H}^T = \mathbf{H}$.
+2. **Idempotent:** $\mathbf{H}^2 = \mathbf{H}\mathbf{H} = \mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T = \mathbf{H}$.
+3. **Trace and Rank:** $\operatorname{tr}(\mathbf{H}) = \operatorname{rank}(\mathbf{H}) = p$ (number of parameters including intercept).
+4. **Orthogonal Complement $(\mathbf{I} - \mathbf{H})$:**
+   - Symmetric and idempotent: $(\mathbf{I} - \mathbf{H})^2 = \mathbf{I} - \mathbf{H}$.
+   - $\operatorname{tr}(\mathbf{I} - \mathbf{H}) = n - p$.
+   - Projects $\mathbf{Y}$ onto the orthogonal residual space: $\mathbf{e} = (\mathbf{I} - \mathbf{H})\mathbf{Y}$.
+
+---
+
+## 3. Expectation of Quadratic Forms
+
+For a symmetric matrix $\mathbf{A}$ and random vector $\mathbf{Y}$ with mean $\boldsymbol{\mu}$ and covariance $\boldsymbol{\Sigma}$:
+$$\mathrm{E}[\mathbf{Y}^T \mathbf{A} \mathbf{Y}] = \operatorname{tr}(\mathbf{A}\boldsymbol{\Sigma}) + \boldsymbol{\mu}^T \mathbf{A} \boldsymbol{\mu}$$
+
+### Application to SSE:
+Since $\text{SSE} = \mathbf{e}^T\mathbf{e} = \mathbf{Y}^T(\mathbf{I} - \mathbf{H})\mathbf{Y}$, where $\boldsymbol{\mu} = \mathbf{X}\boldsymbol{\beta}$ and $(\mathbf{I} - \mathbf{H})\mathbf{X} = \mathbf{0}$:
+$$\mathrm{E}[\text{SSE}] = \operatorname{tr}((\mathbf{I} - \mathbf{H})\sigma^2 \mathbf{I}) + \boldsymbol{\beta}^T \mathbf{X}^T (\mathbf{I} - \mathbf{H}) \mathbf{X}\boldsymbol{\beta} = \sigma^2 \operatorname{tr}(\mathbf{I} - \mathbf{H}) + 0 = (n - p)\sigma^2$$
+Therefore, the Mean Squared Error (MSE) is an unbiased estimator of error variance:
+$$\mathrm{E}[\text{MSE}] = \mathrm{E}\left[\frac{\text{SSE}}{n - p}\right] = \sigma^2$$
