@@ -4,6 +4,8 @@ project:
 
 website:
   title: "STAC67H3: Regression Analysis"
+  site-url: "https://igor-kan.github.io/stac67h3"
+  repo-url: "https://github.com/igor-kan/stac67h3"
   description: "Linear regression, matrix formulations, model diagnostics, ANOVA, multicollinearity, and generalized linear models."
   navbar:
     left:
@@ -23,3 +25,6 @@ format:
     toc: true
     toc-depth: 3
     math: true
+    code-fold: show
+    code-tools: true
+    code-copy: true

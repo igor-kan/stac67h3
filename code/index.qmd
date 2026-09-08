@@ -1,9 +1,9 @@
 ---
 title: "Statistical Code & Diagnostic Labs"
 description: "R and Python scripts for diagnostic residual plots, Q-Q plots, and influence analysis."
-format:
-  html:
-    toc: true
+listing:
+  contents: "*.qmd"
+  sort: "date desc"
+  type: default
+page-layout: full
 ---
-
-This section provides computational implementations of OLS regression diagnostics in Python and R.

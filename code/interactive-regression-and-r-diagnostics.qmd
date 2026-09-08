@@ -1,0 +1,174 @@
+---
+title: "Interactive Regression Lab: R Diagnostics & Live OLS Playground"
+subtitle: "Client-side interactive regression with dynamic outlier sensitivity, R ggplot2 diagnostics, and Python statsmodels."
+date: "2026-09-08"
+categories: ["Statistics", "R", "Python", "Interactive", "Regression", "Observable JS"]
+format:
+  html:
+    toc: true
+    code-fold: show
+    code-tools: true
+---
+
+## 1. Live In-Browser OLS Regression Playground (Observable JS)
+
+Explore how sample size, noise variance, and influential outliers affect ordinary least squares (OLS) parameter estimates $\hat{\beta}_1$ and coefficient of determination $R^2$ in real time:
+
+```{ojs}
+//| echo: false
+viewof sampleSize = Inputs.range([10, 150], {value: 40, step: 5, label: "Sample Size (n)"})
+viewof trueSlope = Inputs.range([-4.0, 4.0], {value: 1.8, step: 0.1, label: "True Slope (β₁)"})
+viewof noiseLevel = Inputs.range([0.5, 10.0], {value: 2.5, step: 0.5, label: "Residual Noise (σ)"})
+viewof outlierY = Inputs.range([-25, 25], {value: 0, step: 1, label: "Leverage Outlier (at x = 9)"})
+```
+
+```{ojs}
+//| echo: false
+simData = {
+  // Deterministic seeded random points
+  let pts = [];
+  for (let i = 0; i < sampleSize; i++) {
+    const x = (i / sampleSize) * 10;
+    // Box-Muller normal approximation
+    const u1 = Math.sin(i * 997.1) * 0.5 + 0.5;
+    const u2 = Math.cos(i * 331.7) * 0.5 + 0.5;
+    const z = Math.sqrt(-2.0 * Math.log(Math.max(1e-5, u1))) * Math.cos(2.0 * Math.PI * u2);
+    const y = 3.0 + trueSlope * x + z * noiseLevel;
+    pts.push({x, y});
+  }
+  // Add leverage point
+  if (outlierY !== 0) {
+    pts.push({x: 9.0, y: 3.0 + trueSlope * 9.0 + outlierY, isOutlier: true});
+  }
+  return pts;
+}
+```
+
+```{ojs}
+//| echo: false
+stats = {
+  const n = simData.length;
+  let sumX = 0, sumY = 0, sumXY = 0, sumXX = 0, sumYY = 0;
+  for (const p of simData) {
+    sumX += p.x;
+    sumY += p.y;
+    sumXY += p.x * p.y;
+    sumXX += p.x * p.x;
+    sumYY += p.y * p.y;
+  }
+  const xBar = sumX / n;
+  const yBar = sumY / n;
+  const ssX = sumXX - n * xBar * xBar;
+  const ssY = sumYY - n * yBar * yBar;
+  const ssXY = sumXY - n * xBar * yBar;
+
+  const beta1 = ssXY / ssX;
+  const beta0 = yBar - beta1 * xBar;
+  const r2 = (ssXY * ssXY) / (ssX * ssY);
+
+  return { beta0, beta1, r2, n };
+}
+```
+
+```{ojs}
+//| echo: false
+html`
+<div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 8px; margin-bottom: 12px; font-family: monospace;">
+  <strong>Fitted Model:</strong> ŷ = ${stats.beta0.toFixed(3)} + ${stats.beta1.toFixed(3)} x &nbsp;|&nbsp;
+  <strong>R²:</strong> ${(stats.r2).toFixed(4)} &nbsp;|&nbsp;
+  <strong>Observations:</strong> ${stats.n}
+</div>
+`
+```
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  width: 650,
+  height: 380,
+  grid: true,
+  x: {label: "Predictor Variable (X)", domain: [-0.5, 10.5]},
+  y: {label: "Response Variable (Y)"},
+  marks: [
+    Plot.dot(simData.filter(d => !d.isOutlier), {x: "x", y: "y", fill: "#3b82f6", r: 4}),
+    Plot.dot(simData.filter(d => d.isOutlier), {x: "x", y: "y", fill: "#ef4444", r: 7, stroke: "#991b1b"}),
+    Plot.line([[0, stats.beta0], [10, stats.beta0 + stats.beta1 * 10]], {stroke: "#dc2626", strokeWidth: 2.5}),
+    Plot.line([[0, 3], [10, 3 + trueSlope * 10]], {stroke: "#10b981", strokeDasharray: "4 4", strokeWidth: 1.5})
+  ]
+})
+```
+
+---
+
+## 2. Rigorous Regression Diagnostics in R
+
+R provides statistical diagnostic workflows via `stats` and `ggplot2`:
+
+```r
+# regression_diagnostics.R
+library(ggplot2)
+library(broom)
+
+# Fit linear model
+data(mtcars)
+model <- lm(mpg ~ wt + hp + qsec, data = mtcars)
+summary(model)
+
+# ANOVA Table
+anova(model)
+
+# Extract diagnostic residuals
+diag_df <- augment(model)
+
+# 1. Residuals vs Fitted (Checking homoscedasticity and linearity)
+p1 <- ggplot(diag_df, aes(x = .fitted, y = .resid)) +
+  geom_point(color = "#1e40af", alpha = 0.8) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red") +
+  geom_smooth(method = "loess", se = FALSE, color = "#ea580c") +
+  labs(title = "Residuals vs Fitted", x = "Fitted Values", y = "Residuals") +
+  theme_minimal()
+
+# 2. Normal Q-Q Plot (Checking normality of error terms)
+p2 <- ggplot(diag_df, aes(sample = .std.resid)) +
+  stat_qq(color = "#1e40af") +
+  stat_qq_line(color = "red", linetype = "dashed") +
+  labs(title = "Normal Q-Q Plot", x = "Theoretical Quantiles", y = "Standardized Residuals") +
+  theme_minimal()
+
+# 3. Cook's Distance (Detecting high-influence leverage points)
+p3 <- ggplot(diag_df, aes(x = seq_along(.cooksd), y = .cooksd)) +
+  geom_bar(stat = "identity", fill = "#0284c7") +
+  geom_hline(yintercept = 4 / nrow(mtcars), linetype = "dotted", color = "red") +
+  labs(title = "Cook's Distance Influence Index", x = "Observation Index", y = "Cook's D") +
+  theme_minimal()
+```
+
+---
+
+## 3. Statistical Modeling in Python (`statsmodels`)
+
+```python
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
+import pandas as pd
+import numpy as np
+
+# Load dataset
+df = sm.datasets.get_rdataset("mtcars", "datasets").data
+
+# Fit OLS model with robust covariance matrix (HC3)
+ols_model = smf.ols("mpg ~ wt + hp + qsec", data=df).fit(cov_type="HC3")
+print(ols_model.summary())
+
+# Variance Inflation Factors (VIF) to detect Multicollinearity
+from statsmodels.stats.outliers_influence import variance_inflation_factor
+
+X = df[["wt", "hp", "qsec"]]
+X = sm.add_constant(X)
+vif_data = pd.DataFrame({
+    "Variable": X.columns,
+    "VIF": [variance_inflation_factor(X.values, i) for i in range(X.shape[1])]
+})
+print("\nVariance Inflation Factors (VIF):")
+print(vif_data)
+```
