@@ -1,0 +1,107 @@
+[
+  {
+    "objectID": "notes/multiple-regression-matrix-approach.html",
+    "href": "notes/multiple-regression-matrix-approach.html",
+    "title": "Matrix Formulation of Multiple Linear Regression",
+    "section": "",
+    "text": "We express the multiple linear regression model for \\(n\\) observations and \\(p-1\\) predictors in matrix notation: \\[\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\varepsilon}\\] where: * \\(\\mathbf{y} \\in \\mathbb{R}^{n \\times 1}\\) is the response vector. * \\(\\mathbf{X} \\in \\mathbb{R}^{n \\times p}\\) is the design matrix (with a first column of ones for the intercept). * \\(\\boldsymbol{\\beta} \\in \\mathbb{R}^{p \\times 1}\\) is the vector of unknown regression coefficients. * \\(\\boldsymbol{\\varepsilon} \\in \\mathbb{R}^{n \\times 1}\\) is the random error vector satisfying: \\[\\mathbb{E}[\\boldsymbol{\\varepsilon}] = \\mathbf{0}, \\qquad \\operatorname{Var}(\\boldsymbol{\\varepsilon}) = \\sigma^2 \\mathbf{I}_n\\]"
+  },
+  {
+    "objectID": "notes/multiple-regression-matrix-approach.html#the-general-linear-model",
+    "href": "notes/multiple-regression-matrix-approach.html#the-general-linear-model",
+    "title": "Matrix Formulation of Multiple Linear Regression",
+    "section": "",
+    "text": "We express the multiple linear regression model for \\(n\\) observations and \\(p-1\\) predictors in matrix notation: \\[\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\varepsilon}\\] where: * \\(\\mathbf{y} \\in \\mathbb{R}^{n \\times 1}\\) is the response vector. * \\(\\mathbf{X} \\in \\mathbb{R}^{n \\times p}\\) is the design matrix (with a first column of ones for the intercept). * \\(\\boldsymbol{\\beta} \\in \\mathbb{R}^{p \\times 1}\\) is the vector of unknown regression coefficients. * \\(\\boldsymbol{\\varepsilon} \\in \\mathbb{R}^{n \\times 1}\\) is the random error vector satisfying: \\[\\mathbb{E}[\\boldsymbol{\\varepsilon}] = \\mathbf{0}, \\qquad \\operatorname{Var}(\\boldsymbol{\\varepsilon}) = \\sigma^2 \\mathbf{I}_n\\]"
+  },
+  {
+    "objectID": "notes/multiple-regression-matrix-approach.html#ordinary-least-squares-ols-estimator",
+    "href": "notes/multiple-regression-matrix-approach.html#ordinary-least-squares-ols-estimator",
+    "title": "Matrix Formulation of Multiple Linear Regression",
+    "section": "2. Ordinary Least Squares (OLS) Estimator",
+    "text": "2. Ordinary Least Squares (OLS) Estimator\nWe seek \\(\\hat{\\boldsymbol{\\beta}}\\) that minimizes the residual sum of squares (SSE): \\[Q(\\boldsymbol{\\beta}) = \\boldsymbol{\\varepsilon}^T \\boldsymbol{\\varepsilon} = (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) = \\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\\]\nTaking the vector derivative with respect to \\(\\boldsymbol{\\beta}\\) and equating to zero: \\[\\frac{\\partial Q}{\\partial \\boldsymbol{\\beta}} = -2\\mathbf{X}^T\\mathbf{y} + 2\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta} = \\mathbf{0}\\]\nThis yields the Normal Equations: \\[\\mathbf{X}^T\\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\mathbf{X}^T\\mathbf{y}\\]\nAssuming \\(\\mathbf{X}\\) has full column rank (\\(\\operatorname{rank}(\\mathbf{X}) = p\\)), the matrix \\(\\mathbf{X}^T\\mathbf{X}\\) is strictly invertible: \\[\\boxed{\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}}\\]\n\nSampling Distribution & Unbiasedness\n\nExpectation: \\[\\mathbb{E}[\\hat{\\boldsymbol{\\beta}}] = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T \\mathbb{E}[\\mathbf{y}] = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T (\\mathbf{X}\\boldsymbol{\\beta}) = \\boldsymbol{\\beta} \\quad (\\text{Unbiased})\\]\nVariance-Covariance Matrix: \\[\\operatorname{Var}(\\hat{\\boldsymbol{\\beta}}) = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T \\operatorname{Var}(\\mathbf{y}) \\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1} = \\sigma^2 (\\mathbf{X}^T\\mathbf{X})^{-1}\\]"
+  },
+  {
+    "objectID": "notes/multiple-regression-matrix-approach.html#the-hat-matrix-orthogonal-projection",
+    "href": "notes/multiple-regression-matrix-approach.html#the-hat-matrix-orthogonal-projection",
+    "title": "Matrix Formulation of Multiple Linear Regression",
+    "section": "3. The Hat Matrix (Orthogonal Projection)",
+    "text": "3. The Hat Matrix (Orthogonal Projection)\nThe fitted values are: \\[\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y} = \\mathbf{H}\\mathbf{y}\\] where \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\) is the Hat Matrix.\n\nKey Algebraic Properties of \\(\\mathbf{H}\\):\n\nSymmetric: \\(\\mathbf{H}^T = \\mathbf{H}\\).\nIdempotent: \\(\\mathbf{H}^2 = \\mathbf{H}\\) (projecting twice is the same as projecting once).\nTrace: \\(\\operatorname{tr}(\\mathbf{H}) = \\operatorname{tr}(\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T) = \\operatorname{tr}((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}) = \\operatorname{tr}(\\mathbf{I}_p) = p\\).\nResidual Vector: \\(\\mathbf{e} = \\mathbf{y} - \\hat{\\mathbf{y}} = (\\mathbf{I} - \\mathbf{H})\\mathbf{y}\\). Because \\(\\mathbf{X}^T(\\mathbf{I} - \\mathbf{H}) = \\mathbf{0}\\), the residual vector is strictly orthogonal to the column space of \\(\\mathbf{X}\\) (\\(\\mathbf{X}^T\\mathbf{e} = \\mathbf{0}\\))."
+  },
+  {
+    "objectID": "code/interactive-regression-and-r-diagnostics.html",
+    "href": "code/interactive-regression-and-r-diagnostics.html",
+    "title": "Interactive Regression Lab: R Diagnostics & Live OLS Playground",
+    "section": "",
+    "text": "Explore how sample size, noise variance, and influential outliers affect ordinary least squares (OLS) parameter estimates \\(\\hat{\\beta}_1\\) and coefficient of determination \\(R^2\\) in real time:\n\n\nCode\nviewof sampleSize = Inputs.range([10, 150], {value: 40, step: 5, label: \"Sample Size (n)\"})\nviewof trueSlope = Inputs.range([-4.0, 4.0], {value: 1.8, step: 0.1, label: \"True Slope (β₁)\"})\nviewof noiseLevel = Inputs.range([0.5, 10.0], {value: 2.5, step: 0.5, label: \"Residual Noise (σ)\"})\nviewof outlierY = Inputs.range([-25, 25], {value: 0, step: 1, label: \"Leverage Outlier (at x = 9)\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nsimData = {\n  // Deterministic seeded random points\n  let pts = [];\n  for (let i = 0; i &lt; sampleSize; i++) {\n    const x = (i / sampleSize) * 10;\n    // Box-Muller normal approximation\n    const u1 = Math.sin(i * 997.1) * 0.5 + 0.5;\n    const u2 = Math.cos(i * 331.7) * 0.5 + 0.5;\n    const z = Math.sqrt(-2.0 * Math.log(Math.max(1e-5, u1))) * Math.cos(2.0 * Math.PI * u2);\n    const y = 3.0 + trueSlope * x + z * noiseLevel;\n    pts.push({x, y});\n  }\n  // Add leverage point\n  if (outlierY !== 0) {\n    pts.push({x: 9.0, y: 3.0 + trueSlope * 9.0 + outlierY, isOutlier: true});\n  }\n  return pts;\n}\n\n\n\n\n\n\n\n\n\nCode\nstats = {\n  const n = simData.length;\n  let sumX = 0, sumY = 0, sumXY = 0, sumXX = 0, sumYY = 0;\n  for (const p of simData) {\n    sumX += p.x;\n    sumY += p.y;\n    sumXY += p.x * p.y;\n    sumXX += p.x * p.x;\n    sumYY += p.y * p.y;\n  }\n  const xBar = sumX / n;\n  const yBar = sumY / n;\n  const ssX = sumXX - n * xBar * xBar;\n  const ssY = sumYY - n * yBar * yBar;\n  const ssXY = sumXY - n * xBar * yBar;\n\n  const beta1 = ssXY / ssX;\n  const beta0 = yBar - beta1 * xBar;\n  const r2 = (ssXY * ssXY) / (ssX * ssY);\n\n  return { beta0, beta1, r2, n };\n}\n\n\n\n\n\n\n\n\n\nCode\nhtml`\n&lt;div style=\"background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 8px; margin-bottom: 12px; font-family: monospace;\"&gt;\n  &lt;strong&gt;Fitted Model:&lt;/strong&gt; ŷ = ${stats.beta0.toFixed(3)} + ${stats.beta1.toFixed(3)} x &nbsp;|&nbsp;\n  &lt;strong&gt;R²:&lt;/strong&gt; ${(stats.r2).toFixed(4)} &nbsp;|&nbsp;\n  &lt;strong&gt;Observations:&lt;/strong&gt; ${stats.n}\n&lt;/div&gt;\n`\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  width: 650,\n  height: 380,\n  grid: true,\n  x: {label: \"Predictor Variable (X)\", domain: [-0.5, 10.5]},\n  y: {label: \"Response Variable (Y)\"},\n  marks: [\n    Plot.dot(simData.filter(d =&gt; !d.isOutlier), {x: \"x\", y: \"y\", fill: \"#3b82f6\", r: 4}),\n    Plot.dot(simData.filter(d =&gt; d.isOutlier), {x: \"x\", y: \"y\", fill: \"#ef4444\", r: 7, stroke: \"#991b1b\"}),\n    Plot.line([[0, stats.beta0], [10, stats.beta0 + stats.beta1 * 10]], {stroke: \"#dc2626\", strokeWidth: 2.5}),\n    Plot.line([[0, 3], [10, 3 + trueSlope * 10]], {stroke: \"#10b981\", strokeDasharray: \"4 4\", strokeWidth: 1.5})\n  ]\n})"
+  },
+  {
+    "objectID": "code/interactive-regression-and-r-diagnostics.html#live-in-browser-ols-regression-playground-observable-js",
+    "href": "code/interactive-regression-and-r-diagnostics.html#live-in-browser-ols-regression-playground-observable-js",
+    "title": "Interactive Regression Lab: R Diagnostics & Live OLS Playground",
+    "section": "",
+    "text": "Explore how sample size, noise variance, and influential outliers affect ordinary least squares (OLS) parameter estimates \\(\\hat{\\beta}_1\\) and coefficient of determination \\(R^2\\) in real time:\n\n\nCode\nviewof sampleSize = Inputs.range([10, 150], {value: 40, step: 5, label: \"Sample Size (n)\"})\nviewof trueSlope = Inputs.range([-4.0, 4.0], {value: 1.8, step: 0.1, label: \"True Slope (β₁)\"})\nviewof noiseLevel = Inputs.range([0.5, 10.0], {value: 2.5, step: 0.5, label: \"Residual Noise (σ)\"})\nviewof outlierY = Inputs.range([-25, 25], {value: 0, step: 1, label: \"Leverage Outlier (at x = 9)\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nsimData = {\n  // Deterministic seeded random points\n  let pts = [];\n  for (let i = 0; i &lt; sampleSize; i++) {\n    const x = (i / sampleSize) * 10;\n    // Box-Muller normal approximation\n    const u1 = Math.sin(i * 997.1) * 0.5 + 0.5;\n    const u2 = Math.cos(i * 331.7) * 0.5 + 0.5;\n    const z = Math.sqrt(-2.0 * Math.log(Math.max(1e-5, u1))) * Math.cos(2.0 * Math.PI * u2);\n    const y = 3.0 + trueSlope * x + z * noiseLevel;\n    pts.push({x, y});\n  }\n  // Add leverage point\n  if (outlierY !== 0) {\n    pts.push({x: 9.0, y: 3.0 + trueSlope * 9.0 + outlierY, isOutlier: true});\n  }\n  return pts;\n}\n\n\n\n\n\n\n\n\n\nCode\nstats = {\n  const n = simData.length;\n  let sumX = 0, sumY = 0, sumXY = 0, sumXX = 0, sumYY = 0;\n  for (const p of simData) {\n    sumX += p.x;\n    sumY += p.y;\n    sumXY += p.x * p.y;\n    sumXX += p.x * p.x;\n    sumYY += p.y * p.y;\n  }\n  const xBar = sumX / n;\n  const yBar = sumY / n;\n  const ssX = sumXX - n * xBar * xBar;\n  const ssY = sumYY - n * yBar * yBar;\n  const ssXY = sumXY - n * xBar * yBar;\n\n  const beta1 = ssXY / ssX;\n  const beta0 = yBar - beta1 * xBar;\n  const r2 = (ssXY * ssXY) / (ssX * ssY);\n\n  return { beta0, beta1, r2, n };\n}\n\n\n\n\n\n\n\n\n\nCode\nhtml`\n&lt;div style=\"background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 8px; margin-bottom: 12px; font-family: monospace;\"&gt;\n  &lt;strong&gt;Fitted Model:&lt;/strong&gt; ŷ = ${stats.beta0.toFixed(3)} + ${stats.beta1.toFixed(3)} x &nbsp;|&nbsp;\n  &lt;strong&gt;R²:&lt;/strong&gt; ${(stats.r2).toFixed(4)} &nbsp;|&nbsp;\n  &lt;strong&gt;Observations:&lt;/strong&gt; ${stats.n}\n&lt;/div&gt;\n`\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  width: 650,\n  height: 380,\n  grid: true,\n  x: {label: \"Predictor Variable (X)\", domain: [-0.5, 10.5]},\n  y: {label: \"Response Variable (Y)\"},\n  marks: [\n    Plot.dot(simData.filter(d =&gt; !d.isOutlier), {x: \"x\", y: \"y\", fill: \"#3b82f6\", r: 4}),\n    Plot.dot(simData.filter(d =&gt; d.isOutlier), {x: \"x\", y: \"y\", fill: \"#ef4444\", r: 7, stroke: \"#991b1b\"}),\n    Plot.line([[0, stats.beta0], [10, stats.beta0 + stats.beta1 * 10]], {stroke: \"#dc2626\", strokeWidth: 2.5}),\n    Plot.line([[0, 3], [10, 3 + trueSlope * 10]], {stroke: \"#10b981\", strokeDasharray: \"4 4\", strokeWidth: 1.5})\n  ]\n})"
+  },
+  {
+    "objectID": "code/interactive-regression-and-r-diagnostics.html#rigorous-regression-diagnostics-in-r",
+    "href": "code/interactive-regression-and-r-diagnostics.html#rigorous-regression-diagnostics-in-r",
+    "title": "Interactive Regression Lab: R Diagnostics & Live OLS Playground",
+    "section": "2. Rigorous Regression Diagnostics in R",
+    "text": "2. Rigorous Regression Diagnostics in R\nR provides statistical diagnostic workflows via stats and ggplot2:\n# regression_diagnostics.R\nlibrary(ggplot2)\nlibrary(broom)\n\n# Fit linear model\ndata(mtcars)\nmodel &lt;- lm(mpg ~ wt + hp + qsec, data = mtcars)\nsummary(model)\n\n# ANOVA Table\nanova(model)\n\n# Extract diagnostic residuals\ndiag_df &lt;- augment(model)\n\n# 1. Residuals vs Fitted (Checking homoscedasticity and linearity)\np1 &lt;- ggplot(diag_df, aes(x = .fitted, y = .resid)) +\n  geom_point(color = \"#1e40af\", alpha = 0.8) +\n  geom_hline(yintercept = 0, linetype = \"dashed\", color = \"red\") +\n  geom_smooth(method = \"loess\", se = FALSE, color = \"#ea580c\") +\n  labs(title = \"Residuals vs Fitted\", x = \"Fitted Values\", y = \"Residuals\") +\n  theme_minimal()\n\n# 2. Normal Q-Q Plot (Checking normality of error terms)\np2 &lt;- ggplot(diag_df, aes(sample = .std.resid)) +\n  stat_qq(color = \"#1e40af\") +\n  stat_qq_line(color = \"red\", linetype = \"dashed\") +\n  labs(title = \"Normal Q-Q Plot\", x = \"Theoretical Quantiles\", y = \"Standardized Residuals\") +\n  theme_minimal()\n\n# 3. Cook's Distance (Detecting high-influence leverage points)\np3 &lt;- ggplot(diag_df, aes(x = seq_along(.cooksd), y = .cooksd)) +\n  geom_bar(stat = \"identity\", fill = \"#0284c7\") +\n  geom_hline(yintercept = 4 / nrow(mtcars), linetype = \"dotted\", color = \"red\") +\n  labs(title = \"Cook's Distance Influence Index\", x = \"Observation Index\", y = \"Cook's D\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "code/interactive-regression-and-r-diagnostics.html#statistical-modeling-in-python-statsmodels",
+    "href": "code/interactive-regression-and-r-diagnostics.html#statistical-modeling-in-python-statsmodels",
+    "title": "Interactive Regression Lab: R Diagnostics & Live OLS Playground",
+    "section": "3. Statistical Modeling in Python (statsmodels)",
+    "text": "3. Statistical Modeling in Python (statsmodels)\nimport statsmodels.api as sm\nimport statsmodels.formula.api as smf\nimport pandas as pd\nimport numpy as np\n\n# Load dataset\ndf = sm.datasets.get_rdataset(\"mtcars\", \"datasets\").data\n\n# Fit OLS model with robust covariance matrix (HC3)\nols_model = smf.ols(\"mpg ~ wt + hp + qsec\", data=df).fit(cov_type=\"HC3\")\nprint(ols_model.summary())\n\n# Variance Inflation Factors (VIF) to detect Multicollinearity\nfrom statsmodels.stats.outliers_influence import variance_inflation_factor\n\nX = df[[\"wt\", \"hp\", \"qsec\"]]\nX = sm.add_constant(X)\nvif_data = pd.DataFrame({\n    \"Variable\": X.columns,\n    \"VIF\": [variance_inflation_factor(X.values, i) for i in range(X.shape[1])]\n})\nprint(\"\\nVariance Inflation Factors (VIF):\")\nprint(vif_data)"
+  },
+  {
+    "objectID": "assignments/assignment-1.html",
+    "href": "assignments/assignment-1.html",
+    "title": "Assignment 1: Leverage, Outliers, and Cook’s Distance",
+    "section": "",
+    "text": "Let \\(h_{ii} = \\mathbf{x}_i^T (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{x}_i\\) be the \\(i\\)-th diagonal element of the hat matrix \\(\\mathbf{H}\\).\n\nProve that \\(0 \\le h_{ii} \\le 1\\).\nFor a model with an intercept term, prove that \\(\\frac{1}{n} \\le h_{ii} \\le 1\\).\nCompute the average leverage \\(\\bar{h} = \\frac{1}{n}\\sum_{i=1}^n h_{ii}\\)."
+  },
+  {
+    "objectID": "assignments/assignment-1.html#problem-bounds-on-leverage-values",
+    "href": "assignments/assignment-1.html#problem-bounds-on-leverage-values",
+    "title": "Assignment 1: Leverage, Outliers, and Cook’s Distance",
+    "section": "",
+    "text": "Let \\(h_{ii} = \\mathbf{x}_i^T (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{x}_i\\) be the \\(i\\)-th diagonal element of the hat matrix \\(\\mathbf{H}\\).\n\nProve that \\(0 \\le h_{ii} \\le 1\\).\nFor a model with an intercept term, prove that \\(\\frac{1}{n} \\le h_{ii} \\le 1\\).\nCompute the average leverage \\(\\bar{h} = \\frac{1}{n}\\sum_{i=1}^n h_{ii}\\)."
+  },
+  {
+    "objectID": "assignments/assignment-1.html#proof",
+    "href": "assignments/assignment-1.html#proof",
+    "title": "Assignment 1: Leverage, Outliers, and Cook’s Distance",
+    "section": "Proof",
+    "text": "Proof\n\n1. Proof that \\(0 \\le h_{ii} \\le 1\\)\nBecause \\(\\mathbf{H}\\) is idempotent (\\(\\mathbf{H} = \\mathbf{H}^2\\)): \\[h_{ii} = \\sum_{j=1}^n h_{ij}^2 = h_{ii}^2 + \\sum_{j \\neq i} h_{ij}^2\\] Since \\(\\sum_{j \\neq i} h_{ij}^2 \\ge 0\\), we have: \\[h_{ii} \\ge h_{ii}^2 \\implies h_{ii}(1 - h_{ii}) \\ge 0 \\implies \\boxed{0 \\le h_{ii} \\le 1}\\]\n\n\n2. Lower Bound with an Intercept\nWhen the first column of \\(\\mathbf{X}\\) is \\(\\mathbf{1}_n\\): \\[\\mathbf{X} = [\\mathbf{1}_n \\quad \\mathbf{X}_c]\\] Using partitioned matrix inversion, the projection splits into the mean projection \\(\\frac{1}{n}\\mathbf{J}_n\\) and the centered predictor projection: \\[h_{ii} = \\frac{1}{n} + (\\mathbf{x}_i - \\bar{\\mathbf{x}})^T (\\mathbf{X}_c^T\\mathbf{X}_c)^{-1}(\\mathbf{x}_i - \\bar{\\mathbf{x}})\\] Because \\((\\mathbf{X}_c^T\\mathbf{X}_c)^{-1}\\) is positive semi-definite, the quadratic form is non-negative: \\[h_{ii} \\ge \\frac{1}{n} \\implies \\boxed{\\frac{1}{n} \\le h_{ii} \\le 1}\\]\n\n\n3. Average Leverage\n\\[\\bar{h} = \\frac{1}{n} \\sum_{i=1}^n h_{ii} = \\frac{1}{n} \\operatorname{tr}(\\mathbf{H}) = \\frac{p}{n}\\] Points with \\(h_{ii} &gt; 2\\bar{h} = \\frac{2p}{n}\\) are standardly flagged as high leverage observations."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STAC67H3: Regression Analysis",
+    "section": "",
+    "text": "STAC67H3: Regression Analysis\n\nDepartment of Computer and Mathematical Sciences — UTSC\nComprehensive study hub for linear models, generalized least squares, model validation, and computational statistics in R and Python.\n\n\n\n\n📊 Lecture Notes\nMatrix derivations of OLS estimators \\(\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}\\), Gauss-Markov theorem, hat matrix \\(\\mathbf{H}\\), and ANOVA decompositions.\n\n\n📝 Assignments\nWorked solutions to theoretical homework problems, mathematical proofs, and data analysis case studies.\n\n\n💻 Code & Labs\nDiagnostic plotting scripts, multicollinearity VIF calculations, Cook’s distance analysis, and LASSO/Ridge regularization."
+  },
+  {
+    "objectID": "assignments/index.html",
+    "href": "assignments/index.html",
+    "title": "Assignments & Case Studies",
+    "section": "",
+    "text": "Assignment 1: Leverage, Outliers, and Cook’s Distance\n\n\nDerivations of leverage bounds and Cook’s distance influence measures.\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "code/index.html",
+    "href": "code/index.html",
+    "title": "Statistical Code & Diagnostic Labs",
+    "section": "",
+    "text": "Interactive Regression Lab: R Diagnostics & Live OLS Playground\n\n\nClient-side interactive regression with dynamic outlier sensitivity, R ggplot2 diagnostics, and Python statsmodels.\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "notes/index.html",
+    "href": "notes/index.html",
+    "title": "STAC67 Lecture Notes",
+    "section": "",
+    "text": "Matrix Formulation of Multiple Linear Regression\n\n\nDerivation of the normal equations, the projection hat matrix, and the Gauss-Markov theorem.\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\n\n\n\nNo matching items"
+  }
+]
