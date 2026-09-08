@@ -1,0 +1,28 @@
+---
+title: "STAC67H3: Regression Analysis"
+subtitle: "Theory and applications of linear statistical models, matrix methods, diagnostics, and inference."
+page-layout: full
+---
+
+::: {.hero-banner}
+# STAC67H3: Regression Analysis
+### Department of Computer and Mathematical Sciences — UTSC
+Comprehensive study hub for linear models, generalized least squares, model validation, and computational statistics in R and Python.
+:::
+
+::: {.card-grid}
+::: {.course-card}
+### 📊 [Lecture Notes](notes/index.qmd)
+Matrix derivations of OLS estimators $\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}$, Gauss-Markov theorem, hat matrix $\mathbf{H}$, and ANOVA decompositions.
+:::
+
+::: {.course-card}
+### 📝 [Assignments](assignments/index.qmd)
+Worked solutions to theoretical homework problems, mathematical proofs, and data analysis case studies.
+:::
+
+::: {.course-card}
+### 💻 [Code & Labs](code/index.qmd)
+Diagnostic plotting scripts, multicollinearity VIF calculations, Cook's distance analysis, and LASSO/Ridge regularization.
+:::
+:::

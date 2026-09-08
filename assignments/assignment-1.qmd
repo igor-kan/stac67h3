@@ -1,0 +1,39 @@
+---
+title: "Assignment 1: Leverage, Outliers, and Cook's Distance"
+subtitle: "Derivations of leverage bounds and Cook's distance influence measures."
+date: "2026-09-08"
+categories: ["Diagnostics", "Leverage", "Cook's Distance"]
+format:
+  html:
+    math: true
+---
+
+## Problem: Bounds on Leverage Values
+
+Let $h_{ii} = \mathbf{x}_i^T (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{x}_i$ be the $i$-th diagonal element of the hat matrix $\mathbf{H}$.
+
+1. Prove that $0 \le h_{ii} \le 1$.
+2. For a model with an intercept term, prove that $\frac{1}{n} \le h_{ii} \le 1$.
+3. Compute the average leverage $\bar{h} = \frac{1}{n}\sum_{i=1}^n h_{ii}$.
+
+---
+
+## Proof
+
+### 1. Proof that $0 \le h_{ii} \le 1$
+Because $\mathbf{H}$ is idempotent ($\mathbf{H} = \mathbf{H}^2$):
+$$h_{ii} = \sum_{j=1}^n h_{ij}^2 = h_{ii}^2 + \sum_{j \neq i} h_{ij}^2$$
+Since $\sum_{j \neq i} h_{ij}^2 \ge 0$, we have:
+$$h_{ii} \ge h_{ii}^2 \implies h_{ii}(1 - h_{ii}) \ge 0 \implies \boxed{0 \le h_{ii} \le 1}$$
+
+### 2. Lower Bound with an Intercept
+When the first column of $\mathbf{X}$ is $\mathbf{1}_n$:
+$$\mathbf{X} = [\mathbf{1}_n \quad \mathbf{X}_c]$$
+Using partitioned matrix inversion, the projection splits into the mean projection $\frac{1}{n}\mathbf{J}_n$ and the centered predictor projection:
+$$h_{ii} = \frac{1}{n} + (\mathbf{x}_i - \bar{\mathbf{x}})^T (\mathbf{X}_c^T\mathbf{X}_c)^{-1}(\mathbf{x}_i - \bar{\mathbf{x}})$$
+Because $(\mathbf{X}_c^T\mathbf{X}_c)^{-1}$ is positive semi-definite, the quadratic form is non-negative:
+$$h_{ii} \ge \frac{1}{n} \implies \boxed{\frac{1}{n} \le h_{ii} \le 1}$$
+
+### 3. Average Leverage
+$$\bar{h} = \frac{1}{n} \sum_{i=1}^n h_{ii} = \frac{1}{n} \operatorname{tr}(\mathbf{H}) = \frac{p}{n}$$
+Points with $h_{ii} > 2\bar{h} = \frac{2p}{n}$ are standardly flagged as **high leverage observations**.

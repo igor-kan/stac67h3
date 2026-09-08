@@ -1,0 +1,57 @@
+---
+title: "Matrix Formulation of Multiple Linear Regression"
+subtitle: "Derivation of the normal equations, the projection hat matrix, and the Gauss-Markov theorem."
+date: "2026-09-08"
+categories: ["Linear Models", "Matrix Algebra", "Inference"]
+format:
+  html:
+    math: true
+---
+
+## 1. The General Linear Model
+
+We express the multiple linear regression model for $n$ observations and $p-1$ predictors in matrix notation:
+$$\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\varepsilon}$$
+where:
+*   $\mathbf{y} \in \mathbb{R}^{n \times 1}$ is the response vector.
+*   $\mathbf{X} \in \mathbb{R}^{n \times p}$ is the design matrix (with a first column of ones for the intercept).
+*   $\boldsymbol{\beta} \in \mathbb{R}^{p \times 1}$ is the vector of unknown regression coefficients.
+*   $\boldsymbol{\varepsilon} \in \mathbb{R}^{n \times 1}$ is the random error vector satisfying:
+    $$\mathbb{E}[\boldsymbol{\varepsilon}] = \mathbf{0}, \qquad \operatorname{Var}(\boldsymbol{\varepsilon}) = \sigma^2 \mathbf{I}_n$$
+
+---
+
+## 2. Ordinary Least Squares (OLS) Estimator
+
+We seek $\hat{\boldsymbol{\beta}}$ that minimizes the residual sum of squares (SSE):
+$$Q(\boldsymbol{\beta}) = \boldsymbol{\varepsilon}^T \boldsymbol{\varepsilon} = (\mathbf{y} - \mathbf{X}\boldsymbol{\beta})^T (\mathbf{y} - \mathbf{X}\boldsymbol{\beta}) = \mathbf{y}^T\mathbf{y} - 2\boldsymbol{\beta}^T\mathbf{X}^T\mathbf{y} + \boldsymbol{\beta}^T\mathbf{X}^T\mathbf{X}\boldsymbol{\beta}$$
+
+Taking the vector derivative with respect to $\boldsymbol{\beta}$ and equating to zero:
+$$\frac{\partial Q}{\partial \boldsymbol{\beta}} = -2\mathbf{X}^T\mathbf{y} + 2\mathbf{X}^T\mathbf{X}\boldsymbol{\beta} = \mathbf{0}$$
+
+This yields the **Normal Equations**:
+$$\mathbf{X}^T\mathbf{X}\hat{\boldsymbol{\beta}} = \mathbf{X}^T\mathbf{y}$$
+
+Assuming $\mathbf{X}$ has full column rank ($\operatorname{rank}(\mathbf{X}) = p$), the matrix $\mathbf{X}^T\mathbf{X}$ is strictly invertible:
+$$\boxed{\hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}}$$
+
+### Sampling Distribution & Unbiasedness
+1.  **Expectation:**
+    $$\mathbb{E}[\hat{\boldsymbol{\beta}}] = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T \mathbb{E}[\mathbf{y}] = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T (\mathbf{X}\boldsymbol{\beta}) = \boldsymbol{\beta} \quad (\text{Unbiased})$$
+2.  **Variance-Covariance Matrix:**
+    $$\operatorname{Var}(\hat{\boldsymbol{\beta}}) = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T \operatorname{Var}(\mathbf{y}) \mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1} = \sigma^2 (\mathbf{X}^T\mathbf{X})^{-1}$$
+
+---
+
+## 3. The Hat Matrix (Orthogonal Projection)
+
+The fitted values are:
+$$\hat{\mathbf{y}} = \mathbf{X}\hat{\boldsymbol{\beta}} = \mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y} = \mathbf{H}\mathbf{y}$$
+where $\mathbf{H} = \mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T$ is the **Hat Matrix**.
+
+### Key Algebraic Properties of $\mathbf{H}$:
+1.  **Symmetric:** $\mathbf{H}^T = \mathbf{H}$.
+2.  **Idempotent:** $\mathbf{H}^2 = \mathbf{H}$ (projecting twice is the same as projecting once).
+3.  **Trace:** $\operatorname{tr}(\mathbf{H}) = \operatorname{tr}(\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T) = \operatorname{tr}((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}) = \operatorname{tr}(\mathbf{I}_p) = p$.
+4.  **Residual Vector:** $\mathbf{e} = \mathbf{y} - \hat{\mathbf{y}} = (\mathbf{I} - \mathbf{H})\mathbf{y}$. 
+    Because $\mathbf{X}^T(\mathbf{I} - \mathbf{H}) = \mathbf{0}$, the residual vector is strictly orthogonal to the column space of $\mathbf{X}$ ($\mathbf{X}^T\mathbf{e} = \mathbf{0}$).

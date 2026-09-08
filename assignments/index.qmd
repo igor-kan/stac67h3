@@ -1,0 +1,9 @@
+---
+title: "Assignments & Case Studies"
+description: "Theoretical problem sets and empirical regression assignments."
+listing:
+  contents: "*.qmd"
+  sort: "date desc"
+  type: default
+page-layout: full
+---

@@ -1,0 +1,25 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "STAC67H3: Regression Analysis"
+  description: "Linear regression, matrix formulations, model diagnostics, ANOVA, multicollinearity, and generalized linear models."
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: notes/index.qmd
+        text: Lecture Notes
+      - href: assignments/index.qmd
+        text: Assignments
+      - href: code/index.qmd
+        text: Statistical Code & Labs
+
+format:
+  html:
+    theme: flatly
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    math: true
