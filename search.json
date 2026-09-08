@@ -56,6 +56,62 @@
     "text": "3. Statistical Modeling in Python (statsmodels)\nimport statsmodels.api as sm\nimport statsmodels.formula.api as smf\nimport pandas as pd\nimport numpy as np\n\n# Load dataset\ndf = sm.datasets.get_rdataset(\"mtcars\", \"datasets\").data\n\n# Fit OLS model with robust covariance matrix (HC3)\nols_model = smf.ols(\"mpg ~ wt + hp + qsec\", data=df).fit(cov_type=\"HC3\")\nprint(ols_model.summary())\n\n# Variance Inflation Factors (VIF) to detect Multicollinearity\nfrom statsmodels.stats.outliers_influence import variance_inflation_factor\n\nX = df[[\"wt\", \"hp\", \"qsec\"]]\nX = sm.add_constant(X)\nvif_data = pd.DataFrame({\n    \"Variable\": X.columns,\n    \"VIF\": [variance_inflation_factor(X.values, i) for i in range(X.shape[1])]\n})\nprint(\"\\nVariance Inflation Factors (VIF):\")\nprint(vif_data)"
   },
   {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule & Readings",
+    "section": "",
+    "text": "This timeline outlines the topics covered, suggested textbook readings, and important assessments for each week.\n\n\n\n\n\n\n\n\n\nWeek / Date\nLectures\nSuggested Reading\nAssessment / Due\n\n\n\n\nWeek 1Sep 8–13\nIntroduction; what regression is; data visualisation; covariance and correlation.Correlation and its test; data collection and the regression process; the simple linear regression model.\nKutner 1.1–1.3Kutner 2.11\n\n\n\nWeek 2Sep 14–20\nLeast squares estimation; the Gauss–Markov theorem; interpretation of σ²; fitted values and residuals.Inference on the regression parameters: confidence intervals and hypothesis tests.\nKutner 1.4–1.7Kutner 2.1–2.2\nAssign 1 out (Sep 18)\n\n\nWeek 3Sep 21–27\nSampling distribution of the estimators; interval estimation of the mean response; prediction intervals.Analysis of variance; the coefficient of determination.\nKutner 2.3–2.6Kutner 2.7–2.9\n\n\n\nWeek 4Sep 28–Oct 4\nF- and t-tests; descriptive measures of association; model assumptions and residual plots.Matrices and random vectors; simple linear regression in matrix form; the hat matrix.\nKutner 3.1–3.3Kutner 5.1–5.10\nAssign 1 due (Sep 30)\n\n\nWeek 5Oct 5–11\nUseful matrix results.Properties of linear functions of random vectors; properties of the estimators, fitted values, residuals and predictions.\nKutner 5.11–5.13Kutner 6.1–6.4\nAssign 2 out (Oct 7)Quiz 1 (Oct 6/7)Project brief (Oct 9)\n\n\nWeek 6Oct 12–18\nThe geometry of least squares.Inference for the mean response and a new observation; quadratic forms; the overall F-test.\nKutner 6.5–6.8\n\n\n\nWeek 7Oct 19–25\nGeneral linear hypothesis testing; extra sums of squares.Multicollinearity and its effects; qualitative predictors.\nKutner 7.1–7.5Kutner 7.6, 8.3\nAssign 2 due (Oct 21)Midterm (TBA)\n\n\nReading WeekOct 26–30\nNo classes or tutorials.\n\n\n\n\nWeek 8Nov 2–8\nOne continuous and one categorical predictor.Interaction models; case study.\nKutner 8.3–8.6\nAssign 3 out (Nov 4)Quiz 2 (Nov 3/4)Project groups due (Nov 6)\n\n\nWeek 9Nov 9–15\nPolynomial regression models; centred predictors.Variable transformations.\nKutner 8.1–8.2Kutner 3.9\nProject checkpoint (Nov 13)\n\n\nWeek 10Nov 16–22\nModel selection and validation: criteria and procedures.Diagnostics: outlying Y observations, outlying X observations, leverage.\nKutner 9.1–9.6Kutner 10.1–10.3\nAssign 3 due (Nov 18)\n\n\nWeek 11Nov 23–29\nInfluential observations; multicollinearity diagnostics.Remedial measures: weighted least squares.\nKutner 10.4–10.5Kutner 11.1\nQuiz 3 (Nov 24/25)Project report (Nov 27)Drop date: Nov 24\n\n\nWeek 12Nov 30–Dec 6\nShrinkage methods: the bias–variance trade-off, ridge regression and the LASSO.Project presentations; course review.\nKutner 11.2\nProject presentations (Dec 4)"
+  },
+  {
+    "objectID": "assignments/index.html",
+    "href": "assignments/index.html",
+    "title": "Assignments & Project",
+    "section": "",
+    "text": "Late submissions are not accepted.\n\n\n\nAssignment\nOut\nDue\n\n\n\n\nAssignment 1\nSeptember 18th\nSeptember 30th, 23:59\n\n\nAssignment 2\nOctober 7th\nOctober 21st, 23:59\n\n\nAssignment 3\nNovember 4th\nNovember 18th, 23:59"
+  },
+  {
+    "objectID": "assignments/index.html#assignments",
+    "href": "assignments/index.html#assignments",
+    "title": "Assignments & Project",
+    "section": "",
+    "text": "Late submissions are not accepted.\n\n\n\nAssignment\nOut\nDue\n\n\n\n\nAssignment 1\nSeptember 18th\nSeptember 30th, 23:59\n\n\nAssignment 2\nOctober 7th\nOctober 21st, 23:59\n\n\nAssignment 3\nNovember 4th\nNovember 18th, 23:59"
+  },
+  {
+    "objectID": "assignments/index.html#quizzes",
+    "href": "assignments/index.html#quizzes",
+    "title": "Assignments & Project",
+    "section": "🧠 Quizzes",
+    "text": "🧠 Quizzes\nThree quizzes, written in tutorial. The best two of three count. There are no make-up quizzes. Each quiz covers material up to the Friday of the previous week.\n\n\n\nQuiz\nTutorial Date\nCovers\n\n\n\n\nQuiz 1\nWeek 5 (Oct 6 / Oct 7)\nthrough Friday October 2\n\n\nQuiz 2\nWeek 8 (Nov 3 / Nov 4)\nthrough Friday October 23\n\n\nQuiz 3\nWeek 11 (Nov 24 / Nov 25)\nthrough Friday November 20"
+  },
+  {
+    "objectID": "assignments/index.html#case-study-project",
+    "href": "assignments/index.html#case-study-project",
+    "title": "Assignments & Project",
+    "section": "📊 Case Study Project",
+    "text": "📊 Case Study Project\nGroups of at most four, working on a dataset from a pre-approved list. Assessed on a checkpoint, a written report in R Markdown, and a five-minute presentation.\nYour grade is computed both with and without the project, and you receive whichever is higher. The project counts whenever your project mark is higher than your final exam mark, so it can raise your grade and can never lower it.\n\n\n\nMilestone\nDate\n\n\n\n\nBrief and dataset list released\nOctober 9th\n\n\nGroups and dataset claimed (binding)\nNovember 6th\n\n\nCheckpoint: research question + EDA\nNovember 13th\n\n\nReport due\nNovember 27th, 23:59\n\n\nPresentations\nDecember 4th"
+  },
+  {
+    "objectID": "assignments/index.html#exams",
+    "href": "assignments/index.html#exams",
+    "title": "Assignments & Project",
+    "section": "📝 Exams",
+    "text": "📝 Exams\n\nMidterm Exam\n\nDate: Week of October 19–25 (tentative)\nCoverage: Material through Week 6.\nLogistics: Scheduled by the Registrar’s Office (outside class time). Room TBA.\n\n\n\nFinal Exam\n\nDate: December 10–22 (examination period).\nCoverage: All material from the term.\nLogistics: Room and time TBA."
+  },
+  {
+    "objectID": "index.html#time-location",
+    "href": "index.html#time-location",
+    "title": "STAC67: Regression Analysis",
+    "section": "🏫 Time & Location",
+    "text": "🏫 Time & Location\n\n\n\nSection\nTime\nLocation\n\n\n\n\nLEC01\nWednesday, 4:00–5:00 PM\nIn person: IA 2021\n\n\nLEC01\nFriday, 1:00–3:00 PM\nIn person: IA 2021\n\n\nTUT0001\nTuesday, 5:00–6:00 PM\nIn person: IA 3120\n\n\nTUT0002\nWednesday, 3:00–4:00 PM\nIn person: IC 208\n\n\n\nTutorials start in Week 2 and run weekly. They are used for practical work in R and for the three quizzes. Note: tutorials take place before that week’s lectures, so a tutorial only ever assumes material up to the previous Friday."
+  },
+  {
+    "objectID": "index.html#office-hours-contact",
+    "href": "index.html#office-hours-contact",
+    "title": "STAC67: Regression Analysis",
+    "section": "👨‍🏫 Office Hours & Contact",
+    "text": "👨‍🏫 Office Hours & Contact\n\nInstructor: Thibault Randrianarisoa\nOffice: IA 4064\nEmail: t.randrianarisoa@utoronto.ca (put [STAC67] in the subject, and your student number in the body)\nOffice hours: Wednesday 10–11 AM and Friday 3–4 PM, IA 4064\n\nPlease use Piazza for course-content questions; email is for private matters.\n\n\n📅 Schedule & Readings\nWeek-by-week timeline of topics, textbook reading assignments, and tutorial topics.\n\n\n📚 Notes & Materials\nTextbook details, R and R Markdown cheat sheets, and lecture resources.\n\n\n📝 Assignments & Project\nInformation and deadlines for the three assignments, the three quizzes, and the final Case Study Project."
+  },
+  {
     "objectID": "assignments/assignment-1.html",
     "href": "assignments/assignment-1.html",
     "title": "Assignment 1: Leverage, Outliers, and Cook’s Distance",
@@ -77,20 +133,6 @@
     "text": "Proof\n\n1. Proof that \\(0 \\le h_{ii} \\le 1\\)\nBecause \\(\\mathbf{H}\\) is idempotent (\\(\\mathbf{H} = \\mathbf{H}^2\\)): \\[h_{ii} = \\sum_{j=1}^n h_{ij}^2 = h_{ii}^2 + \\sum_{j \\neq i} h_{ij}^2\\] Since \\(\\sum_{j \\neq i} h_{ij}^2 \\ge 0\\), we have: \\[h_{ii} \\ge h_{ii}^2 \\implies h_{ii}(1 - h_{ii}) \\ge 0 \\implies \\boxed{0 \\le h_{ii} \\le 1}\\]\n\n\n2. Lower Bound with an Intercept\nWhen the first column of \\(\\mathbf{X}\\) is \\(\\mathbf{1}_n\\): \\[\\mathbf{X} = [\\mathbf{1}_n \\quad \\mathbf{X}_c]\\] Using partitioned matrix inversion, the projection splits into the mean projection \\(\\frac{1}{n}\\mathbf{J}_n\\) and the centered predictor projection: \\[h_{ii} = \\frac{1}{n} + (\\mathbf{x}_i - \\bar{\\mathbf{x}})^T (\\mathbf{X}_c^T\\mathbf{X}_c)^{-1}(\\mathbf{x}_i - \\bar{\\mathbf{x}})\\] Because \\((\\mathbf{X}_c^T\\mathbf{X}_c)^{-1}\\) is positive semi-definite, the quadratic form is non-negative: \\[h_{ii} \\ge \\frac{1}{n} \\implies \\boxed{\\frac{1}{n} \\le h_{ii} \\le 1}\\]\n\n\n3. Average Leverage\n\\[\\bar{h} = \\frac{1}{n} \\sum_{i=1}^n h_{ii} = \\frac{1}{n} \\operatorname{tr}(\\mathbf{H}) = \\frac{p}{n}\\] Points with \\(h_{ii} &gt; 2\\bar{h} = \\frac{2p}{n}\\) are standardly flagged as high leverage observations."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "STAC67H3: Regression Analysis",
-    "section": "",
-    "text": "STAC67H3: Regression Analysis\n\nDepartment of Computer and Mathematical Sciences — UTSC\nComprehensive study hub for linear models, generalized least squares, model validation, and computational statistics in R and Python.\n\n\n\n\n📊 Lecture Notes\nMatrix derivations of OLS estimators \\(\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}\\), Gauss-Markov theorem, hat matrix \\(\\mathbf{H}\\), and ANOVA decompositions.\n\n\n📝 Assignments\nWorked solutions to theoretical homework problems, mathematical proofs, and data analysis case studies.\n\n\n💻 Code & Labs\nDiagnostic plotting scripts, multicollinearity VIF calculations, Cook’s distance analysis, and LASSO/Ridge regularization."
-  },
-  {
-    "objectID": "assignments/index.html",
-    "href": "assignments/index.html",
-    "title": "Assignments & Case Studies",
-    "section": "",
-    "text": "Assignment 1: Leverage, Outliers, and Cook’s Distance\n\n\nDerivations of leverage bounds and Cook’s distance influence measures.\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "code/index.html",
     "href": "code/index.html",
     "title": "Statistical Code & Diagnostic Labs",
@@ -100,8 +142,22 @@
   {
     "objectID": "notes/index.html",
     "href": "notes/index.html",
-    "title": "STAC67 Lecture Notes",
+    "title": "Notes & Materials",
     "section": "",
-    "text": "Matrix Formulation of Multiple Linear Regression\n\n\nDerivation of the normal equations, the projection hat matrix, and the Gauss-Markov theorem.\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\n\n\n\nNo matching items"
+    "text": "Required:\n(Kutner) Kutner, Nachtsheim & Neter, Applied Linear Regression Models, 4th edition (older editions are fine). - Data sets and solution manual are available.\nSub-text:\n(Sheather) Simon J. Sheather (2009), A Modern Approach to Regression with R — available online through the UofT library."
+  },
+  {
+    "objectID": "notes/index.html#course-materials",
+    "href": "notes/index.html#course-materials",
+    "title": "Notes & Materials",
+    "section": "",
+    "text": "Required:\n(Kutner) Kutner, Nachtsheim & Neter, Applied Linear Regression Models, 4th edition (older editions are fine). - Data sets and solution manual are available.\nSub-text:\n(Sheather) Simon J. Sheather (2009), A Modern Approach to Regression with R — available online through the UofT library."
+  },
+  {
+    "objectID": "notes/index.html#computational-tools",
+    "href": "notes/index.html#computational-tools",
+    "title": "Notes & Materials",
+    "section": "💻 Computational Tools",
+    "text": "💻 Computational Tools\nAll computation in this course is performed in R.\nCheat Sheets: - R Markdown Cheat Sheet - ggplot2 Cheat Sheet"
   }
 ]

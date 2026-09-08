@@ -1,20 +1,8 @@
 [
   {
-    "listing": "/assignments/index.html",
-    "items": [
-      "/assignments/assignment-1.html"
-    ]
-  },
-  {
     "listing": "/code/index.html",
     "items": [
       "/code/interactive-regression-and-r-diagnostics.html"
-    ]
-  },
-  {
-    "listing": "/notes/index.html",
-    "items": [
-      "/notes/multiple-regression-matrix-approach.html"
     ]
   }
 ]
