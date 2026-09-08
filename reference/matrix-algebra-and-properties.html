@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-09-08">
 
-<title>STAC67H3: Regression Analysis</title>
+<title>Matrix Algebra, Idempotency &amp; Quadratic Forms – STAC67H3: Regression Analysis</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -64,23 +65,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b870008b052ed818a16b5facaae2925e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-b870008b052ed818a16b5facaae2925e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -139,7 +140,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -149,7 +150,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">STAC67H3: Regression Analysis</span>
     </a>
   </div>
@@ -160,23 +161,23 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./notes/index.html"> 
+    <a class="nav-link" href="../notes/index.html"> 
 <span class="menu-text">Lecture Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./problems/index.html"> 
+    <a class="nav-link" href="../problems/index.html"> 
 <span class="menu-text">Problem Sets</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./simulations/index.html"> 
+    <a class="nav-link" href="../simulations/index.html"> 
 <span class="menu-text">Code &amp; Simulations</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./reference/index.html"> 
+    <a class="nav-link" href="../reference/index.html"> 
 <span class="menu-text">Reference &amp; Math</span></a>
   </li>  
 </ul>
@@ -187,7 +188,7 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -195,29 +196,41 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#stac67h3-regression-analysis" id="toc-stac67h3-regression-analysis" class="nav-link active" data-scroll-target="#stac67h3-regression-analysis">STAC67H3: Regression Analysis</a>
+  <li><a href="#random-vectors-expectation-covariance" id="toc-random-vectors-expectation-covariance" class="nav-link active" data-scroll-target="#random-vectors-expectation-covariance">1. Random Vectors: Expectation &amp; Covariance</a></li>
+  <li><a href="#properties-of-the-hat-matrix-mathbfh" id="toc-properties-of-the-hat-matrix-mathbfh" class="nav-link" data-scroll-target="#properties-of-the-hat-matrix-mathbfh">2. Properties of the Hat Matrix <span class="math inline">\(\mathbf{H}\)</span></a></li>
+  <li><a href="#expectation-of-quadratic-forms" id="toc-expectation-of-quadratic-forms" class="nav-link" data-scroll-target="#expectation-of-quadratic-forms">3. Expectation of Quadratic Forms</a>
   <ul class="collapse">
-  <li><a href="#university-of-toronto-scarborough-fall-2026" id="toc-university-of-toronto-scarborough-fall-2026" class="nav-link" data-scroll-target="#university-of-toronto-scarborough-fall-2026">University of Toronto Scarborough · Fall 2026</a></li>
+  <li><a href="#application-to-sse" id="toc-application-to-sse" class="nav-link" data-scroll-target="#application-to-sse">Application to SSE:</a></li>
   </ul></li>
-  <li><a href="#course-roadmap-calendar-fall-2026" id="toc-course-roadmap-calendar-fall-2026" class="nav-link" data-scroll-target="#course-roadmap-calendar-fall-2026">📅 Course Roadmap &amp; Calendar (Fall 2026)</a></li>
-  <li><a href="#office-hours-contact" id="toc-office-hours-contact" class="nav-link" data-scroll-target="#office-hours-contact">👨‍🏫 Office Hours &amp; Contact</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">STAC67H3: Regression Analysis</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
-<p class="subtitle lead">Theory and applications of linear statistical models, matrix methods, diagnostics, and inference.</p>
-</div>
+<div class="quarto-title-block"><div><h1 class="title">Matrix Algebra, Idempotency &amp; Quadratic Forms</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead">Expectation and covariance of random vectors, projection matrices, and Cochran’s theorem.</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">Reference</div>
+    <div class="quarto-category">Matrix Algebra</div>
+    <div class="quarto-category">Quadratic Forms</div>
+    <div class="quarto-category">Proofs</div>
+  </div>
+  </div>
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2026-09-08</p>
+    </div>
+  </div>
   
     
   </div>
@@ -227,167 +240,41 @@ window.Quarto = {
 </header>
 
 
-<section id="stac67h3-regression-analysis" class="level1 hero-banner">
-<h1>STAC67H3: Regression Analysis</h1>
-<section id="university-of-toronto-scarborough-fall-2026" class="level3">
-<h3 class="anchored" data-anchor-id="university-of-toronto-scarborough-fall-2026">University of Toronto Scarborough · Fall 2026</h3>
-<p>Comprehensive course portal featuring the official course schedule, analytical lecture derivations, R Markdown case studies, interactive statistical simulations, and mathematical reference toolkits.</p>
-</section>
-</section>
-<div class="card-grid">
-<section id="lecture-notes-schedule" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="lecture-notes-schedule">📊 <a href="./notes/index.html">Lecture Notes &amp; Schedule</a></h3>
-<p>Course schedule, Gauss-Markov theorem, hat matrix <span class="math inline">\(\mathbf{H}\)</span>, geometry of least squares, multicollinearity, and regularized regression (Ridge / LASSO).</p>
-</section>
-<section id="problem-sets-projects" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="problem-sets-projects">✏️ <a href="./problems/index.html">Problem Sets &amp; Projects</a></h3>
-<p>Assignments A1–A3, tutorial quizzes (Q1–Q3), and complete guidelines for the R Markdown Case Study Project.</p>
-</section>
-<section id="code-simulations" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="code-simulations">💻 <a href="./simulations/index.html">Code &amp; Simulations</a></h3>
-<p>Interactive in-browser statistical simulations (dynamic OLS, leverage sensitivity, Cook’s distance), R ggplot2 diagnostics, and Python models.</p>
-</section>
-<section id="reference-math" class="level3 course-card">
-<h3 class="anchored" data-anchor-id="reference-math">📐 <a href="./reference/index.html">Reference &amp; Math</a></h3>
-<p>Matrix algebra theorems (idempotent matrices, quadratic forms), ANOVA identities, R &amp; R Markdown cheat sheets, and course bibliography.</p>
-</section>
-</div>
+<section id="random-vectors-expectation-covariance" class="level2">
+<h2 class="anchored" data-anchor-id="random-vectors-expectation-covariance">1. Random Vectors: Expectation &amp; Covariance</h2>
+<p>Let <span class="math inline">\(\mathbf{Y}\)</span> be an <span class="math inline">\(n \times 1\)</span> random vector with mean <span class="math inline">\(\mathrm{E}[\mathbf{Y}] = \boldsymbol{\mu}\)</span> and covariance matrix <span class="math inline">\(\operatorname{Cov}(\mathbf{Y}) = \boldsymbol{\Sigma}\)</span>.</p>
+<p>For any constant <span class="math inline">\(m \times n\)</span> matrix <span class="math inline">\(\mathbf{A}\)</span>: <span class="math display">\[\mathrm{E}[\mathbf{A}\mathbf{Y}] = \mathbf{A}\boldsymbol{\mu}\]</span> <span class="math display">\[\operatorname{Cov}(\mathbf{A}\mathbf{Y}) = \mathbf{A} \boldsymbol{\Sigma} \mathbf{A}^T\]</span></p>
+<p>If <span class="math inline">\(\mathbf{Y} \sim \mathcal{N}_n(\mathbf{X}\boldsymbol{\beta}, \sigma^2 \mathbf{I})\)</span>: <span class="math display">\[\mathbf{A}\mathbf{Y} \sim \mathcal{N}_m(\mathbf{A}\mathbf{X}\boldsymbol{\beta}, \sigma^2 \mathbf{A}\mathbf{A}^T)\]</span></p>
 <hr>
-<section id="course-roadmap-calendar-fall-2026" class="level2">
-<h2 class="anchored" data-anchor-id="course-roadmap-calendar-fall-2026">📅 Course Roadmap &amp; Calendar (Fall 2026)</h2>
-<p><em>Lectures: Wednesday 16:00–17:00 &amp; Friday 13:00–15:00 in IA 2021</em><br>
-<em>Tutorials: Tuesday 17:00–18:00 (IA 3120) or Wednesday 15:00–16:00 (IC 208)</em></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Week</th>
-<th style="text-align: left;">Dates</th>
-<th style="text-align: left;">Topics &amp; Readings (Kutner et al.)</th>
-<th style="text-align: left;">Tutorials &amp; Assessments</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>01</strong></td>
-<td style="text-align: left;">Sep 08–13</td>
-<td style="text-align: left;">Intro to Regression, Correlation, Simple Linear Model (Ch 1.1–1.3, 2.11)</td>
-<td style="text-align: left;">No Tutorials</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>02</strong></td>
-<td style="text-align: left;">Sep 14–20</td>
-<td style="text-align: left;">Least Squares, Gauss-Markov Theorem, Residuals, Inference (Ch 1.4–1.7, 2.1–2.2)</td>
-<td style="text-align: left;"><strong>Assignment #1 Out (Sep 18)</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>03</strong></td>
-<td style="text-align: left;">Sep 21–27</td>
-<td style="text-align: left;">Estimator Distributions, Prediction Intervals, ANOVA &amp; <span class="math inline">\(R^2\)</span> (Ch 2.3–2.9)</td>
-<td style="text-align: left;">R Environment Setup</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>04</strong></td>
-<td style="text-align: left;">Sep 28 – Oct 04</td>
-<td style="text-align: left;">F-tests, Model Assumptions, Matrix Formulation, Hat Matrix (Ch 3.1–3.3, 5.1–5.10)</td>
-<td style="text-align: left;"><strong>Assignment #1 Due (Sep 30)</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>05</strong></td>
-<td style="text-align: left;">Oct 05–11</td>
-<td style="text-align: left;">Matrix Results, Linear Functions of Random Vectors (Ch 5.11–5.13, 6.1–6.4)</td>
-<td style="text-align: left;"><strong>Quiz 1 (Oct 6/7)</strong> · Project Brief</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>06</strong></td>
-<td style="text-align: left;">Oct 12–18</td>
-<td style="text-align: left;">Geometry of Least Squares, Quadratic Forms, General F-test (Ch 6.5–6.8)</td>
-<td style="text-align: left;">Midterm Review</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>07</strong></td>
-<td style="text-align: left;">Oct 19–25</td>
-<td style="text-align: left;">General Linear Hypotheses, Extra SS, Multicollinearity (Ch 7.1–7.6, 8.3)</td>
-<td style="text-align: left;"><strong>Assignment #2 Due (Oct 21)</strong> · <strong>Midterm</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>RW</strong></td>
-<td style="text-align: left;">Oct 26–30</td>
-<td style="text-align: left;"><em>Reading Week (No Classes or Tutorials)</em></td>
-<td style="text-align: left;">Study Break</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>08</strong></td>
-<td style="text-align: left;">Nov 02–08</td>
-<td style="text-align: left;">Categorical Predictors, Interaction Models (Ch 8.3–8.6)</td>
-<td style="text-align: left;"><strong>Quiz 2 (Nov 3/4)</strong> · Groups Claimed</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>09</strong></td>
-<td style="text-align: left;">Nov 09–15</td>
-<td style="text-align: left;">Polynomial Models, Centred Predictors, Box-Cox Transformations (Ch 8.1–8.2, 3.9)</td>
-<td style="text-align: left;"><strong>Project Checkpoint Due (Nov 13)</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>10</strong></td>
-<td style="text-align: left;">Nov 16–22</td>
-<td style="text-align: left;">Model Selection Criteria (<span class="math inline">\(R_{\text{adj}}^2, AIC, BIC\)</span>), Outlier Diagnostics (Ch 9.1–9.6, 10.1–10.3)</td>
-<td style="text-align: left;"><strong>Assignment #3 Due (Nov 18)</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>11</strong></td>
-<td style="text-align: left;">Nov 23–29</td>
-<td style="text-align: left;">Cook’s Distance, DFFITS, Weighted Least Squares (Ch 10.4–10.5, 11.1)</td>
-<td style="text-align: left;"><strong>Quiz 3 (Nov 24/25)</strong> · <strong>Report Due (Nov 27)</strong></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>12</strong></td>
-<td style="text-align: left;">Nov 30 – Dec 06</td>
-<td style="text-align: left;">Bias-Variance Tradeoff, Ridge Regression &amp; LASSO (Ch 11.2)</td>
-<td style="text-align: left;"><strong>Project Presentations (Dec 4)</strong></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Final</strong></td>
-<td style="text-align: left;">Dec 10–22</td>
-<td style="text-align: left;"><strong>Comprehensive Final Examination</strong></td>
-<td style="text-align: left;">Scheduled by Registrar</td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Course Schedule &amp; Grading Notes
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Detailed policy on Quizzes (best 2 of 3 count), the non-punitive Case Study Project formula, and R Markdown submission guidelines are detailed in the official <a href="./notes/schedule.html">Course Schedule &amp; Reading Plan</a>.</p>
-</div>
-</div>
 </section>
-<section id="office-hours-contact" class="level2">
-<h2 class="anchored" data-anchor-id="office-hours-contact">👨‍🏫 Office Hours &amp; Contact</h2>
+<section id="properties-of-the-hat-matrix-mathbfh" class="level2">
+<h2 class="anchored" data-anchor-id="properties-of-the-hat-matrix-mathbfh">2. Properties of the Hat Matrix <span class="math inline">\(\mathbf{H}\)</span></h2>
+<p>The hat (projection) matrix is defined as: <span class="math display">\[\mathbf{H} = \mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\]</span></p>
+<ol type="1">
+<li><strong>Symmetric:</strong> <span class="math inline">\(\mathbf{H}^T = \mathbf{H}\)</span>.</li>
+<li><strong>Idempotent:</strong> <span class="math inline">\(\mathbf{H}^2 = \mathbf{H}\mathbf{H} = \mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T = \mathbf{H}\)</span>.</li>
+<li><strong>Trace and Rank:</strong> <span class="math inline">\(\operatorname{tr}(\mathbf{H}) = \operatorname{rank}(\mathbf{H}) = p\)</span> (number of parameters including intercept).</li>
+<li><strong>Orthogonal Complement <span class="math inline">\((\mathbf{I} - \mathbf{H})\)</span>:</strong>
 <ul>
-<li><strong>Instructor:</strong> Thibault Randrianarisoa (Office: IA 4064)
-<ul>
-<li>Email: <code>t.randrianarisoa@utoronto.ca</code> (Subject MUST contain <code>[STAC67]</code> and body MUST contain your student number).</li>
-<li>Office Hours: Wednesday 10:00–11:00 AM and Friday 15:00–16:00 in IA 4064.</li>
+<li>Symmetric and idempotent: <span class="math inline">\((\mathbf{I} - \mathbf{H})^2 = \mathbf{I} - \mathbf{H}\)</span>.</li>
+<li><span class="math inline">\(\operatorname{tr}(\mathbf{I} - \mathbf{H}) = n - p\)</span>.</li>
+<li>Projects <span class="math inline">\(\mathbf{Y}\)</span> onto the orthogonal residual space: <span class="math inline">\(\mathbf{e} = (\mathbf{I} - \mathbf{H})\mathbf{Y}\)</span>.</li>
 </ul></li>
-<li><strong>Piazza:</strong> Use Piazza for all course-content questions; email is reserved for personal administrative matters.</li>
-</ul>
+</ol>
+<hr>
+</section>
+<section id="expectation-of-quadratic-forms" class="level2">
+<h2 class="anchored" data-anchor-id="expectation-of-quadratic-forms">3. Expectation of Quadratic Forms</h2>
+<p>For a symmetric matrix <span class="math inline">\(\mathbf{A}\)</span> and random vector <span class="math inline">\(\mathbf{Y}\)</span> with mean <span class="math inline">\(\boldsymbol{\mu}\)</span> and covariance <span class="math inline">\(\boldsymbol{\Sigma}\)</span>: <span class="math display">\[\mathrm{E}[\mathbf{Y}^T \mathbf{A} \mathbf{Y}] = \operatorname{tr}(\mathbf{A}\boldsymbol{\Sigma}) + \boldsymbol{\mu}^T \mathbf{A} \boldsymbol{\mu}\]</span></p>
+<section id="application-to-sse" class="level3">
+<h3 class="anchored" data-anchor-id="application-to-sse">Application to SSE:</h3>
+<p>Since <span class="math inline">\(\text{SSE} = \mathbf{e}^T\mathbf{e} = \mathbf{Y}^T(\mathbf{I} - \mathbf{H})\mathbf{Y}\)</span>, where <span class="math inline">\(\boldsymbol{\mu} = \mathbf{X}\boldsymbol{\beta}\)</span> and <span class="math inline">\((\mathbf{I} - \mathbf{H})\mathbf{X} = \mathbf{0}\)</span>: <span class="math display">\[\mathrm{E}[\text{SSE}] = \operatorname{tr}((\mathbf{I} - \mathbf{H})\sigma^2 \mathbf{I}) + \boldsymbol{\beta}^T \mathbf{X}^T (\mathbf{I} - \mathbf{H}) \mathbf{X}\boldsymbol{\beta} = \sigma^2 \operatorname{tr}(\mathbf{I} - \mathbf{H}) + 0 = (n - p)\sigma^2\]</span> Therefore, the Mean Squared Error (MSE) is an unbiased estimator of error variance: <span class="math display">\[\mathrm{E}[\text{MSE}] = \mathrm{E}\left[\frac{\text{SSE}}{n - p}\right] = \sigma^2\]</span></p>
 
 
 
 <!-- -->
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -843,73 +730,50 @@ window.Quarto = {
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "STAC67H3: Regression Analysis"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Theory and applications of linear statistical models, matrix methods, diagnostics, and inference."</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">page-layout:</span><span class="co"> full</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>::: {.hero-banner}</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu"># STAC67H3: Regression Analysis</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">### University of Toronto Scarborough · Fall 2026</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Comprehensive course portal featuring the official course schedule, analytical lecture derivations, R Markdown case studies, interactive statistical simulations, and mathematical reference toolkits.</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>::: {.card-grid}</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>::: {.course-card}</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">### 📊 [Lecture Notes &amp; Schedule](notes/index.qmd)</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>Course schedule, Gauss-Markov theorem, hat matrix $\mathbf{H}$, geometry of least squares, multicollinearity, and regularized regression (Ridge / LASSO).</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Matrix Algebra, Idempotency &amp; Quadratic Forms"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Expectation and covariance of random vectors, projection matrices, and Cochran's theorem."</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2026-09-08"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> ["Reference", "Matrix Algebra", "Quadratic Forms", "Proofs"]</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1. Random Vectors: Expectation &amp; Covariance</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Let $\mathbf{Y}$ be an $n \times 1$ random vector with mean $\mathrm{E}<span class="co">[</span><span class="ot">\mathbf{Y}</span><span class="co">]</span> = \boldsymbol{\mu}$ and covariance matrix $\operatorname{Cov}(\mathbf{Y}) = \boldsymbol{\Sigma}$.</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>For any constant $m \times n$ matrix $\mathbf{A}$:</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>$$\mathrm{E}<span class="co">[</span><span class="ot">\mathbf{A}\mathbf{Y}</span><span class="co">]</span> = \mathbf{A}\boldsymbol{\mu}$$</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>$$\operatorname{Cov}(\mathbf{A}\mathbf{Y}) = \mathbf{A} \boldsymbol{\Sigma} \mathbf{A}^T$$</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>If $\mathbf{Y} \sim \mathcal{N}_n(\mathbf{X}\boldsymbol{\beta}, \sigma^2 \mathbf{I})$:</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>$$\mathbf{A}\mathbf{Y} \sim \mathcal{N}_m(\mathbf{A}\mathbf{X}\boldsymbol{\beta}, \sigma^2 \mathbf{A}\mathbf{A}^T)$$</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>::: {.course-card}</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">### ✏️ [Problem Sets &amp; Projects](problems/index.qmd)</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Assignments A1–A3, tutorial quizzes (Q1–Q3), and complete guidelines for the R Markdown Case Study Project.</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>::: {.course-card}</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">### 💻 [Code &amp; Simulations](simulations/index.qmd)</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Interactive in-browser statistical simulations (dynamic OLS, leverage sensitivity, Cook's distance), R ggplot2 diagnostics, and Python models.</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>::: {.course-card}</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">### 📐 [Reference &amp; Math](reference/index.qmd)</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Matrix algebra theorems (idempotent matrices, quadratic forms), ANOVA identities, R &amp; R Markdown cheat sheets, and course bibliography.</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📅 Course Roadmap &amp; Calendar (Fall 2026)</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>*Lectures: Wednesday 16:00–17:00 &amp; Friday 13:00–15:00 in IA 2021*  </span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>*Tutorials: Tuesday 17:00–18:00 (IA 3120) or Wednesday 15:00–16:00 (IC 208)*</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Week <span class="pp">|</span> Dates <span class="pp">|</span> Topics &amp; Readings (Kutner et al.) <span class="pp">|</span> Tutorials &amp; Assessments <span class="pp">|</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="pp">| :---</span> <span class="pp">| :---</span> <span class="pp">| :---</span> <span class="pp">| :---</span> <span class="pp">|</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **01** <span class="pp">|</span> Sep 08–13 <span class="pp">|</span> Intro to Regression, Correlation, Simple Linear Model (Ch 1.1–1.3, 2.11) <span class="pp">|</span> No Tutorials <span class="pp">|</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **02** | Sep 14–20 | Least Squares, Gauss-Markov Theorem, Residuals, Inference (Ch 1.4–1.7, 2.1–2.2) | **Assignment #1 Out (Sep 18)** <span class="pp">|</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **03** <span class="pp">|</span> Sep 21–27 <span class="pp">|</span> Estimator Distributions, Prediction Intervals, ANOVA &amp; $R^2$ (Ch 2.3–2.9) <span class="pp">|</span> R Environment Setup <span class="pp">|</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **04** | Sep 28 – Oct 04 | F-tests, Model Assumptions, Matrix Formulation, Hat Matrix (Ch 3.1–3.3, 5.1–5.10) | **Assignment #1 Due (Sep 30)** <span class="pp">|</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **05** | Oct 05–11 | Matrix Results, Linear Functions of Random Vectors (Ch 5.11–5.13, 6.1–6.4) | **Quiz 1 (Oct 6/7)** · Project Brief <span class="pp">|</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **06** <span class="pp">|</span> Oct 12–18 <span class="pp">|</span> Geometry of Least Squares, Quadratic Forms, General F-test (Ch 6.5–6.8) <span class="pp">|</span> Midterm Review <span class="pp">|</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **07** | Oct 19–25 | General Linear Hypotheses, Extra SS, Multicollinearity (Ch 7.1–7.6, 8.3) | **Assignment #2 Due (Oct 21)** · **Midterm** <span class="pp">|</span></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **RW** <span class="pp">|</span> Oct 26–30 <span class="pp">|</span> *Reading Week (No Classes or Tutorials)* <span class="pp">|</span> Study Break <span class="pp">|</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **08** | Nov 02–08 | Categorical Predictors, Interaction Models (Ch 8.3–8.6) | **Quiz 2 (Nov 3/4)** · Groups Claimed <span class="pp">|</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **09** | Nov 09–15 | Polynomial Models, Centred Predictors, Box-Cox Transformations (Ch 8.1–8.2, 3.9) | **Project Checkpoint Due (Nov 13)** <span class="pp">|</span></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **10** | Nov 16–22 | Model Selection Criteria ($R_{\text{adj}}^2, AIC, BIC$), Outlier Diagnostics (Ch 9.1–9.6, 10.1–10.3) | **Assignment #3 Due (Nov 18)** <span class="pp">|</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **11** | Nov 23–29 | Cook's Distance, DFFITS, Weighted Least Squares (Ch 10.4–10.5, 11.1) | **Quiz 3 (Nov 24/25)** · **Report Due (Nov 27)** <span class="pp">|</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **12** | Nov 30 – Dec 06 | Bias-Variance Tradeoff, Ridge Regression &amp; LASSO (Ch 11.2) | **Project Presentations (Dec 4)** <span class="pp">|</span></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Final** | Dec 10–22 | **Comprehensive Final Examination** <span class="pp">|</span> Scheduled by Registrar <span class="pp">|</span></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="fu">### Course Schedule &amp; Grading Notes</span></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>Detailed policy on Quizzes (best 2 of 3 count), the non-punitive Case Study Project formula, and R Markdown submission guidelines are detailed in the official <span class="co">[</span><span class="ot">Course Schedule &amp; Reading Plan</span><span class="co">](notes/schedule.qmd)</span>.</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## 👨‍🏫 Office Hours &amp; Contact</span></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Instructor:** Thibault Randrianarisoa (Office: IA 4064)</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Email: <span class="in">`t.randrianarisoa@utoronto.ca`</span> (Subject MUST contain <span class="in">`[STAC67]`</span> and body MUST contain your student number).</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Office Hours: Wednesday 10:00–11:00 AM and Friday 15:00–16:00 in IA 4064.</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Piazza:** Use Piazza for all course-content questions; email is reserved for personal administrative matters.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2. Properties of the Hat Matrix $\mathbf{H}$</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>The hat (projection) matrix is defined as:</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>$$\mathbf{H} = \mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T$$</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Symmetric:** $\mathbf{H}^T = \mathbf{H}$.</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Idempotent:** $\mathbf{H}^2 = \mathbf{H}\mathbf{H} = \mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T = \mathbf{H}$.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Trace and Rank:** $\operatorname{tr}(\mathbf{H}) = \operatorname{rank}(\mathbf{H}) = p$ (number of parameters including intercept).</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Orthogonal Complement $(\mathbf{I} - \mathbf{H})$:**</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Symmetric and idempotent: $(\mathbf{I} - \mathbf{H})^2 = \mathbf{I} - \mathbf{H}$.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>$\operatorname{tr}(\mathbf{I} - \mathbf{H}) = n - p$.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Projects $\mathbf{Y}$ onto the orthogonal residual space: $\mathbf{e} = (\mathbf{I} - \mathbf{H})\mathbf{Y}$.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## 3. Expectation of Quadratic Forms</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>For a symmetric matrix $\mathbf{A}$ and random vector $\mathbf{Y}$ with mean $\boldsymbol{\mu}$ and covariance $\boldsymbol{\Sigma}$:</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>$$\mathrm{E}<span class="co">[</span><span class="ot">\mathbf{Y}^T \mathbf{A} \mathbf{Y}</span><span class="co">]</span> = \operatorname{tr}(\mathbf{A}\boldsymbol{\Sigma}) + \boldsymbol{\mu}^T \mathbf{A} \boldsymbol{\mu}$$</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">### Application to SSE:</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>Since $\text{SSE} = \mathbf{e}^T\mathbf{e} = \mathbf{Y}^T(\mathbf{I} - \mathbf{H})\mathbf{Y}$, where $\boldsymbol{\mu} = \mathbf{X}\boldsymbol{\beta}$ and $(\mathbf{I} - \mathbf{H})\mathbf{X} = \mathbf{0}$:</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>$$\mathrm{E}<span class="co">[</span><span class="ot">\text{SSE}</span><span class="co">]</span> = \operatorname{tr}((\mathbf{I} - \mathbf{H})\sigma^2 \mathbf{I}) + \boldsymbol{\beta}^T \mathbf{X}^T (\mathbf{I} - \mathbf{H}) \mathbf{X}\boldsymbol{\beta} = \sigma^2 \operatorname{tr}(\mathbf{I} - \mathbf{H}) + 0 = (n - p)\sigma^2$$</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Therefore, the Mean Squared Error (MSE) is an unbiased estimator of error variance:</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>$$\mathrm{E}<span class="co">[</span><span class="ot">\text{MSE}</span><span class="co">]</span> = \mathrm{E}\left<span class="co">[</span><span class="ot">\frac{\text{SSE}}{n - p}\right</span><span class="co">]</span> = \sigma^2$$</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

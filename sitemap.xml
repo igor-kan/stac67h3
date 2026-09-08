@@ -1,35 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://igor-kan.github.io/stac67h3/notes/multiple-regression-matrix-approach.html</loc>
-    <lastmod>2026-09-08T22:31:25.704Z</lastmod>
-  </url>
-  <url>
-    <loc>https://igor-kan.github.io/stac67h3/code/interactive-regression-and-r-diagnostics.html</loc>
-    <lastmod>2026-09-08T22:31:25.704Z</lastmod>
-  </url>
-  <url>
-    <loc>https://igor-kan.github.io/stac67h3/schedule.html</loc>
-    <lastmod>2026-09-08T22:31:25.704Z</lastmod>
-  </url>
-  <url>
-    <loc>https://igor-kan.github.io/stac67h3/assignments/index.html</loc>
-    <lastmod>2026-09-08T22:31:25.704Z</lastmod>
-  </url>
-  <url>
-    <loc>https://igor-kan.github.io/stac67h3/index.html</loc>
-    <lastmod>2026-09-08T22:31:25.704Z</lastmod>
-  </url>
-  <url>
-    <loc>https://igor-kan.github.io/stac67h3/assignments/assignment-1.html</loc>
-    <lastmod>2026-09-08T22:31:25.704Z</lastmod>
-  </url>
-  <url>
-    <loc>https://igor-kan.github.io/stac67h3/code/index.html</loc>
-    <lastmod>2026-09-08T22:31:25.704Z</lastmod>
+    <loc>https://igor-kan.github.io/stac67h3/notes/schedule.html</loc>
+    <lastmod>2026-09-08T22:39:53.980Z</lastmod>
   </url>
   <url>
     <loc>https://igor-kan.github.io/stac67h3/notes/index.html</loc>
-    <lastmod>2026-09-08T22:31:25.704Z</lastmod>
+    <lastmod>2026-09-08T22:39:53.979Z</lastmod>
+  </url>
+  <url>
+    <loc>https://igor-kan.github.io/stac67h3/reference/sources-and-bibliography.html</loc>
+    <lastmod>2026-09-08T22:39:53.980Z</lastmod>
+  </url>
+  <url>
+    <loc>https://igor-kan.github.io/stac67h3/reference/index.html</loc>
+    <lastmod>2026-09-08T22:39:53.980Z</lastmod>
+  </url>
+  <url>
+    <loc>https://igor-kan.github.io/stac67h3/simulations/interactive-leverage-and-influence.html</loc>
+    <lastmod>2026-09-08T22:39:53.980Z</lastmod>
+  </url>
+  <url>
+    <loc>https://igor-kan.github.io/stac67h3/problems/assignment-1.html</loc>
+    <lastmod>2026-09-08T22:39:53.980Z</lastmod>
+  </url>
+  <url>
+    <loc>https://igor-kan.github.io/stac67h3/problems/index.html</loc>
+    <lastmod>2026-09-08T22:39:53.980Z</lastmod>
+  </url>
+  <url>
+    <loc>https://igor-kan.github.io/stac67h3/index.html</loc>
+    <lastmod>2026-09-08T22:39:53.979Z</lastmod>
+  </url>
+  <url>
+    <loc>https://igor-kan.github.io/stac67h3/problems/case-study-project.html</loc>
+    <lastmod>2026-09-08T22:39:53.980Z</lastmod>
+  </url>
+  <url>
+    <loc>https://igor-kan.github.io/stac67h3/simulations/index.html</loc>
+    <lastmod>2026-09-08T22:39:53.980Z</lastmod>
+  </url>
+  <url>
+    <loc>https://igor-kan.github.io/stac67h3/simulations/interactive-regression-and-r-diagnostics.html</loc>
+    <lastmod>2026-09-08T22:39:53.980Z</lastmod>
+  </url>
+  <url>
+    <loc>https://igor-kan.github.io/stac67h3/reference/matrix-algebra-and-properties.html</loc>
+    <lastmod>2026-09-08T22:39:53.980Z</lastmod>
+  </url>
+  <url>
+    <loc>https://igor-kan.github.io/stac67h3/reference/r-and-rmarkdown-cheatsheet.html</loc>
+    <lastmod>2026-09-08T22:39:53.980Z</lastmod>
+  </url>
+  <url>
+    <loc>https://igor-kan.github.io/stac67h3/notes/multiple-regression-matrix-approach.html</loc>
+    <lastmod>2026-09-08T22:39:53.980Z</lastmod>
   </url>
 </urlset>
