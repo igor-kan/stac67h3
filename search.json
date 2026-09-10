@@ -2,23 +2,16 @@
   {
     "objectID": "reference/index.html",
     "href": "reference/index.html",
-    "title": "STAC67 Reference & Mathematical Tools",
+    "title": "Reference & Math",
     "section": "",
-    "text": "Quick-reference toolkits, matrix identities, distribution properties of quadratic forms, and R programming cheatsheets for STAC67.\n\n\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Created - Oldest\n      \n      \n        Created - Newest\n      \n      \n        Modified - Oldest\n      \n      \n        Modified - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\nNo matching items"
   },
   {
     "objectID": "problems/index.html",
     "href": "problems/index.html",
-    "title": "STAC67 Problem Sets, Quizzes & Projects",
+    "title": "Problem Sets & Projects",
     "section": "",
-    "text": "This section houses all official problem sets, tutorial quiz guides, case study datasets, and examination review materials for STAC67.\n\nCourse Policy Highlights\n\nLate Submissions: Late assignment submissions are strictly not accepted.\nQuizzes: 3 in-tutorial quizzes; best 2 of 3 count towards final grade.\nProject Grade Boost: The Case Study Project counts only when it increases your course standing relative to the final exam.\n\n\n\n\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Created - Oldest\n      \n      \n        Created - Newest\n      \n      \n        Modified - Oldest\n      \n      \n        Modified - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "STAC67H3: Regression Analysis",
-    "section": "",
-    "text": "Comprehensive course portal featuring the official course schedule, analytical lecture derivations, R Markdown case studies, interactive statistical simulations, and mathematical reference toolkits."
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#course-roadmap-calendar-fall-2026",
@@ -37,15 +30,15 @@
   {
     "objectID": "simulations/index.html",
     "href": "simulations/index.html",
-    "title": "Statistical Code & Simulations",
+    "title": "Code & Simulations",
     "section": "",
-    "text": "This section hosts all interactive computational tools, R diagnostic notebooks, and statistical simulators for STAC67:\n\nInteractive Regression Playground: In-browser live OLS models exploring outlier influence, leverage points, and coefficient sensitivity in real time.\nR Statistical Labs: Complete R scripts for diagnostic plotting (residuals vs. fitted, Q-Q plots, scale-location, residuals vs. leverage).\nPython Statistical Surrogates: Statsmodels implementations for matrix verification and simulation checks.\n\n\n\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Created - Oldest\n      \n      \n        Created - Newest\n      \n      \n        Modified - Oldest\n      \n      \n        Modified - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\nNo matching items"
   },
   {
     "objectID": "notes/index.html",
     "href": "notes/index.html",
-    "title": "STAC67 Lecture Notes & Schedule",
+    "title": "Lecture Notes & Schedule",
     "section": "",
-    "text": "This section houses the course schedule and analytical lecture notes following Kutner et al.’s Applied Linear Regression Models for STAC67. Use the category filters below to locate specific theoretical derivations.\n\n\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Created - Oldest\n      \n      \n        Created - Newest\n      \n      \n        Modified - Oldest\n      \n      \n        Modified - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\nNo matching items"
   }
 ]
