@@ -1,0 +1,233 @@
+---
+title: "STAC67H3 F: Regression Analysis — Fall 2026 Syllabus"
+subtitle: "Official Syllabus (Version: September 7th) & Comprehensive Course Information"
+date: "2026-09-07"
+categories: ["Syllabus", "Course Administration", "STAC67"]
+draft: true
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    math: true
+    code-fold: show
+---
+
+# STAC67H3 F LEC01: Regression Analysis
+
+**Fall 2026 Syllabus (Version: September 7th)**
+
+---
+
+## Course Navigation & Live Portals
+
+- **Official Syllabus Document**: [Download STAC67H3F-2026_Fall_Syllabus-20260902.docx](https://thibaultrandrianarisoa.netlify.app/courses/stac67/STAC67H3F-2026_Fall_Syllabus-20260902.docx)
+- **Course Webpage**: [https://thibaultrandrianarisoa.netlify.app/courses/stac67/](https://thibaultrandrianarisoa.netlify.app/courses/stac67/)
+- **Quercus Portal**: [https://q.utoronto.ca/courses/464507](https://q.utoronto.ca/courses/464507)
+- **Piazza Discussion Board**: [Piazza STAC67 Fall 2026 Home](https://piazza.com/utoronto.ca/fall2026/stac67/home) (or [Direct Demo / Auth Login](https://piazza.com/demo_login?nid=mtrg4rj858g237&auth=950bc81)) — *You are encouraged to ask questions on course content, assignments, etc., and discuss here.*
+
+---
+
+## Office Hours & Contact
+
+- **Instructor**: Pr. Thibault Randrianarisoa
+- **Office**: IA 4064 (Sam Ibrahim Building)
+- **Email**: [t.randrianarisoa@utoronto.ca](mailto:t.randrianarisoa@utoronto.ca)  
+  *(Put `[STAC67]` in the subject, and your student number in the body/signature).*
+- **Phone**: 416-208-5106
+- **Office Hours**: 
+  - Wednesday: 10:00 AM – 11:00 AM, IA 4064
+  - Friday: 3:00 PM – 4:00 PM, IA 4064
+- **Teaching Assistants**: To be announced.
+
+> **Communication Policy**: Please use Piazza for questions about course content; email is reserved for private matters. Always use your `utoronto.ca` account. Allow at least 48 hours for a response before following up.
+
+---
+
+## Time & Location
+
+| Section | Day & Time | Delivery Mode & Location |
+| :--- | :--- | :--- |
+| **LEC01** | Wednesday, 4:00 PM – 5:00 PM<br>Friday, 1:00 PM – 3:00 PM | In person: **IA 2021**<br>In person: **IA 2021** |
+| **TUT0001** | Tuesday, 5:00 PM – 6:00 PM | In person: **IA 3120** |
+| **TUT0002** | Wednesday, 3:00 PM – 4:00 PM | In person: **IC 208** |
+
+*Refer to ACORN for the most up-to-date information about the location of course meetings.*
+
+- **Tutorial Start**: Tutorials start in **Week 2** and run weekly.
+- **Tutorial Purpose**: Practical work in **R** and administration of the three quizzes.
+- **Material Alignment**: Note that tutorials take place *before* that week's lectures, so a tutorial only ever assumes material covered up to the previous Friday. Each quiz covers material up to the Friday of the week before.
+
+---
+
+## Course Overview & Learning Outcomes
+
+### Course Description
+Regression is one of the most widely used statistical techniques across the sciences, social sciences, and industry. This course develops both its theory and its practice: how regression models are built and justified, and how to analyse data when they apply.
+
+We begin with simple linear regression (least squares estimation, the geometry behind it, and inference on the regression parameters under normally distributed errors) then extend to multiple regression in matrix form, covering analysis of variance, confidence and prediction intervals, multicollinearity, and models with both quantitative and qualitative predictors. The last part of the course asks what to do when the standard assumptions fail: diagnostics, model selection and validation, and remedial measures including weighted least squares. All computation is in R, and you will be expected to write R code, interpret its output, and report your conclusions in writing.
+
+### Learning Outcomes
+At the completion of this course, students will be able to:
+1. Use R software to conduct regression analysis.
+2. Carry out and interpret inference procedures for simple and multiple linear regression.
+3. Know the multiple linear regression model in its matrix form, including all common variations on this model (e.g., continuous predictors, categorical predictors, square and interaction terms).
+4. Understand what are the purposes of diagnostic methods in simple and multiple regression; be able to carry out several common diagnostic procedures and interpret them.
+5. Know several measures of model performance, how to compute and interpret them for a multiple regression model.
+6. Write an analysis report with real data.
+
+### Course Metadata
+- **Prerequisites**: STAB57H3
+- **Corequisites**: None
+- **Exclusions**: STA302H; [Students who want to complete both STAC67H3 and MGEB12H3, and receive credit for both courses, must successfully complete MGEB12H3 prior to enrolling in STAC67H3; for students who complete MGEB12H3 after successfully completing STAC67H3, MGEB12H3 will be marked as Extra (EXT)].
+- **Recommended Preparation**: None
+- **Credit Value**: 0.5
+
+---
+
+## Course Materials & Computing Resources
+
+### Textbooks
+- **Required Text (Kutner)**:  
+  Kutner, M. H., Nachtsheim, C. J., and Neter, J. (2004), *Applied Linear Regression Models*, 4th edition (older editions are fine).  
+  - Data sets and solution manual: [http://www.cnachtsheim-text.csom.umn.edu](http://www.cnachtsheim-text.csom.umn.edu)
+- **Sub-text (Sheather)**:  
+  Simon J. Sheather (2009), *A Modern Approach to Regression with R* (a lighter, R-centred companion, available online for free through the U of T library).
+
+### Statistical Computing in R
+All computation in this course is in **R**, and you are expected to write R code and interpret R output on assignments, quizzes, and tests.
+
+- **R**: Install [The R Project for Statistical Computing](https://www.r-project.org/) (free, all platforms).
+- **RStudio**: Install [RStudio Desktop](https://posit.co/download/rstudio-desktop/) as the primary IDE.
+- **R Markdown**: Reports are written in [R Markdown](https://rmarkdown.rstudio.com/lesson-1.html), which produces a PDF or HTML document from code and prose in one file (covered in Tutorial 1).
+- **ggplot2 & Tidyverse**: Figures use [ggplot2](https://ggplot2.tidyverse.org/).
+- **Required R Packages**:
+  ```r
+  install.packages(c("ggplot2", "dplyr", "car", "leaps", "MASS", "glmnet"))
+  ```
+- **Cheat Sheets & References**:
+  - [R for Data Science (2e)](https://r4ds.hadley.nz/)
+  - [R Markdown Cheat Sheet](https://posit.co/resources/cheatsheets/)
+  - [ggplot2 Cheat Sheet](https://posit.co/resources/cheatsheets/)
+
+---
+
+## Marking Scheme & Grading Formulas
+
+| Assessment | Weight | Details | Due Date / Window |
+| :--- | :---: | :--- | :--- |
+| **Assignments** | **15%** | Three assignments, 5% each. Individual work. Late submissions are not accepted. | Sep 30, Oct 21, Nov 18 (23:59) |
+| **Midterm Test** | **15%** | Scheduled by Registrar's Office outside class time. Covers material through Week 6. | Week of Oct 19–25 |
+| **Quizzes** | **15%** | Three quizzes written in tutorial. Best 2 of 3 count (7.5% each); lowest mark dropped automatically. | Tutorials (W4, W8/9, W11/12) |
+| **Case Study Project** | **20%** | Optional. Groups of at most four on pre-approved dataset. Checkpoint (8), Report (72), Presentation (20). | Milestone dates below |
+| **Final Exam** | **35%** | Comprehensive exam covering all material from the term. | December 10–22 exam period |
+
+### Final Grade Formulas
+
+$$\text{Final Grade} = 15\% \, (\text{Assignments}) + 15\% \, (\text{Quizzes}) + 15\% \, (\text{Midterm}) + \max \Big\{ 20\% \, (\text{Project}) + 35\% \, (\text{Final Exam}), \; 55\% \, (\text{Final Exam}) \Big\}$$
+
+- **Dual Calculation**: Your grade is calculated twice: once counting the project, and once with that weight moved onto the final exam. You receive whichever result is higher.
+- **Zero Risk**: Both marks are out of 100, so the comparison is simple: the project counts whenever your project mark is higher than your final exam mark, and is ignored otherwise. Doing the project can raise your grade and can never lower it. If you do not do the project, your final exam is worth **55%**.
+- **Leaving the Project**: The project has four deadlines:
+  1. Group and dataset declared (**Friday, Nov 6**)
+  2. Checkpoint (**Friday, Nov 13**)
+  3. Written report (**Friday, Nov 27**)
+  4. Presentation (**Week of Nov 30 / Dec 4**)
+  If you miss any of them, you are simply assessed on the second formula for the rest of the term, with the final exam worth 55%. This is not an academic penalty and you do not receive a zero; you are treated exactly as a student who chose not to do the project. Leaving is an individual decision: the rest of your group may carry on, and your report mark is discarded only for you.
+- **Midterm Policy**: The midterm test is not optional and is not part of this calculation. If you miss it for a documented valid reason, its weight is transferred to your final exam.
+
+---
+
+## Lectures and Timeline (12-Week Schedule)
+
+Slides and annotated slides are posted after each class:
+
+| Week & Dates | Lectures & Topics | Suggested Reading | Tutorial Focus | Key Assessments / Deadlines |
+| :--- | :--- | :--- | :--- | :--- |
+| **Week 1**<br>Sep 7–13 | • Introduction; what regression is; data visualisation; covariance and correlation.<br>&nbsp;&nbsp;[Download Lecture 1 PDF](https://thibaultrandrianarisoa.netlify.app/courses/stac67/Lecture1.pdf)<br>• Correlation and its test; data collection and the regression process; the simple linear regression model.<br>&nbsp;&nbsp;[Download Lecture 2 PDF](https://thibaultrandrianarisoa.netlify.app/courses/stac67/Lecture2.pdf) | Kutner 1.1–1.3<br>Kutner 2.11 | *No tutorial in Week 1* | *Lectures begin Sep 9* |
+| **Week 2**<br>Sep 14–20 | • Least squares estimation; the Gauss–Markov theorem; interpretation of $\sigma^2$; fitted values and residuals.<br>• Inference on the regression parameters: confidence intervals and hypothesis tests. | Kutner 1.4–1.7<br>Kutner 2.1–2.2 | **Tutorial 1**<br>R, RStudio, and R Markdown | **Assignment 1 Released**<br>(Sep 18) |
+| **Week 3**<br>Sep 21–27 | • Sampling distribution of the estimators; interval estimation of the mean response; prediction intervals.<br>• Analysis of variance; the coefficient of determination ($R^2$). | Kutner 2.3–2.6<br>Kutner 2.7–2.9 | **Tutorial 2**<br>Descriptive statistics & `ggplot2` | |
+| **Week 4**<br>Sep 28–Oct 4 | • $F$- and $t$-tests; descriptive measures of association; model assumptions and residual plots (Diagnostics I).<br>• Matrices and random vectors; simple linear regression in matrix form; the hat matrix. | Kutner 3.1–3.3<br>Kutner 5.1–5.10 | **Tutorial 3**<br>Simple linear regression in R | **Quiz 1** (in tutorial)<br>*(covers through Sep 25 / Oct 2)*<br>**Assignment 1 Due**<br>(Sep 30, 23:59) |
+| **Week 5**<br>Oct 5–11 | • Useful matrix results.<br>• Multiple linear regression I: properties of linear functions of random vectors; properties of estimators, fitted values, residuals, and predictions. | Kutner 5.11–5.13<br>Kutner 6.1–6.4 | **Tutorial 4**<br>ANOVA table, $R^2$, sampling distributions by simulation | **Assignment 2 Released**<br>(Oct 7)<br>**Project Brief & Datasets Released**<br>(Oct 9) |
+| **Week 6**<br>Oct 12–18 | • The geometry of least squares.<br>• Multiple linear regression II: inference for the mean response and a new observation; quadratic forms; the overall $F$-test. | Kutner 6.5–6.8 | **Tutorial 5**<br>Matrix algebra in R | |
+| **Week 7**<br>Oct 19–25 | • Multiple linear regression III: general linear hypothesis testing; extra sums of squares.<br>• Multicollinearity and its effects; qualitative predictors (binary & multi-level factors). | Kutner 7.1–7.5<br>Kutner 7.6, 8.3 | **Tutorial 6**<br>Fitting and interpreting multiple regression | **Assignment 2 Due**<br>(Oct 21, 23:59)<br>**Midterm Test**<br>(Outside class time, covers W1–W6) |
+| **Reading Week**<br>Oct 26–30 | *No classes or tutorials (Reading Week).* | — | — | — |
+| **Week 8**<br>Nov 2–8 | • Regression models for quantitative and qualitative predictors: one continuous and one categorical predictor.<br>• Interaction models; case study. | Kutner 8.3–8.6 | **Tutorial 7**<br>Multiple regression inference | **Quiz 2** (in tutorial)<br>*(covers through Oct 23)*<br>**Assignment 3 Released**<br>**Project Groups & Datasets Claimed**<br>(Nov 6, binding) |
+| **Week 9**<br>Nov 9–15 | • Polynomial regression models: second and higher order, several predictors, centred predictors.<br>• Variable transformations. | Kutner 8.1–8.2<br>Kutner 3.9 | **Tutorial 8**<br>Categorical predictors, interactions, ANCOVA | **Project Checkpoint Due**<br>(Nov 13: research question + EDA) |
+| **Week 10**<br>Nov 16–22 | • Model selection and validation: criteria for model selection, selection procedures, validation.<br>• Diagnostics II: outlying $Y$ observations, outlying $X$ observations, leverage. | Kutner 9.1–9.6<br>Kutner 10.1–10.3 | **Tutorial 9**<br>Polynomial fits and transformations | **Assignment 3 Due**<br>(Nov 18, 23:59) |
+| **Week 11**<br>Nov 23–29 | • Diagnostics III: influential observations, multicollinearity diagnostics.<br>• Remedial measures: weighted least squares (WLS). | Kutner 10.4–10.5<br>Kutner 11.1 | **Tutorial 10**<br>Model selection and diagnostics | **Quiz 3** (in tutorial)<br>*(covers through Nov 20)*<br>**Project Report Due**<br>(Nov 27, 23:59)<br>*Last day to drop: Nov 24* |
+| **Week 12**<br>Nov 30–Dec 6 | • Shrinkage methods: bias–variance trade-off, ridge regression, LASSO, cross-validation.<br>• Project presentations; course review. | Kutner 11.2 | **Tutorial 11**<br>Exam revision | **Project Presentations**<br>(Dec 4 in tutorial / class) |
+| **Exam Period**<br>Dec 10–22 | **Final Examination** (covers all material from the term) | Cumulative | — | Scheduled by Registrar |
+
+---
+
+## Assessment Details
+
+### Assignments
+- **Individual Work**: Assignments must represent individual student effort.
+- **Submission**: Submitted electronically via Quercus before 23:59 on the due date.
+- **Strict Policy**: **Late submissions are NOT accepted under any circumstance.**
+
+| Assignment | Released | Due Date (23:59) | Solutions & Notes |
+| :--- | :--- | :--- | :--- |
+| **Assignment 1** | September 18, 2026 | September 30, 2026 | To be posted after deadline |
+| **Assignment 2** | October 7, 2026 | October 21, 2026 | To be posted after deadline |
+| **Assignment 3** | November 4, 2026 | November 18, 2026 | To be posted after deadline |
+
+### Quizzes
+- **Format**: Three quizzes written during designated tutorial sessions.
+- **Weighting**: The **best two of three** count (7.5% each, total 15%). The lowest quiz mark is dropped automatically.
+- **Coverage**: Each quiz covers material up to the Friday of the preceding week:
+  - **Quiz 1**: Week 4 tutorial (covers through Friday Sep 25 / Oct 2)
+  - **Quiz 2**: Week 8/9 tutorial (covers through Friday Oct 23)
+  - **Quiz 3**: Week 11/12 tutorial (covers through Friday Nov 20)
+- **Make-up Policy**: **There are NO make-up quizzes for any reason.** The dropped quiz accommodation accounts for illness or emergencies.
+
+### Optional Case Study Project
+- **Format**: Collaborative groups of **at most four students**, analyzing a dataset from a pre-approved list.
+- **Components**:
+  - Checkpoint (8 points): Research question and exploratory data analysis (EDA)
+  - Written Report (72 points): Fully reproducible report written in R Markdown
+  - Presentation (20 points): 5-minute presentation in tutorial/class
+
+| Milestone | Date | Deliverable |
+| :--- | :--- | :--- |
+| **Brief & Dataset List Released** | October 9, 2026 | Project guidelines, datasets, and grading rubric released |
+| **Groups & Dataset Claimed (Binding)** | November 6, 2026 | Sign-up and selection confirmed |
+| **Checkpoint Submission** | November 13, 2026 | Research question + initial EDA |
+| **Final Written Report Due** | November 27, 2026 (23:59) | Complete R Markdown document & knitted PDF/HTML |
+| **Project Presentations** | December 4, 2026 | 5-minute group presentation |
+
+---
+
+## Course Policies & University Statements
+
+### Academic Integrity
+The University treats cases of cheating and plagiarism very seriously. The University of Toronto's [Code of Behaviour on Academic Matters](http://www.governingcouncil.utoronto.ca/policies/behaveac.htm) outlines behaviours constituting academic dishonesty:
+- **Papers & Assignments**: Using someone else's ideas or words without appropriate acknowledgement, submitting work in more than one course without instructor permission, falsifying sources or data, or obtaining unauthorized assistance.
+- **Tests & Exams**: Using or possessing unauthorized aids, looking at someone else's answers, misrepresenting identity, or altering documentation.
+
+### Generative Artificial Intelligence Tools Policy
+- **Permitted Uses**: Students may use artificial intelligence tools, including generative AI, in this course as learning aids or to help produce assignments. However, **students are ultimately accountable for the work they submit**.
+- **Prohibited Uses**: Students **may NOT use artificial intelligence tools for taking tests or examinations**.
+- **Academic Offense**: The knowing use of generative AI tools (ChatGPT, GitHub Copilot, etc.) for the completion of, or to support the completion of, an examination, term test, or unauthorized assessment constitutes an academic offense.
+
+### Missed Assessments & Late Policies
+- **Late Submissions**: Late submission of any assessment will NOT be allowed.
+- **Quizzes**: Lowest of three dropped automatically. No make-ups.
+- **Midterm**: If missed for a documented valid reason, its weight is transferred to the final exam.
+- **Project Deadlines**: To be counted, groups must declare members and claim a dataset by Nov 6 and pass the checkpoint on Nov 13. Late reports are not accepted.
+
+### Accommodations
+Students with diverse learning styles and needs are welcome in this course. If you have a disability or health consideration requiring accommodations, approach the instructor and/or the [AccessAbility Services Office](https://www.utsc.utoronto.ca/ability/) as soon as possible.  
+- **Location**: Rm IA5105, Sam Ibrahim Building  
+- **Phone**: 416-287-7560  
+- **Email**: [ability.utsc@utoronto.ca](mailto:ability.utsc@utoronto.ca)
+
+### Equity, Diversity, and Inclusion (EDI)
+The University of Toronto is committed to equity, human rights, and respect for diversity. All members of the learning environment should strive to create an atmosphere of mutual respect. U of T does not condone discrimination or harassment on grounds of race, religion, ancestry, place of origin, colour, ethnic origin, citizenship, creed, sex, sexual orientation, gender identity, gender expression, age, marital status, family status, disability, or receipt of public assistance.
+
+### Land Acknowledgement
+We wish to acknowledge this land on which the University of Toronto operates. For thousands of years, it has been the traditional land of the Huron-Wendat, the Seneca, and the Mississaugas of the Credit. Today, this meeting place is still the home to many Indigenous people from across Turtle Island and we are grateful to have the opportunity to work on this land.
+
+### Video Recording & Sharing
+This course, including student participation, may be recorded on video and made available to students in the course for remote viewing. Course videos and materials belong to the instructor and the University and are protected by copyright. **Downloading, copying, or re-sharing course videos or student materials without explicit permission is strictly prohibited.**

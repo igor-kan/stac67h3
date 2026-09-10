@@ -1,0 +1,110 @@
+---
+title: "STAC67: Course Information & Computing Environment"
+subtitle: "Instructor contacts, lecture & tutorial sections, textbook portals, and R statistical environment"
+date: "2026-09-07"
+categories: ["Course Info", "Administration", "STAC67", "R"]
+draft: true
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: show
+---
+
+# STAC67 Fall 2026: Regression Analysis
+
+**Instructor**: Pr. Thibault Randrianarisoa  
+**Department of Computer and Mathematical Sciences (CMS), University of Toronto Scarborough**
+
+---
+
+## Introduction
+
+Regression is one of the most widely used statistical techniques across the sciences, social sciences, and industry. This course develops both its theory and its practice: how regression models are built and justified, and how to analyse data when they apply.
+
+We begin with simple linear regression (least squares estimation, the geometry behind it, and inference on the regression parameters under normally distributed errors) then extend to multiple regression in matrix form, covering analysis of variance, confidence and prediction intervals, multicollinearity, and models with both quantitative and qualitative predictors. The last part of the course asks what to do when the standard assumptions fail: diagnostics, model selection and validation, and remedial measures including weighted least squares. All computation is in R, and you will be expected to write R code, interpret its output, and report your conclusions in writing.
+
+More details can be found in the [Official Syllabus docx](https://thibaultrandrianarisoa.netlify.app/courses/stac67/STAC67H3F-2026_Fall_Syllabus-20260902.docx), on [Quercus](https://q.utoronto.ca/courses/464507), and on [Piazza](https://piazza.com/utoronto.ca/fall2026/stac67/home).
+
+---
+
+## Announcements
+
+- **Lectures begin on September 9, 2026!**
+- Slides and annotated slides will be posted on the course website and Quercus after each class.
+
+---
+
+## Instructor & Office Hours
+
+- **Instructor**: Thibault Randrianarisoa
+- **Office**: IA 4064 (Sam Ibrahim Building)
+- **Phone**: 416-208-5106
+- **Email**: [t.randrianarisoa@utoronto.ca](mailto:t.randrianarisoa@utoronto.ca)  
+  *(Include `[STAC67]` in the subject line, and your student number in the body).*
+- **Office Hours**:
+  - Wednesday: 10:00 AM – 11:00 AM, IA 4064
+  - Friday: 3:00 PM – 4:00 PM, IA 4064
+- **Teaching Assistants**: To be announced.
+
+> **Communication Notice**: Please use Piazza for questions about course content; email is reserved for private matters.
+
+---
+
+## Time & Location
+
+| Section | Day & Time | Delivery Mode & Location |
+| :--- | :--- | :--- |
+| **LEC01** | Wednesday, 4:00 PM – 5:00 PM<br>Friday, 1:00 PM – 3:00 PM | In person: **IA 2021**<br>In person: **IA 2021** |
+| **TUT0001** | Tuesday, 5:00 PM – 6:00 PM | In person: **IA 3120** |
+| **TUT0002** | Wednesday, 3:00 PM – 4:00 PM | In person: **IC 208** |
+
+Tutorials start in **Week 2** and run weekly. They are used for practical work in R and for the three quizzes. Note that tutorials meet *before* that week's lectures, so a tutorial only assumes material covered up to the previous Friday, and each quiz covers material up to the Friday of the week before.
+
+---
+
+## Suggested Reading & Textbooks
+
+The course follows the chapter structure of *Applied Linear Regression Models* (Kutner), the required text.
+
+1. **(Kutner) Required Text**:  
+   Kutner, M. H., Nachtsheim, C. J., and Neter, J. (2004), *Applied Linear Regression Models*, 4th edition (older editions are fine).  
+   - **Data Sets & Solution Manual**: [http://www.cnachtsheim-text.csom.umn.edu](http://www.cnachtsheim-text.csom.umn.edu)
+2. **(Sheather) Sub-text**:  
+   Simon J. Sheather (2009), *A Modern Approach to Regression with R* (a lighter, R-centred companion, available online through the U of T library).
+
+---
+
+## Direct Lecture Downloads & Live Links
+
+- **Lecture 1 Slides**: [Download Lecture 1 PDF](https://thibaultrandrianarisoa.netlify.app/courses/stac67/Lecture1.pdf)  
+  *Introduction; what regression is; data visualisation; covariance and correlation.*
+- **Lecture 2 Slides**: [Download Lecture 2 PDF](https://thibaultrandrianarisoa.netlify.app/courses/stac67/Lecture2.pdf)  
+  *Correlation and its test; data collection and the regression process; the simple linear regression model.*
+- **Official Syllabus Word Document**: [Download STAC67H3F-2026_Fall_Syllabus-20260902.docx](https://thibaultrandrianarisoa.netlify.app/courses/stac67/STAC67H3F-2026_Fall_Syllabus-20260902.docx)
+- **Course Webpage**: [https://thibaultrandrianarisoa.netlify.app/courses/stac67/](https://thibaultrandrianarisoa.netlify.app/courses/stac67/)
+- **Quercus Course Page**: [https://q.utoronto.ca/courses/464507](https://q.utoronto.ca/courses/464507)
+- **Piazza Board**: [https://piazza.com/utoronto.ca/fall2026/stac67/home](https://piazza.com/utoronto.ca/fall2026/stac67/home)
+
+---
+
+## Computing Resources: Setting Up R
+
+All computation in this course is in **R**, and you are expected to write R code and interpret R output on assignments, quizzes, and tests.
+
+### Software Installation
+1. Install [R](https://www.r-project.org/) (free, available for macOS, Windows, Linux).
+2. Install [RStudio Desktop](https://posit.co/download/rstudio-desktop/) as the IDE.
+3. Reports are written in [R Markdown](https://rmarkdown.rstudio.com/lesson-1.html), which produces a PDF or HTML document from code and prose in one file (covered in Tutorial 1).
+4. Figures use [ggplot2](https://ggplot2.tidyverse.org/).
+
+### Required R Packages
+Install the standard statistical packages used in the course:
+```r
+install.packages(c("ggplot2", "dplyr", "car", "leaps", "MASS", "glmnet"))
+```
+
+### Reference Guides & Cheat Sheets
+- [R for Data Science (2e)](https://r4ds.hadley.nz/)
+- [R Markdown Lessons & Documentation](https://rmarkdown.rstudio.com/lesson-1.html)
+- [Posit / RStudio Cheat Sheets (ggplot2, R Markdown, dplyr)](https://posit.co/resources/cheatsheets/)

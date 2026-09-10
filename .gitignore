@@ -7,3 +7,6 @@ __pycache__/
 .Rhistory
 .RData
 .Rproj.user
+
+/.quarto/
+**/*.quarto_ipynb

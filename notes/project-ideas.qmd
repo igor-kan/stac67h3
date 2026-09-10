@@ -3,6 +3,7 @@ title: "STAC67 Project Ideas: Advanced Statistical Modeling & Econometric Infere
 subtitle: "Semester capstone project blueprints in high-dimensional de-biased inference, robust high-breakdown regression, and spatial econometric modeling."
 date: "2026-09-10"
 categories: ["Statistics", "STAC67", "Regression", "Robust Statistics", "High-Dimensional", "Econometrics"]
+draft: true
 format:
   html:
     toc: true
