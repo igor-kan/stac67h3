@@ -1,94 +1,24 @@
 [
   {
-    "objectID": "notes/schedule.html",
-    "href": "notes/schedule.html",
-    "title": "STAC67 Official Schedule, Timeline & Readings",
-    "section": "",
-    "text": "This timeline outlines the topics covered, suggested textbook readings, and important assessments for each week.\n\n\n\n\n\n\n\n\n\nWeek / Date\nLectures\nSuggested Reading\nAssessment / Due\n\n\n\n\nWeek 1Sep 8–13\nIntroduction; what regression is; data visualisation; covariance and correlation.Correlation and its test; data collection and the regression process; the simple linear regression model.\nKutner 1.1–1.3Kutner 2.11\n\n\n\nWeek 2Sep 14–20\nLeast squares estimation; the Gauss–Markov theorem; interpretation of σ²; fitted values and residuals.Inference on the regression parameters: confidence intervals and hypothesis tests.\nKutner 1.4–1.7Kutner 2.1–2.2\nAssign 1 out (Sep 18)\n\n\nWeek 3Sep 21–27\nSampling distribution of the estimators; interval estimation of the mean response; prediction intervals.Analysis of variance; the coefficient of determination.\nKutner 2.3–2.6Kutner 2.7–2.9\n\n\n\nWeek 4Sep 28–Oct 4\nF- and t-tests; descriptive measures of association; model assumptions and residual plots.Matrices and random vectors; simple linear regression in matrix form; the hat matrix.\nKutner 3.1–3.3Kutner 5.1–5.10\nAssign 1 due (Sep 30)\n\n\nWeek 5Oct 5–11\nUseful matrix results.Properties of linear functions of random vectors; properties of the estimators, fitted values, residuals and predictions.\nKutner 5.11–5.13Kutner 6.1–6.4\nAssign 2 out (Oct 7)Quiz 1 (Oct 6/7)Project brief (Oct 9)\n\n\nWeek 6Oct 12–18\nThe geometry of least squares.Inference for the mean response and a new observation; quadratic forms; the overall F-test.\nKutner 6.5–6.8\n\n\n\nWeek 7Oct 19–25\nGeneral linear hypothesis testing; extra sums of squares.Multicollinearity and its effects; qualitative predictors.\nKutner 7.1–7.5Kutner 7.6, 8.3\nAssign 2 due (Oct 21)Midterm (TBA)\n\n\nReading WeekOct 26–30\nNo classes or tutorials.\n\n\n\n\nWeek 8Nov 2–8\nOne continuous and one categorical predictor.Interaction models; case study.\nKutner 8.3–8.6\nAssign 3 out (Nov 4)Quiz 2 (Nov 3/4)Project groups due (Nov 6)\n\n\nWeek 9Nov 9–15\nPolynomial regression models; centred predictors.Variable transformations.\nKutner 8.1–8.2Kutner 3.9\nProject checkpoint (Nov 13)\n\n\nWeek 10Nov 16–22\nModel selection and validation: criteria and procedures.Diagnostics: outlying Y observations, outlying X observations, leverage.\nKutner 9.1–9.6Kutner 10.1–10.3\nAssign 3 due (Nov 18)\n\n\nWeek 11Nov 23–29\nInfluential observations; multicollinearity diagnostics.Remedial measures: weighted least squares.\nKutner 10.4–10.5Kutner 11.1\nQuiz 3 (Nov 24/25)Project report (Nov 27)Drop date: Nov 24\n\n\nWeek 12Nov 30–Dec 6\nShrinkage methods: the bias–variance trade-off, ridge regression and the LASSO.Project presentations; course review.\nKutner 11.2\nProject presentations (Dec 4)"
-  },
-  {
     "objectID": "notes/index.html",
     "href": "notes/index.html",
     "title": "STAC67 Lecture Notes & Schedule",
     "section": "",
-    "text": "This section houses the course schedule and analytical lecture notes following Kutner et al.’s Applied Linear Regression Models for STAC67. Use the category filters below to locate specific theoretical derivations.\n\n\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Created - Oldest\n      \n      \n        Created - Newest\n      \n      \n        Modified - Oldest\n      \n      \n        Modified - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\nMatrix Formulation of Multiple Linear Regression\n\n\nDerivation of the normal equations, the projection hat matrix, and the Gauss-Markov theorem.\n\n\n\nLinear Models\n\nMatrix Algebra\n\nInference\n\n\n\n\n\n\n2026-09-08\n\n2 min\n\nInvalid Date\n\n\n\n\n\n\n\nSTAC67 Official Schedule, Timeline & Readings\n\n\n12-Week Roadmap of Lectures, Kutner Readings, and Tutorial Assessments\n\n\n\nSchedule\n\nCourse Roadmap\n\n\n\n\n\n\n2026-09-08\n\n3 min\n\nInvalid Date\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "reference/sources-and-bibliography.html",
-    "href": "reference/sources-and-bibliography.html",
-    "title": "Regression Analysis Sources & Bibliography",
-    "section": "",
-    "text": "Kutner, M. H., Nachtsheim, C. J., & Neter, J. (2004). Applied Linear Regression Models (4th ed.). McGraw-Hill/Irwin.\nSheather, S. J. (2009). A Modern Approach to Regression with R. Springer Texts in Statistics. Springer.\nHastie, T., Tibshirani, R., & Friedman, J. (2009). The Elements of Statistical Learning (2nd ed.). Springer."
-  },
-  {
-    "objectID": "reference/sources-and-bibliography.html#textbooks",
-    "href": "reference/sources-and-bibliography.html#textbooks",
-    "title": "Regression Analysis Sources & Bibliography",
-    "section": "",
-    "text": "Kutner, M. H., Nachtsheim, C. J., & Neter, J. (2004). Applied Linear Regression Models (4th ed.). McGraw-Hill/Irwin.\nSheather, S. J. (2009). A Modern Approach to Regression with R. Springer Texts in Statistics. Springer.\nHastie, T., Tibshirani, R., & Friedman, J. (2009). The Elements of Statistical Learning (2nd ed.). Springer."
-  },
-  {
-    "objectID": "reference/sources-and-bibliography.html#r-computing-documentation",
-    "href": "reference/sources-and-bibliography.html#r-computing-documentation",
-    "title": "Regression Analysis Sources & Bibliography",
-    "section": "🌐 R & Computing Documentation",
-    "text": "🌐 R & Computing Documentation\n\nCRAN: The Comprehensive R Archive Network\nRStudio / Posit Cheat Sheets\nPiazza Course Q&A Forum"
+    "text": "This section houses the course schedule and analytical lecture notes following Kutner et al.’s Applied Linear Regression Models for STAC67. Use the category filters below to locate specific theoretical derivations.\n\n\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Created - Oldest\n      \n      \n        Created - Newest\n      \n      \n        Modified - Oldest\n      \n      \n        Modified - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\nNo matching items"
   },
   {
     "objectID": "reference/index.html",
     "href": "reference/index.html",
     "title": "STAC67 Reference & Mathematical Tools",
     "section": "",
-    "text": "Quick-reference toolkits, matrix identities, distribution properties of quadratic forms, and R programming cheatsheets for STAC67.\n\n\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Created - Oldest\n      \n      \n        Created - Newest\n      \n      \n        Modified - Oldest\n      \n      \n        Modified - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\nMatrix Algebra, Idempotency & Quadratic Forms\n\n\nExpectation and covariance of random vectors, projection matrices, and Cochran’s theorem.\n\n\n\nReference\n\nMatrix Algebra\n\nQuadratic Forms\n\nProofs\n\n\n\n\n\n\n2026-09-08\n\n2 min\n\nInvalid Date\n\n\n\n\n\n\n\nR & R Markdown Computational Reference\n\n\nKey commands for linear models, diagnostic plots, ANOVA, and report compilation.\n\n\n\nReference\n\nR\n\nR Markdown\n\nggplot2\n\n\n\n\n\n\n2026-09-08\n\n1 min\n\nInvalid Date\n\n\n\n\n\n\n\nRegression Analysis Sources & Bibliography\n\n\nTextbooks, reference manuals, R documentation, and statistical packages for STAC67.\n\n\n\nReference\n\nBibliography\n\nSources\n\n\n\n\n\n\n2026-09-08\n\n1 min\n\nInvalid Date\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "simulations/interactive-leverage-and-influence.html",
-    "href": "simulations/interactive-leverage-and-influence.html",
-    "title": "Interactive Leverage & Cook’s Distance Simulation",
-    "section": "",
-    "text": "In Ordinary Least Squares (OLS) regression \\(\\mathbf{Y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\varepsilon}\\):\n\n\nFitted values are generated via the projection (hat) matrix \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\): \\[\\hat{\\mathbf{Y}} = \\mathbf{H}\\mathbf{Y} \\implies \\hat{Y}_i = h_{ii} Y_i + \\sum_{j \\ne i} h_{ij} Y_j\\]\nFor a simple linear regression model, the diagonal element (leverage) is: \\[h_{ii} = \\frac{1}{n} + \\frac{(x_i - \\bar{x})^2}{\\sum_{k=1}^n (x_k - \\bar{x})^2}\\] Points far from the predictor centroid \\(\\bar{x}\\) possess high leverage (\\(h_{ii} &gt; 2p/n\\) or \\(2/n\\)).\n\n\n\nCook’s distance quantifies the aggregate shift in all fitted values when observation \\(i\\) is deleted: \\[D_i = \\frac{\\sum_{j=1}^n (\\hat{Y}_j - \\hat{Y}_{j(i)})^2}{p \\cdot \\text{MSE}} = \\frac{r_i^2}{p} \\left( \\frac{h_{ii}}{1 - h_{ii}} \\right)\\] where \\(r_i\\) is the studentized residual. An observation is considered influential if \\(D_i &gt; 0.5\\) or \\(D_i &gt; 1.0\\) (\\(F_{p, n-p}(0.5)\\) threshold)."
-  },
-  {
-    "objectID": "simulations/interactive-leverage-and-influence.html#theoretical-framework-leverage-vs.-influence",
-    "href": "simulations/interactive-leverage-and-influence.html#theoretical-framework-leverage-vs.-influence",
-    "title": "Interactive Leverage & Cook’s Distance Simulation",
-    "section": "",
-    "text": "In Ordinary Least Squares (OLS) regression \\(\\mathbf{Y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\varepsilon}\\):\n\n\nFitted values are generated via the projection (hat) matrix \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\): \\[\\hat{\\mathbf{Y}} = \\mathbf{H}\\mathbf{Y} \\implies \\hat{Y}_i = h_{ii} Y_i + \\sum_{j \\ne i} h_{ij} Y_j\\]\nFor a simple linear regression model, the diagonal element (leverage) is: \\[h_{ii} = \\frac{1}{n} + \\frac{(x_i - \\bar{x})^2}{\\sum_{k=1}^n (x_k - \\bar{x})^2}\\] Points far from the predictor centroid \\(\\bar{x}\\) possess high leverage (\\(h_{ii} &gt; 2p/n\\) or \\(2/n\\)).\n\n\n\nCook’s distance quantifies the aggregate shift in all fitted values when observation \\(i\\) is deleted: \\[D_i = \\frac{\\sum_{j=1}^n (\\hat{Y}_j - \\hat{Y}_{j(i)})^2}{p \\cdot \\text{MSE}} = \\frac{r_i^2}{p} \\left( \\frac{h_{ii}}{1 - h_{ii}} \\right)\\] where \\(r_i\\) is the studentized residual. An observation is considered influential if \\(D_i &gt; 0.5\\) or \\(D_i &gt; 1.0\\) (\\(F_{p, n-p}(0.5)\\) threshold)."
-  },
-  {
-    "objectID": "simulations/interactive-leverage-and-influence.html#interactive-demonstration",
-    "href": "simulations/interactive-leverage-and-influence.html#interactive-demonstration",
-    "title": "Interactive Leverage & Cook’s Distance Simulation",
-    "section": "🎮 Interactive Demonstration",
-    "text": "🎮 Interactive Demonstration\nDrag the highlighted red test point anywhere across the plot to see how its leverage (\\(h_{ii}\\)) and Cook’s distance (\\(D_i\\)) instantly change, and watch the solid regression line rotate relative to the baseline (dashed line).\n\n  \n    \n      Base Observations: $n = 20$\n    \n    \n      Leverage $h_{ii}$: 0.18\n      Residual $e_i$: 0.00\n      Cook's $D_i$: 0.00\n    \n    \n      Reset Test Point\n    \n  \n\n  \n    \n    \n      -- Dashed Blue: Baseline OLS  |  \n      — Solid Red: OLS with Influential Point  | \n      ● Yellow Drag Point: Active Observation"
-  },
-  {
-    "objectID": "problems/assignment-1.html",
-    "href": "problems/assignment-1.html",
-    "title": "Assignment 1: Leverage, Outliers, and Cook’s Distance",
-    "section": "",
-    "text": "Let \\(h_{ii} = \\mathbf{x}_i^T (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{x}_i\\) be the \\(i\\)-th diagonal element of the hat matrix \\(\\mathbf{H}\\).\n\nProve that \\(0 \\le h_{ii} \\le 1\\).\nFor a model with an intercept term, prove that \\(\\frac{1}{n} \\le h_{ii} \\le 1\\).\nCompute the average leverage \\(\\bar{h} = \\frac{1}{n}\\sum_{i=1}^n h_{ii}\\)."
-  },
-  {
-    "objectID": "problems/assignment-1.html#problem-bounds-on-leverage-values",
-    "href": "problems/assignment-1.html#problem-bounds-on-leverage-values",
-    "title": "Assignment 1: Leverage, Outliers, and Cook’s Distance",
-    "section": "",
-    "text": "Let \\(h_{ii} = \\mathbf{x}_i^T (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{x}_i\\) be the \\(i\\)-th diagonal element of the hat matrix \\(\\mathbf{H}\\).\n\nProve that \\(0 \\le h_{ii} \\le 1\\).\nFor a model with an intercept term, prove that \\(\\frac{1}{n} \\le h_{ii} \\le 1\\).\nCompute the average leverage \\(\\bar{h} = \\frac{1}{n}\\sum_{i=1}^n h_{ii}\\)."
-  },
-  {
-    "objectID": "problems/assignment-1.html#proof",
-    "href": "problems/assignment-1.html#proof",
-    "title": "Assignment 1: Leverage, Outliers, and Cook’s Distance",
-    "section": "Proof",
-    "text": "Proof\n\n1. Proof that \\(0 \\le h_{ii} \\le 1\\)\nBecause \\(\\mathbf{H}\\) is idempotent (\\(\\mathbf{H} = \\mathbf{H}^2\\)): \\[h_{ii} = \\sum_{j=1}^n h_{ij}^2 = h_{ii}^2 + \\sum_{j \\neq i} h_{ij}^2\\] Since \\(\\sum_{j \\neq i} h_{ij}^2 \\ge 0\\), we have: \\[h_{ii} \\ge h_{ii}^2 \\implies h_{ii}(1 - h_{ii}) \\ge 0 \\implies \\boxed{0 \\le h_{ii} \\le 1}\\]\n\n\n2. Lower Bound with an Intercept\nWhen the first column of \\(\\mathbf{X}\\) is \\(\\mathbf{1}_n\\): \\[\\mathbf{X} = [\\mathbf{1}_n \\quad \\mathbf{X}_c]\\] Using partitioned matrix inversion, the projection splits into the mean projection \\(\\frac{1}{n}\\mathbf{J}_n\\) and the centered predictor projection: \\[h_{ii} = \\frac{1}{n} + (\\mathbf{x}_i - \\bar{\\mathbf{x}})^T (\\mathbf{X}_c^T\\mathbf{X}_c)^{-1}(\\mathbf{x}_i - \\bar{\\mathbf{x}})\\] Because \\((\\mathbf{X}_c^T\\mathbf{X}_c)^{-1}\\) is positive semi-definite, the quadratic form is non-negative: \\[h_{ii} \\ge \\frac{1}{n} \\implies \\boxed{\\frac{1}{n} \\le h_{ii} \\le 1}\\]\n\n\n3. Average Leverage\n\\[\\bar{h} = \\frac{1}{n} \\sum_{i=1}^n h_{ii} = \\frac{1}{n} \\operatorname{tr}(\\mathbf{H}) = \\frac{p}{n}\\] Points with \\(h_{ii} &gt; 2\\bar{h} = \\frac{2p}{n}\\) are standardly flagged as high leverage observations."
+    "text": "Quick-reference toolkits, matrix identities, distribution properties of quadratic forms, and R programming cheatsheets for STAC67.\n\n\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Created - Oldest\n      \n      \n        Created - Newest\n      \n      \n        Modified - Oldest\n      \n      \n        Modified - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\nNo matching items"
   },
   {
     "objectID": "problems/index.html",
     "href": "problems/index.html",
     "title": "STAC67 Problem Sets, Quizzes & Projects",
     "section": "",
-    "text": "This section houses all official problem sets, tutorial quiz guides, case study datasets, and examination review materials for STAC67.\n\nCourse Policy Highlights\n\nLate Submissions: Late assignment submissions are strictly not accepted.\nQuizzes: 3 in-tutorial quizzes; best 2 of 3 count towards final grade.\nProject Grade Boost: The Case Study Project counts only when it increases your course standing relative to the final exam.\n\n\n\n\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Created - Oldest\n      \n      \n        Created - Newest\n      \n      \n        Modified - Oldest\n      \n      \n        Modified - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\nRegression Case Study Project Guidelines\n\n\nReal-world dataset analysis, exploratory data analysis, R Markdown report, and presentations.\n\n\n\nProjects\n\nCase Study\n\nR Markdown\n\n\n\n\n\n\n2026-10-09\n\n1 min\n\nInvalid Date\n\n\n\n\n\n\n\nAssignment 1: Leverage, Outliers, and Cook’s Distance\n\n\nDerivations of leverage bounds and Cook’s distance influence measures.\n\n\n\nDiagnostics\n\nLeverage\n\nCook's Distance\n\n\n\n\n\n\n2026-09-08\n\n1 min\n\nInvalid Date\n\n\n\n\n\nNo matching items"
+    "text": "This section houses all official problem sets, tutorial quiz guides, case study datasets, and examination review materials for STAC67.\n\nCourse Policy Highlights\n\nLate Submissions: Late assignment submissions are strictly not accepted.\nQuizzes: 3 in-tutorial quizzes; best 2 of 3 count towards final grade.\nProject Grade Boost: The Case Study Project counts only when it increases your course standing relative to the final exam.\n\n\n\n\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Created - Oldest\n      \n      \n        Created - Newest\n      \n      \n        Modified - Oldest\n      \n      \n        Modified - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -102,7 +32,7 @@
     "href": "index.html#course-roadmap-calendar-fall-2026",
     "title": "STAC67H3: Regression Analysis",
     "section": "📅 Course Roadmap & Calendar (Fall 2026)",
-    "text": "📅 Course Roadmap & Calendar (Fall 2026)\nLectures: Wednesday 16:00–17:00 & Friday 13:00–15:00 in IA 2021\nTutorials: Tuesday 17:00–18:00 (IA 3120) or Wednesday 15:00–16:00 (IC 208)\n\n\n\n\n\n\n\n\n\nWeek\nDates\nTopics & Readings (Kutner et al.)\nTutorials & Assessments\n\n\n\n\n01\nSep 08–13\nIntro to Regression, Correlation, Simple Linear Model (Ch 1.1–1.3, 2.11)\nNo Tutorials\n\n\n02\nSep 14–20\nLeast Squares, Gauss-Markov Theorem, Residuals, Inference (Ch 1.4–1.7, 2.1–2.2)\nAssignment #1 Out (Sep 18)\n\n\n03\nSep 21–27\nEstimator Distributions, Prediction Intervals, ANOVA & \\(R^2\\) (Ch 2.3–2.9)\nR Environment Setup\n\n\n04\nSep 28 – Oct 04\nF-tests, Model Assumptions, Matrix Formulation, Hat Matrix (Ch 3.1–3.3, 5.1–5.10)\nAssignment #1 Due (Sep 30)\n\n\n05\nOct 05–11\nMatrix Results, Linear Functions of Random Vectors (Ch 5.11–5.13, 6.1–6.4)\nQuiz 1 (Oct 6/7) · Project Brief\n\n\n06\nOct 12–18\nGeometry of Least Squares, Quadratic Forms, General F-test (Ch 6.5–6.8)\nMidterm Review\n\n\n07\nOct 19–25\nGeneral Linear Hypotheses, Extra SS, Multicollinearity (Ch 7.1–7.6, 8.3)\nAssignment #2 Due (Oct 21) · Midterm\n\n\nRW\nOct 26–30\nReading Week (No Classes or Tutorials)\nStudy Break\n\n\n08\nNov 02–08\nCategorical Predictors, Interaction Models (Ch 8.3–8.6)\nQuiz 2 (Nov 3/4) · Groups Claimed\n\n\n09\nNov 09–15\nPolynomial Models, Centred Predictors, Box-Cox Transformations (Ch 8.1–8.2, 3.9)\nProject Checkpoint Due (Nov 13)\n\n\n10\nNov 16–22\nModel Selection Criteria (\\(R_{\\text{adj}}^2, AIC, BIC\\)), Outlier Diagnostics (Ch 9.1–9.6, 10.1–10.3)\nAssignment #3 Due (Nov 18)\n\n\n11\nNov 23–29\nCook’s Distance, DFFITS, Weighted Least Squares (Ch 10.4–10.5, 11.1)\nQuiz 3 (Nov 24/25) · Report Due (Nov 27)\n\n\n12\nNov 30 – Dec 06\nBias-Variance Tradeoff, Ridge Regression & LASSO (Ch 11.2)\nProject Presentations (Dec 4)\n\n\nFinal\nDec 10–22\nComprehensive Final Examination\nScheduled by Registrar\n\n\n\n\n\n\n\n\n\nNoteCourse Schedule & Grading Notes\n\n\n\nDetailed policy on Quizzes (best 2 of 3 count), the non-punitive Case Study Project formula, and R Markdown submission guidelines are detailed in the official Course Schedule & Reading Plan."
+    "text": "📅 Course Roadmap & Calendar (Fall 2026)\nLectures: Wednesday 16:00–17:00 & Friday 13:00–15:00 in IA 2021\nTutorials: Tuesday 17:00–18:00 (IA 3120) or Wednesday 15:00–16:00 (IC 208)\n\n\n\n\n\n\n\n\n\nWeek\nDates\nTopics & Readings (Kutner et al.)\nTutorials & Assessments\n\n\n\n\n01\nSep 08–13\nIntro to Regression, Correlation, Simple Linear Model (Ch 1.1–1.3, 2.11)\nNo Tutorials\n\n\n02\nSep 14–20\nLeast Squares, Gauss-Markov Theorem, Residuals, Inference (Ch 1.4–1.7, 2.1–2.2)\nAssignment #1 Out (Sep 18)\n\n\n03\nSep 21–27\nEstimator Distributions, Prediction Intervals, ANOVA & \\(R^2\\) (Ch 2.3–2.9)\nR Environment Setup\n\n\n04\nSep 28 – Oct 04\nF-tests, Model Assumptions, Matrix Formulation, Hat Matrix (Ch 3.1–3.3, 5.1–5.10)\nAssignment #1 Due (Sep 30)\n\n\n05\nOct 05–11\nMatrix Results, Linear Functions of Random Vectors (Ch 5.11–5.13, 6.1–6.4)\nQuiz 1 (Oct 6/7) · Project Brief\n\n\n06\nOct 12–18\nGeometry of Least Squares, Quadratic Forms, General F-test (Ch 6.5–6.8)\nMidterm Review\n\n\n07\nOct 19–25\nGeneral Linear Hypotheses, Extra SS, Multicollinearity (Ch 7.1–7.6, 8.3)\nAssignment #2 Due (Oct 21) · Midterm\n\n\nRW\nOct 26–30\nReading Week (No Classes or Tutorials)\nStudy Break\n\n\n08\nNov 02–08\nCategorical Predictors, Interaction Models (Ch 8.3–8.6)\nQuiz 2 (Nov 3/4) · Groups Claimed\n\n\n09\nNov 09–15\nPolynomial Models, Centred Predictors, Box-Cox Transformations (Ch 8.1–8.2, 3.9)\nProject Checkpoint Due (Nov 13)\n\n\n10\nNov 16–22\nModel Selection Criteria (\\(R_{\\text{adj}}^2, AIC, BIC\\)), Outlier Diagnostics (Ch 9.1–9.6, 10.1–10.3)\nAssignment #3 Due (Nov 18)\n\n\n11\nNov 23–29\nCook’s Distance, DFFITS, Weighted Least Squares (Ch 10.4–10.5, 11.1)\nQuiz 3 (Nov 24/25) · Report Due (Nov 27)\n\n\n12\nNov 30 – Dec 06\nBias-Variance Tradeoff, Ridge Regression & LASSO (Ch 11.2)\nProject Presentations (Dec 4)\n\n\nFinal\nDec 10–22\nComprehensive Final Examination\nScheduled by Registrar\n\n\n\n\n\n\n\n\n\nNoteCourse Schedule & Grading Notes\n\n\n\nDetailed policy on Quizzes (best 2 of 3 count), the non-punitive Case Study Project formula, and R Markdown submission guidelines are detailed in the official Course Schedule &amp; Reading Plan."
   },
   {
     "objectID": "index.html#office-hours-contact",
@@ -112,143 +42,10 @@
     "text": "👨‍🏫 Office Hours & Contact\n\nInstructor: Thibault Randrianarisoa (Office: IA 4064)\n\nEmail: t.randrianarisoa@utoronto.ca (Subject MUST contain [STAC67] and body MUST contain your student number).\nOffice Hours: Wednesday 10:00–11:00 AM and Friday 15:00–16:00 in IA 4064.\n\nPiazza: Use Piazza for all course-content questions; email is reserved for personal administrative matters."
   },
   {
-    "objectID": "problems/case-study-project.html",
-    "href": "problems/case-study-project.html",
-    "title": "Regression Case Study Project Guidelines",
-    "section": "",
-    "text": "The Case Study Project challenges groups of at most four students to formulate an original research question, perform rigorous exploratory data analysis, build and validate multiple regression models, conduct diagnostic tests (outliers, multicollinearity, heteroskedasticity), and present statistical findings in an R Markdown report."
-  },
-  {
-    "objectID": "problems/case-study-project.html#overview-objectives",
-    "href": "problems/case-study-project.html#overview-objectives",
-    "title": "Regression Case Study Project Guidelines",
-    "section": "",
-    "text": "The Case Study Project challenges groups of at most four students to formulate an original research question, perform rigorous exploratory data analysis, build and validate multiple regression models, conduct diagnostic tests (outliers, multicollinearity, heteroskedasticity), and present statistical findings in an R Markdown report."
-  },
-  {
-    "objectID": "problems/case-study-project.html#milestones-deadlines",
-    "href": "problems/case-study-project.html#milestones-deadlines",
-    "title": "Regression Case Study Project Guidelines",
-    "section": "📅 Milestones & Deadlines",
-    "text": "📅 Milestones & Deadlines\n\n\n\n\n\n\n\n\nMilestone\nDeadline\nDeliverable\n\n\n\n\nBrief & Dataset List\nOctober 9\nPre-approved dataset list released\n\n\nGroups & Dataset Claimed\nNovember 6\nBinding group declaration via Quercus\n\n\nCheckpoint Submission\nNovember 13\nResearch question statement + initial EDA plots\n\n\nFinal Written Report\nNovember 27 (23:59)\nCompiled PDF generated from .Rmd source\n\n\nGroup Presentations\nDecember 4\n5-minute slide deck presentation"
-  },
-  {
-    "objectID": "problems/case-study-project.html#non-punitive-grading-formula",
-    "href": "problems/case-study-project.html#non-punitive-grading-formula",
-    "title": "Regression Case Study Project Guidelines",
-    "section": "📈 Non-Punitive Grading Formula",
-    "text": "📈 Non-Punitive Grading Formula\nYour final grade is computed both with and without the project, and you automatically receive whichever is higher. Specifically, the project replaces final exam weight only when your project score exceeds your final exam score: \\[\\text{Project Benefit} = \\max\\left(\\text{Grade}_{\\text{with project}}, \\text{Grade}_{\\text{without project}}\\right)\\] The project can significantly boost your final standing and can never lower it!"
-  },
-  {
     "objectID": "simulations/index.html",
     "href": "simulations/index.html",
     "title": "Statistical Code & Simulations",
     "section": "",
-    "text": "This section hosts all interactive computational tools, R diagnostic notebooks, and statistical simulators for STAC67:\n\nInteractive Regression Playground: In-browser live OLS models exploring outlier influence, leverage points, and coefficient sensitivity in real time.\nR Statistical Labs: Complete R scripts for diagnostic plotting (residuals vs. fitted, Q-Q plots, scale-location, residuals vs. leverage).\nPython Statistical Surrogates: Statsmodels implementations for matrix verification and simulation checks.\n\n\n\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Created - Oldest\n      \n      \n        Created - Newest\n      \n      \n        Modified - Oldest\n      \n      \n        Modified - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\nInteractive Leverage & Cook’s Distance Simulation\n\n\nReal-time OLS slope sensitivity, hat matrix diagonals, and influential outlier dynamics.\n\n\n\nSimulations\n\nRegression\n\nDiagnostics\n\nInteractive\n\n\n\n\n\n\n2026-09-08\n\n9 min\n\nInvalid Date\n\n\n\n\n\n\n\nInteractive Regression Lab: R Diagnostics & Live OLS Playground\n\n\nClient-side interactive regression with dynamic outlier sensitivity, R ggplot2 diagnostics, and Python statsmodels.\n\n\n\nStatistics\n\nR\n\nPython\n\nInteractive\n\nRegression\n\nObservable JS\n\n\n\n\n\n\n2026-09-08\n\n4 min\n\nInvalid Date\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "simulations/interactive-regression-and-r-diagnostics.html",
-    "href": "simulations/interactive-regression-and-r-diagnostics.html",
-    "title": "Interactive Regression Lab: R Diagnostics & Live OLS Playground",
-    "section": "",
-    "text": "Explore how sample size, noise variance, and influential outliers affect ordinary least squares (OLS) parameter estimates \\(\\hat{\\beta}_1\\) and coefficient of determination \\(R^2\\) in real time:\n\n\nCode\nviewof sampleSize = Inputs.range([10, 150], {value: 40, step: 5, label: \"Sample Size (n)\"})\nviewof trueSlope = Inputs.range([-4.0, 4.0], {value: 1.8, step: 0.1, label: \"True Slope (β₁)\"})\nviewof noiseLevel = Inputs.range([0.5, 10.0], {value: 2.5, step: 0.5, label: \"Residual Noise (σ)\"})\nviewof outlierY = Inputs.range([-25, 25], {value: 0, step: 1, label: \"Leverage Outlier (at x = 9)\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nsimData = {\n  // Deterministic seeded random points\n  let pts = [];\n  for (let i = 0; i &lt; sampleSize; i++) {\n    const x = (i / sampleSize) * 10;\n    // Box-Muller normal approximation\n    const u1 = Math.sin(i * 997.1) * 0.5 + 0.5;\n    const u2 = Math.cos(i * 331.7) * 0.5 + 0.5;\n    const z = Math.sqrt(-2.0 * Math.log(Math.max(1e-5, u1))) * Math.cos(2.0 * Math.PI * u2);\n    const y = 3.0 + trueSlope * x + z * noiseLevel;\n    pts.push({x, y});\n  }\n  // Add leverage point\n  if (outlierY !== 0) {\n    pts.push({x: 9.0, y: 3.0 + trueSlope * 9.0 + outlierY, isOutlier: true});\n  }\n  return pts;\n}\n\n\n\n\n\n\n\n\n\nCode\nstats = {\n  const n = simData.length;\n  let sumX = 0, sumY = 0, sumXY = 0, sumXX = 0, sumYY = 0;\n  for (const p of simData) {\n    sumX += p.x;\n    sumY += p.y;\n    sumXY += p.x * p.y;\n    sumXX += p.x * p.x;\n    sumYY += p.y * p.y;\n  }\n  const xBar = sumX / n;\n  const yBar = sumY / n;\n  const ssX = sumXX - n * xBar * xBar;\n  const ssY = sumYY - n * yBar * yBar;\n  const ssXY = sumXY - n * xBar * yBar;\n\n  const beta1 = ssXY / ssX;\n  const beta0 = yBar - beta1 * xBar;\n  const r2 = (ssXY * ssXY) / (ssX * ssY);\n\n  return { beta0, beta1, r2, n };\n}\n\n\n\n\n\n\n\n\n\nCode\nhtml`\n&lt;div style=\"background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 8px; margin-bottom: 12px; font-family: monospace;\"&gt;\n  &lt;strong&gt;Fitted Model:&lt;/strong&gt; ŷ = ${stats.beta0.toFixed(3)} + ${stats.beta1.toFixed(3)} x &nbsp;|&nbsp;\n  &lt;strong&gt;R²:&lt;/strong&gt; ${(stats.r2).toFixed(4)} &nbsp;|&nbsp;\n  &lt;strong&gt;Observations:&lt;/strong&gt; ${stats.n}\n&lt;/div&gt;\n`\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  width: 650,\n  height: 380,\n  grid: true,\n  x: {label: \"Predictor Variable (X)\", domain: [-0.5, 10.5]},\n  y: {label: \"Response Variable (Y)\"},\n  marks: [\n    Plot.dot(simData.filter(d =&gt; !d.isOutlier), {x: \"x\", y: \"y\", fill: \"#3b82f6\", r: 4}),\n    Plot.dot(simData.filter(d =&gt; d.isOutlier), {x: \"x\", y: \"y\", fill: \"#ef4444\", r: 7, stroke: \"#991b1b\"}),\n    Plot.line([[0, stats.beta0], [10, stats.beta0 + stats.beta1 * 10]], {stroke: \"#dc2626\", strokeWidth: 2.5}),\n    Plot.line([[0, 3], [10, 3 + trueSlope * 10]], {stroke: \"#10b981\", strokeDasharray: \"4 4\", strokeWidth: 1.5})\n  ]\n})"
-  },
-  {
-    "objectID": "simulations/interactive-regression-and-r-diagnostics.html#live-in-browser-ols-regression-playground-observable-js",
-    "href": "simulations/interactive-regression-and-r-diagnostics.html#live-in-browser-ols-regression-playground-observable-js",
-    "title": "Interactive Regression Lab: R Diagnostics & Live OLS Playground",
-    "section": "",
-    "text": "Explore how sample size, noise variance, and influential outliers affect ordinary least squares (OLS) parameter estimates \\(\\hat{\\beta}_1\\) and coefficient of determination \\(R^2\\) in real time:\n\n\nCode\nviewof sampleSize = Inputs.range([10, 150], {value: 40, step: 5, label: \"Sample Size (n)\"})\nviewof trueSlope = Inputs.range([-4.0, 4.0], {value: 1.8, step: 0.1, label: \"True Slope (β₁)\"})\nviewof noiseLevel = Inputs.range([0.5, 10.0], {value: 2.5, step: 0.5, label: \"Residual Noise (σ)\"})\nviewof outlierY = Inputs.range([-25, 25], {value: 0, step: 1, label: \"Leverage Outlier (at x = 9)\"})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nsimData = {\n  // Deterministic seeded random points\n  let pts = [];\n  for (let i = 0; i &lt; sampleSize; i++) {\n    const x = (i / sampleSize) * 10;\n    // Box-Muller normal approximation\n    const u1 = Math.sin(i * 997.1) * 0.5 + 0.5;\n    const u2 = Math.cos(i * 331.7) * 0.5 + 0.5;\n    const z = Math.sqrt(-2.0 * Math.log(Math.max(1e-5, u1))) * Math.cos(2.0 * Math.PI * u2);\n    const y = 3.0 + trueSlope * x + z * noiseLevel;\n    pts.push({x, y});\n  }\n  // Add leverage point\n  if (outlierY !== 0) {\n    pts.push({x: 9.0, y: 3.0 + trueSlope * 9.0 + outlierY, isOutlier: true});\n  }\n  return pts;\n}\n\n\n\n\n\n\n\n\n\nCode\nstats = {\n  const n = simData.length;\n  let sumX = 0, sumY = 0, sumXY = 0, sumXX = 0, sumYY = 0;\n  for (const p of simData) {\n    sumX += p.x;\n    sumY += p.y;\n    sumXY += p.x * p.y;\n    sumXX += p.x * p.x;\n    sumYY += p.y * p.y;\n  }\n  const xBar = sumX / n;\n  const yBar = sumY / n;\n  const ssX = sumXX - n * xBar * xBar;\n  const ssY = sumYY - n * yBar * yBar;\n  const ssXY = sumXY - n * xBar * yBar;\n\n  const beta1 = ssXY / ssX;\n  const beta0 = yBar - beta1 * xBar;\n  const r2 = (ssXY * ssXY) / (ssX * ssY);\n\n  return { beta0, beta1, r2, n };\n}\n\n\n\n\n\n\n\n\n\nCode\nhtml`\n&lt;div style=\"background: #f8fafc; border: 1px solid #e2e8f0; padding: 16px; border-radius: 8px; margin-bottom: 12px; font-family: monospace;\"&gt;\n  &lt;strong&gt;Fitted Model:&lt;/strong&gt; ŷ = ${stats.beta0.toFixed(3)} + ${stats.beta1.toFixed(3)} x &nbsp;|&nbsp;\n  &lt;strong&gt;R²:&lt;/strong&gt; ${(stats.r2).toFixed(4)} &nbsp;|&nbsp;\n  &lt;strong&gt;Observations:&lt;/strong&gt; ${stats.n}\n&lt;/div&gt;\n`\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  width: 650,\n  height: 380,\n  grid: true,\n  x: {label: \"Predictor Variable (X)\", domain: [-0.5, 10.5]},\n  y: {label: \"Response Variable (Y)\"},\n  marks: [\n    Plot.dot(simData.filter(d =&gt; !d.isOutlier), {x: \"x\", y: \"y\", fill: \"#3b82f6\", r: 4}),\n    Plot.dot(simData.filter(d =&gt; d.isOutlier), {x: \"x\", y: \"y\", fill: \"#ef4444\", r: 7, stroke: \"#991b1b\"}),\n    Plot.line([[0, stats.beta0], [10, stats.beta0 + stats.beta1 * 10]], {stroke: \"#dc2626\", strokeWidth: 2.5}),\n    Plot.line([[0, 3], [10, 3 + trueSlope * 10]], {stroke: \"#10b981\", strokeDasharray: \"4 4\", strokeWidth: 1.5})\n  ]\n})"
-  },
-  {
-    "objectID": "simulations/interactive-regression-and-r-diagnostics.html#rigorous-regression-diagnostics-in-r",
-    "href": "simulations/interactive-regression-and-r-diagnostics.html#rigorous-regression-diagnostics-in-r",
-    "title": "Interactive Regression Lab: R Diagnostics & Live OLS Playground",
-    "section": "2. Rigorous Regression Diagnostics in R",
-    "text": "2. Rigorous Regression Diagnostics in R\nR provides statistical diagnostic workflows via stats and ggplot2:\n# regression_diagnostics.R\nlibrary(ggplot2)\nlibrary(broom)\n\n# Fit linear model\ndata(mtcars)\nmodel &lt;- lm(mpg ~ wt + hp + qsec, data = mtcars)\nsummary(model)\n\n# ANOVA Table\nanova(model)\n\n# Extract diagnostic residuals\ndiag_df &lt;- augment(model)\n\n# 1. Residuals vs Fitted (Checking homoscedasticity and linearity)\np1 &lt;- ggplot(diag_df, aes(x = .fitted, y = .resid)) +\n  geom_point(color = \"#1e40af\", alpha = 0.8) +\n  geom_hline(yintercept = 0, linetype = \"dashed\", color = \"red\") +\n  geom_smooth(method = \"loess\", se = FALSE, color = \"#ea580c\") +\n  labs(title = \"Residuals vs Fitted\", x = \"Fitted Values\", y = \"Residuals\") +\n  theme_minimal()\n\n# 2. Normal Q-Q Plot (Checking normality of error terms)\np2 &lt;- ggplot(diag_df, aes(sample = .std.resid)) +\n  stat_qq(color = \"#1e40af\") +\n  stat_qq_line(color = \"red\", linetype = \"dashed\") +\n  labs(title = \"Normal Q-Q Plot\", x = \"Theoretical Quantiles\", y = \"Standardized Residuals\") +\n  theme_minimal()\n\n# 3. Cook's Distance (Detecting high-influence leverage points)\np3 &lt;- ggplot(diag_df, aes(x = seq_along(.cooksd), y = .cooksd)) +\n  geom_bar(stat = \"identity\", fill = \"#0284c7\") +\n  geom_hline(yintercept = 4 / nrow(mtcars), linetype = \"dotted\", color = \"red\") +\n  labs(title = \"Cook's Distance Influence Index\", x = \"Observation Index\", y = \"Cook's D\") +\n  theme_minimal()"
-  },
-  {
-    "objectID": "simulations/interactive-regression-and-r-diagnostics.html#statistical-modeling-in-python-statsmodels",
-    "href": "simulations/interactive-regression-and-r-diagnostics.html#statistical-modeling-in-python-statsmodels",
-    "title": "Interactive Regression Lab: R Diagnostics & Live OLS Playground",
-    "section": "3. Statistical Modeling in Python (statsmodels)",
-    "text": "3. Statistical Modeling in Python (statsmodels)\nimport statsmodels.api as sm\nimport statsmodels.formula.api as smf\nimport pandas as pd\nimport numpy as np\n\n# Load dataset\ndf = sm.datasets.get_rdataset(\"mtcars\", \"datasets\").data\n\n# Fit OLS model with robust covariance matrix (HC3)\nols_model = smf.ols(\"mpg ~ wt + hp + qsec\", data=df).fit(cov_type=\"HC3\")\nprint(ols_model.summary())\n\n# Variance Inflation Factors (VIF) to detect Multicollinearity\nfrom statsmodels.stats.outliers_influence import variance_inflation_factor\n\nX = df[[\"wt\", \"hp\", \"qsec\"]]\nX = sm.add_constant(X)\nvif_data = pd.DataFrame({\n    \"Variable\": X.columns,\n    \"VIF\": [variance_inflation_factor(X.values, i) for i in range(X.shape[1])]\n})\nprint(\"\\nVariance Inflation Factors (VIF):\")\nprint(vif_data)"
-  },
-  {
-    "objectID": "reference/matrix-algebra-and-properties.html",
-    "href": "reference/matrix-algebra-and-properties.html",
-    "title": "Matrix Algebra, Idempotency & Quadratic Forms",
-    "section": "",
-    "text": "Let \\(\\mathbf{Y}\\) be an \\(n \\times 1\\) random vector with mean \\(\\mathrm{E}[\\mathbf{Y}] = \\boldsymbol{\\mu}\\) and covariance matrix \\(\\operatorname{Cov}(\\mathbf{Y}) = \\boldsymbol{\\Sigma}\\).\nFor any constant \\(m \\times n\\) matrix \\(\\mathbf{A}\\): \\[\\mathrm{E}[\\mathbf{A}\\mathbf{Y}] = \\mathbf{A}\\boldsymbol{\\mu}\\] \\[\\operatorname{Cov}(\\mathbf{A}\\mathbf{Y}) = \\mathbf{A} \\boldsymbol{\\Sigma} \\mathbf{A}^T\\]\nIf \\(\\mathbf{Y} \\sim \\mathcal{N}_n(\\mathbf{X}\\boldsymbol{\\beta}, \\sigma^2 \\mathbf{I})\\): \\[\\mathbf{A}\\mathbf{Y} \\sim \\mathcal{N}_m(\\mathbf{A}\\mathbf{X}\\boldsymbol{\\beta}, \\sigma^2 \\mathbf{A}\\mathbf{A}^T)\\]"
-  },
-  {
-    "objectID": "reference/matrix-algebra-and-properties.html#random-vectors-expectation-covariance",
-    "href": "reference/matrix-algebra-and-properties.html#random-vectors-expectation-covariance",
-    "title": "Matrix Algebra, Idempotency & Quadratic Forms",
-    "section": "",
-    "text": "Let \\(\\mathbf{Y}\\) be an \\(n \\times 1\\) random vector with mean \\(\\mathrm{E}[\\mathbf{Y}] = \\boldsymbol{\\mu}\\) and covariance matrix \\(\\operatorname{Cov}(\\mathbf{Y}) = \\boldsymbol{\\Sigma}\\).\nFor any constant \\(m \\times n\\) matrix \\(\\mathbf{A}\\): \\[\\mathrm{E}[\\mathbf{A}\\mathbf{Y}] = \\mathbf{A}\\boldsymbol{\\mu}\\] \\[\\operatorname{Cov}(\\mathbf{A}\\mathbf{Y}) = \\mathbf{A} \\boldsymbol{\\Sigma} \\mathbf{A}^T\\]\nIf \\(\\mathbf{Y} \\sim \\mathcal{N}_n(\\mathbf{X}\\boldsymbol{\\beta}, \\sigma^2 \\mathbf{I})\\): \\[\\mathbf{A}\\mathbf{Y} \\sim \\mathcal{N}_m(\\mathbf{A}\\mathbf{X}\\boldsymbol{\\beta}, \\sigma^2 \\mathbf{A}\\mathbf{A}^T)\\]"
-  },
-  {
-    "objectID": "reference/matrix-algebra-and-properties.html#properties-of-the-hat-matrix-mathbfh",
-    "href": "reference/matrix-algebra-and-properties.html#properties-of-the-hat-matrix-mathbfh",
-    "title": "Matrix Algebra, Idempotency & Quadratic Forms",
-    "section": "2. Properties of the Hat Matrix \\(\\mathbf{H}\\)",
-    "text": "2. Properties of the Hat Matrix \\(\\mathbf{H}\\)\nThe hat (projection) matrix is defined as: \\[\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\]\n\nSymmetric: \\(\\mathbf{H}^T = \\mathbf{H}\\).\nIdempotent: \\(\\mathbf{H}^2 = \\mathbf{H}\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T = \\mathbf{H}\\).\nTrace and Rank: \\(\\operatorname{tr}(\\mathbf{H}) = \\operatorname{rank}(\\mathbf{H}) = p\\) (number of parameters including intercept).\nOrthogonal Complement \\((\\mathbf{I} - \\mathbf{H})\\):\n\nSymmetric and idempotent: \\((\\mathbf{I} - \\mathbf{H})^2 = \\mathbf{I} - \\mathbf{H}\\).\n\\(\\operatorname{tr}(\\mathbf{I} - \\mathbf{H}) = n - p\\).\nProjects \\(\\mathbf{Y}\\) onto the orthogonal residual space: \\(\\mathbf{e} = (\\mathbf{I} - \\mathbf{H})\\mathbf{Y}\\)."
-  },
-  {
-    "objectID": "reference/matrix-algebra-and-properties.html#expectation-of-quadratic-forms",
-    "href": "reference/matrix-algebra-and-properties.html#expectation-of-quadratic-forms",
-    "title": "Matrix Algebra, Idempotency & Quadratic Forms",
-    "section": "3. Expectation of Quadratic Forms",
-    "text": "3. Expectation of Quadratic Forms\nFor a symmetric matrix \\(\\mathbf{A}\\) and random vector \\(\\mathbf{Y}\\) with mean \\(\\boldsymbol{\\mu}\\) and covariance \\(\\boldsymbol{\\Sigma}\\): \\[\\mathrm{E}[\\mathbf{Y}^T \\mathbf{A} \\mathbf{Y}] = \\operatorname{tr}(\\mathbf{A}\\boldsymbol{\\Sigma}) + \\boldsymbol{\\mu}^T \\mathbf{A} \\boldsymbol{\\mu}\\]\n\nApplication to SSE:\nSince \\(\\text{SSE} = \\mathbf{e}^T\\mathbf{e} = \\mathbf{Y}^T(\\mathbf{I} - \\mathbf{H})\\mathbf{Y}\\), where \\(\\boldsymbol{\\mu} = \\mathbf{X}\\boldsymbol{\\beta}\\) and \\((\\mathbf{I} - \\mathbf{H})\\mathbf{X} = \\mathbf{0}\\): \\[\\mathrm{E}[\\text{SSE}] = \\operatorname{tr}((\\mathbf{I} - \\mathbf{H})\\sigma^2 \\mathbf{I}) + \\boldsymbol{\\beta}^T \\mathbf{X}^T (\\mathbf{I} - \\mathbf{H}) \\mathbf{X}\\boldsymbol{\\beta} = \\sigma^2 \\operatorname{tr}(\\mathbf{I} - \\mathbf{H}) + 0 = (n - p)\\sigma^2\\] Therefore, the Mean Squared Error (MSE) is an unbiased estimator of error variance: \\[\\mathrm{E}[\\text{MSE}] = \\mathrm{E}\\left[\\frac{\\text{SSE}}{n - p}\\right] = \\sigma^2\\]"
-  },
-  {
-    "objectID": "reference/r-and-rmarkdown-cheatsheet.html",
-    "href": "reference/r-and-rmarkdown-cheatsheet.html",
-    "title": "R & R Markdown Computational Reference",
-    "section": "",
-    "text": "# Fit standard Ordinary Least Squares model\nmodel &lt;- lm(Y ~ X1 + X2 + X3, data = my_data)\n\n# Parameter estimates, standard errors, t-statistics, R-squared\nsummary(model)\n\n# ANOVA decomposition and Extra Sum of Squares F-test\nanova(reduced_model, full_model)\n\n# Confidence intervals for beta parameters\nconfint(model, level = 0.95)\n\n# Fitted values and residuals\ny_hat &lt;- fitted(model)\nresids &lt;- residuals(model)\n\n# Diagnostics: Leverage (hat values) and Cook's distance\nhii &lt;- hatvalues(model)\ncooks &lt;- cooks.distance(model)\ndffits_val &lt;- dffits(model)\nvif_vals &lt;- car::vif(model)"
-  },
-  {
-    "objectID": "reference/r-and-rmarkdown-cheatsheet.html#essential-r-commands-for-regression",
-    "href": "reference/r-and-rmarkdown-cheatsheet.html#essential-r-commands-for-regression",
-    "title": "R & R Markdown Computational Reference",
-    "section": "",
-    "text": "# Fit standard Ordinary Least Squares model\nmodel &lt;- lm(Y ~ X1 + X2 + X3, data = my_data)\n\n# Parameter estimates, standard errors, t-statistics, R-squared\nsummary(model)\n\n# ANOVA decomposition and Extra Sum of Squares F-test\nanova(reduced_model, full_model)\n\n# Confidence intervals for beta parameters\nconfint(model, level = 0.95)\n\n# Fitted values and residuals\ny_hat &lt;- fitted(model)\nresids &lt;- residuals(model)\n\n# Diagnostics: Leverage (hat values) and Cook's distance\nhii &lt;- hatvalues(model)\ncooks &lt;- cooks.distance(model)\ndffits_val &lt;- dffits(model)\nvif_vals &lt;- car::vif(model)"
-  },
-  {
-    "objectID": "reference/r-and-rmarkdown-cheatsheet.html#standard-4-panel-diagnostic-plots",
-    "href": "reference/r-and-rmarkdown-cheatsheet.html#standard-4-panel-diagnostic-plots",
-    "title": "R & R Markdown Computational Reference",
-    "section": "📊 Standard 4-Panel Diagnostic Plots",
-    "text": "📊 Standard 4-Panel Diagnostic Plots\npar(mfrow = c(2, 2))\nplot(model)\n\nResiduals vs Fitted: Tests linearity and homoskedasticity.\nNormal Q-Q Plot: Tests normality of errors \\(\\varepsilon_i \\sim \\mathcal{N}(0, \\sigma^2)\\).\nScale-Location: Evaluates constant variance across fitted range.\nResiduals vs Leverage: Identifies influential observations (\\(D_i &gt; 0.5\\))."
-  },
-  {
-    "objectID": "notes/multiple-regression-matrix-approach.html",
-    "href": "notes/multiple-regression-matrix-approach.html",
-    "title": "Matrix Formulation of Multiple Linear Regression",
-    "section": "",
-    "text": "We express the multiple linear regression model for \\(n\\) observations and \\(p-1\\) predictors in matrix notation: \\[\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\varepsilon}\\] where: * \\(\\mathbf{y} \\in \\mathbb{R}^{n \\times 1}\\) is the response vector. * \\(\\mathbf{X} \\in \\mathbb{R}^{n \\times p}\\) is the design matrix (with a first column of ones for the intercept). * \\(\\boldsymbol{\\beta} \\in \\mathbb{R}^{p \\times 1}\\) is the vector of unknown regression coefficients. * \\(\\boldsymbol{\\varepsilon} \\in \\mathbb{R}^{n \\times 1}\\) is the random error vector satisfying: \\[\\mathbb{E}[\\boldsymbol{\\varepsilon}] = \\mathbf{0}, \\qquad \\operatorname{Var}(\\boldsymbol{\\varepsilon}) = \\sigma^2 \\mathbf{I}_n\\]"
-  },
-  {
-    "objectID": "notes/multiple-regression-matrix-approach.html#the-general-linear-model",
-    "href": "notes/multiple-regression-matrix-approach.html#the-general-linear-model",
-    "title": "Matrix Formulation of Multiple Linear Regression",
-    "section": "",
-    "text": "We express the multiple linear regression model for \\(n\\) observations and \\(p-1\\) predictors in matrix notation: \\[\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\varepsilon}\\] where: * \\(\\mathbf{y} \\in \\mathbb{R}^{n \\times 1}\\) is the response vector. * \\(\\mathbf{X} \\in \\mathbb{R}^{n \\times p}\\) is the design matrix (with a first column of ones for the intercept). * \\(\\boldsymbol{\\beta} \\in \\mathbb{R}^{p \\times 1}\\) is the vector of unknown regression coefficients. * \\(\\boldsymbol{\\varepsilon} \\in \\mathbb{R}^{n \\times 1}\\) is the random error vector satisfying: \\[\\mathbb{E}[\\boldsymbol{\\varepsilon}] = \\mathbf{0}, \\qquad \\operatorname{Var}(\\boldsymbol{\\varepsilon}) = \\sigma^2 \\mathbf{I}_n\\]"
-  },
-  {
-    "objectID": "notes/multiple-regression-matrix-approach.html#ordinary-least-squares-ols-estimator",
-    "href": "notes/multiple-regression-matrix-approach.html#ordinary-least-squares-ols-estimator",
-    "title": "Matrix Formulation of Multiple Linear Regression",
-    "section": "2. Ordinary Least Squares (OLS) Estimator",
-    "text": "2. Ordinary Least Squares (OLS) Estimator\nWe seek \\(\\hat{\\boldsymbol{\\beta}}\\) that minimizes the residual sum of squares (SSE): \\[Q(\\boldsymbol{\\beta}) = \\boldsymbol{\\varepsilon}^T \\boldsymbol{\\varepsilon} = (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta}) = \\mathbf{y}^T\\mathbf{y} - 2\\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{y} + \\boldsymbol{\\beta}^T\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta}\\]\nTaking the vector derivative with respect to \\(\\boldsymbol{\\beta}\\) and equating to zero: \\[\\frac{\\partial Q}{\\partial \\boldsymbol{\\beta}} = -2\\mathbf{X}^T\\mathbf{y} + 2\\mathbf{X}^T\\mathbf{X}\\boldsymbol{\\beta} = \\mathbf{0}\\]\nThis yields the Normal Equations: \\[\\mathbf{X}^T\\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\mathbf{X}^T\\mathbf{y}\\]\nAssuming \\(\\mathbf{X}\\) has full column rank (\\(\\operatorname{rank}(\\mathbf{X}) = p\\)), the matrix \\(\\mathbf{X}^T\\mathbf{X}\\) is strictly invertible: \\[\\boxed{\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y}}\\]\n\nSampling Distribution & Unbiasedness\n\nExpectation: \\[\\mathbb{E}[\\hat{\\boldsymbol{\\beta}}] = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T \\mathbb{E}[\\mathbf{y}] = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T (\\mathbf{X}\\boldsymbol{\\beta}) = \\boldsymbol{\\beta} \\quad (\\text{Unbiased})\\]\nVariance-Covariance Matrix: \\[\\operatorname{Var}(\\hat{\\boldsymbol{\\beta}}) = (\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T \\operatorname{Var}(\\mathbf{y}) \\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1} = \\sigma^2 (\\mathbf{X}^T\\mathbf{X})^{-1}\\]"
-  },
-  {
-    "objectID": "notes/multiple-regression-matrix-approach.html#the-hat-matrix-orthogonal-projection",
-    "href": "notes/multiple-regression-matrix-approach.html#the-hat-matrix-orthogonal-projection",
-    "title": "Matrix Formulation of Multiple Linear Regression",
-    "section": "3. The Hat Matrix (Orthogonal Projection)",
-    "text": "3. The Hat Matrix (Orthogonal Projection)\nThe fitted values are: \\[\\hat{\\mathbf{y}} = \\mathbf{X}\\hat{\\boldsymbol{\\beta}} = \\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{y} = \\mathbf{H}\\mathbf{y}\\] where \\(\\mathbf{H} = \\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\) is the Hat Matrix.\n\nKey Algebraic Properties of \\(\\mathbf{H}\\):\n\nSymmetric: \\(\\mathbf{H}^T = \\mathbf{H}\\).\nIdempotent: \\(\\mathbf{H}^2 = \\mathbf{H}\\) (projecting twice is the same as projecting once).\nTrace: \\(\\operatorname{tr}(\\mathbf{H}) = \\operatorname{tr}(\\mathbf{X}(\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T) = \\operatorname{tr}((\\mathbf{X}^T\\mathbf{X})^{-1}\\mathbf{X}^T\\mathbf{X}) = \\operatorname{tr}(\\mathbf{I}_p) = p\\).\nResidual Vector: \\(\\mathbf{e} = \\mathbf{y} - \\hat{\\mathbf{y}} = (\\mathbf{I} - \\mathbf{H})\\mathbf{y}\\). Because \\(\\mathbf{X}^T(\\mathbf{I} - \\mathbf{H}) = \\mathbf{0}\\), the residual vector is strictly orthogonal to the column space of \\(\\mathbf{X}\\) (\\(\\mathbf{X}^T\\mathbf{e} = \\mathbf{0}\\))."
+    "text": "This section hosts all interactive computational tools, R diagnostic notebooks, and statistical simulators for STAC67:\n\nInteractive Regression Playground: In-browser live OLS models exploring outlier influence, leverage points, and coefficient sensitivity in real time.\nR Statistical Labs: Complete R scripts for diagnostic plotting (residuals vs. fitted, Q-Q plots, scale-location, residuals vs. leverage).\nPython Statistical Surrogates: Statsmodels implementations for matrix verification and simulation checks.\n\n\n\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Created - Oldest\n      \n      \n        Created - Newest\n      \n      \n        Modified - Oldest\n      \n      \n        Modified - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\nNo matching items"
   }
 ]

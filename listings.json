@@ -1,31 +1,18 @@
 [
   {
     "listing": "/notes/index.html",
-    "items": [
-      "/notes/multiple-regression-matrix-approach.html",
-      "/notes/schedule.html"
-    ]
+    "items": []
   },
   {
     "listing": "/reference/index.html",
-    "items": [
-      "/reference/matrix-algebra-and-properties.html",
-      "/reference/r-and-rmarkdown-cheatsheet.html",
-      "/reference/sources-and-bibliography.html"
-    ]
+    "items": []
   },
   {
     "listing": "/problems/index.html",
-    "items": [
-      "/problems/case-study-project.html",
-      "/problems/assignment-1.html"
-    ]
+    "items": []
   },
   {
     "listing": "/simulations/index.html",
-    "items": [
-      "/simulations/interactive-leverage-and-influence.html",
-      "/simulations/interactive-regression-and-r-diagnostics.html"
-    ]
+    "items": []
   }
 ]
