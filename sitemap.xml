@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://igor-kan.github.io/stac67h3/notes/index.html</loc>
-    <lastmod>2026-09-10T14:51:33.286Z</lastmod>
-  </url>
-  <url>
-    <loc>https://igor-kan.github.io/stac67h3/reference/index.html</loc>
-    <lastmod>2026-09-10T14:51:33.287Z</lastmod>
-  </url>
-  <url>
-    <loc>https://igor-kan.github.io/stac67h3/problems/index.html</loc>
-    <lastmod>2026-09-10T14:51:33.287Z</lastmod>
+    <loc>https://igor-kan.github.io/stac67h3/simulations/index.html</loc>
+    <lastmod>2026-09-10T20:07:06.026Z</lastmod>
   </url>
   <url>
     <loc>https://igor-kan.github.io/stac67h3/index.html</loc>
-    <lastmod>2026-09-10T14:51:33.286Z</lastmod>
+    <lastmod>2026-09-10T20:07:06.025Z</lastmod>
   </url>
   <url>
-    <loc>https://igor-kan.github.io/stac67h3/simulations/index.html</loc>
-    <lastmod>2026-09-10T14:51:33.287Z</lastmod>
+    <loc>https://igor-kan.github.io/stac67h3/problems/index.html</loc>
+    <lastmod>2026-09-10T20:07:06.026Z</lastmod>
+  </url>
+  <url>
+    <loc>https://igor-kan.github.io/stac67h3/reference/index.html</loc>
+    <lastmod>2026-09-10T20:07:06.026Z</lastmod>
+  </url>
+  <url>
+    <loc>https://igor-kan.github.io/stac67h3/notes/index.html</loc>
+    <lastmod>2026-09-10T20:07:06.025Z</lastmod>
   </url>
 </urlset>
