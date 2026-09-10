@@ -1,0 +1,112 @@
+---
+title: "STAC67 Project Ideas: Advanced Statistical Modeling & Econometric Inference"
+subtitle: "Semester capstone project blueprints in high-dimensional de-biased inference, robust high-breakdown regression, and spatial econometric modeling."
+date: "2026-09-10"
+categories: ["Statistics", "STAC67", "Regression", "Robust Statistics", "High-Dimensional", "Econometrics"]
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    math: true
+    code-fold: false
+---
+
+## 🎯 Project Selection Framework & Evaluation Criteria
+
+Every project proposed below meets five mandatory criteria designed to build deep, enduring expertise in the age of generative AI:
+
+1. **Semester Feasibility:** Scoped to be independently conceptualized, implemented, mathematically derived, and documented in an R Markdown / Quarto research report within a 12-week undergraduate term.
+2. **Curricular Grounding:** Deeply anchored to the STAC67 syllabus following Kutner et al.'s *Applied Linear Statistical Models*—specifically applying the Gauss-Markov theorem, hat matrix $\mathbf{H}$ properties, leverage diagnostics ($h_{ii}$), Cook's distance ($D_i$), extra sums of squares F-tests, multicollinearity (VIF), Weighted Least Squares (WLS), and regularized penalized regression (Ridge / LASSO).
+3. **AI Automation Resilience:** Focuses on foundational statistical subtleties where standard LLMs make catastrophic errors: invalidating classical $p$-values through post-selection bias ("data snooping"), misinterpreting high-leverage vs high-residual outlier masking, ignoring spatial/temporal autocorrelation in error covariance structures, and failing to derive asymptotic distribution theory.
+4. **Academic Leverage (Impressing Faculty):** Formulated to exhibit rigorous theoretical understanding of mathematical statistics (linear algebra of idempotent projections, quadratic forms, M-estimation) that directly impresses professors (e.g., Prof. Thibault Randrianarisoa) and prepares students for graduate studies in statistics or biostatistics.
+5. **Industry & Professional Value:** Teaches techniques critical for high-stakes quantitative decisions: quantitative hedge funds (risk modeling, factor investing, portfolio attribution where outliers corrupt OLS), clinical trials / biostatistics (causal inference, genomic biomarker discovery with $p \gg n$), and tech econometrics.
+
+---
+
+## 🛡️ Project Option 1: High-Breakdown Robust Regression & Finite-Sample Influence Diagnostics under Heavy-Tailed Heteroskedasticity
+
+### 1. Context & Motivation (STAC67 Weeks 2, 4, 10, 11)
+The Gauss-Markov theorem proves that Ordinary Least Squares (OLS) is the Best Linear Unbiased Estimator (BLUE) under spherical errors $\boldsymbol{\varepsilon} \sim (\mathbf{0}, \sigma^2 \mathbf{I})$. However:
+1. **Zero Robustness:** OLS has an asymptotic breakdown point of $\epsilon^* = 1/n$. A single catastrophic outlier or corrupted leverage point ($h_{ii} \to 1$) can tilt the regression plane arbitrarily.
+2. **Masking & Swamping:** When multiple outliers cluster in predictor space, classical single-deletion diagnostics (Cook's distance $D_i$, studentized deleted residuals $t_i$, DFFITS) suffer from masking (failing to identify real outliers) or swamping (falsely flagging clean observations).
+
+In financial time series, macroeconomics, and experimental physics, errors are routinely heavy-tailed (Student-$t$ with low degrees of freedom, Pareto distributions) and heteroskedastic.
+
+### 2. Concrete Deliverables & Scope
+* **Influence Function & Asymptotic Derivation:** Analytically derive the influence functions $\text{IF}(x; T, F)$ and asymptotic relative efficiency (ARE) for:
+  - Classical OLS
+  - Huber M-estimator (linear loss for large residuals, quadratic near origin)
+  - Rousseeuw's Least Trimmed Squares (LTS, achieving 50% breakdown point)
+  - Theil-Sen non-parametric median-of-slopes estimator
+* **Iteratively Reweighted Least Squares (IRLS):** Implement Huber and Bisquare M-estimators from first principles in R using the IRLS algorithm, deriving the exact sandwich covariance estimator for standard errors under heteroskedasticity:
+  $$\widehat{\operatorname{Var}}(\hat{\boldsymbol{\beta}}) = (\mathbf{X}^T \mathbf{X})^{-1} \left( \mathbf{X}^T \hat{\boldsymbol{\Sigma}} \mathbf{X} \right) (\mathbf{X}^T \mathbf{X})^{-1}$$
+* **Monte Carlo Breakdown Simulation:** Conduct a 10,000-iteration Monte Carlo stress test under varying contamination regimes:
+  - Clustered high-leverage bad points ($h_{ii} > 3p/n$)
+  - Heavy-tailed Cauchy and Student-$t(2)$ error distributions
+  - Quantify the empirical Mean Squared Error (MSE) and coverage probability of confidence intervals.
+* **Empirical Application:** Apply the robust pipeline to real-world financial factor models (e.g. Fama-French 5-factor model across market crash regimes like 2008 and 2020) and demonstrate how OLS produces spurious risk premia while LTS remains invariant.
+
+### 3. Why This Impresses Professors & Employers
+* Demonstrates mastery of theoretical statistics beyond naive cookbook application.
+* Crucial for quantitative finance and risk analytics at hedge funds, where financial returns are non-Gaussian and standard OLS estimates are notoriously unreliable.
+
+---
+
+## 🧬 Project Option 2: High-Dimensional De-Biased LASSO & Post-Selection Inference for Biomarker Discovery ($p \gg n$)
+
+### 1. Context & Motivation (STAC67 Weeks 7, 10, 12)
+In the modern genomic and macroeconomic era, researchers routinely analyze datasets where the number of candidate predictors $p$ far exceeds the sample size $n$ ($p \gg n$). Standard OLS is mathematically undefined because $\mathbf{X}^T\mathbf{X}$ is singular and non-invertible.
+
+Penalized regression via the **LASSO** (L1 regularization, Kutner §11.2):
+$$\hat{\boldsymbol{\beta}}_{\text{LASSO}} = \arg\min_{\boldsymbol{\beta}} \left\{ \frac{1}{2n}\|\mathbf{y} - \mathbf{X}\boldsymbol{\beta}\|_2^2 + \lambda \|\boldsymbol{\beta}\|_1 \right\}$$
+selects a sparse subset of active predictors. However, **standard inference is broken**:
+- The L1 shrinkage penalty introduces systematic shrinkage bias toward zero.
+- The selected variables were chosen based on the data ("data snooping"), completely invalidating classical $t$-tests and $F$-tests. Naive $p$-values reported after LASSO selection have false positive rates approaching 100%!
+
+### 2. Concrete Deliverables & Scope
+* **De-Biased / Desparsified LASSO Implementation:** Implement the de-biased estimator (van de Geer et al. / Javanmard & Montanari) in R/Python:
+  $$\hat{\boldsymbol{\beta}}^{\text{debias}} = \hat{\boldsymbol{\beta}}_{\text{LASSO}} + \frac{1}{n} \hat{\boldsymbol{\Theta}} \mathbf{X}^T (\mathbf{y} - \mathbf{X}\hat{\boldsymbol{\beta}}_{\text{LASSO}})$$
+  where $\hat{\boldsymbol{\Theta}}$ is an approximate inverse covariance matrix constructed via nodewise LASSO regressions.
+* **Asymptotic Normality & Valid Confidence Intervals:** Prove and verify that $\sqrt{n}(\hat{\beta}_j^{\text{debias}} - \beta_j^*) \xrightarrow{d} \mathcal{N}(0, \sigma^2 \Omega_{jj})$, enabling mathematically valid confidence intervals and $p$-values for every predictor even when $p > n$.
+* **Multiple Testing Correction:** Implement False Discovery Rate (FDR) control using the Benjamini-Hochberg procedure to prevent spurious discoveries.
+* **Biomedical Validation:** Benchmark on real high-dimensional cancer genomic microarrays (e.g. TCGA breast cancer gene expression predicting survival time) or high-dimensional macroeconomic forecasting (FRED-MD database with 130+ indicators).
+
+### 3. Why This Impresses Professors & Employers
+* Addresses one of the most active frontiers in modern mathematical statistics.
+* Direct application to biostatistics, drug discovery, genomics, and causal machine learning at major pharmaceutical companies and tech labs.
+
+---
+
+## 🗺️ Project Option 3: Geographically Weighted Regression (GWR) & Spatial Autocorrelation Modeling on Urban Economics
+
+### 1. Context & Motivation (STAC67 Weeks 2, 4, 11)
+A foundational assumption of linear regression is that disturbance terms are mutually independent: $\operatorname{Cov}(\varepsilon_i, \varepsilon_j) = 0$ for $i \neq j$. 
+
+However, in spatial and regional economic data (such as housing prices, crime rates, or epidemiology), observations violate independence due to **Tobler's First Law of Geography**: *"Everything is related to everything else, but near things are more related than distant things."* 
+
+Ignoring spatial autocorrelation leads to artificially deflated standard errors, inflated $t$-statistics, and severe omitted variable bias. Furthermore, the underlying economic relationship $\boldsymbol{\beta}$ itself often varies across geographical space (spatial non-stationarity).
+
+### 2. Concrete Deliverables & Scope
+* **Spatial Autocorrelation Diagnostics:** Construct spatial weight matrices $\mathbf{W}$ (queen contiguity, $k$-nearest neighbors, inverse distance) and implement **Moran's $I$** test and Geary's $C$ to formally test for spatial clustering in OLS residuals:
+  $$I = \frac{n}{\sum_{i}\sum_{j} w_{ij}} \frac{\sum_{i}\sum_{j} w_{ij}(e_i - \bar{e})(e_j - \bar{e})}{\sum_{i} (e_i - \bar{e})^2}$$
+* **Spatial Lag (SAR) & Spatial Error (SEM) Models:** Derive the maximum likelihood estimator for:
+  - Spatial Autoregressive Model: $\mathbf{y} = \rho \mathbf{W}\mathbf{y} + \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\varepsilon}$
+  - Spatial Error Model: $\mathbf{y} = \mathbf{X}\boldsymbol{\beta} + \mathbf{u}, \quad \mathbf{u} = \lambda \mathbf{W}\mathbf{u} + \boldsymbol{\varepsilon}$
+* **Geographically Weighted Regression (GWR):** Implement local kernel estimation where coefficients vary across coordinates $(u_i, v_i)$:
+  $$\hat{\boldsymbol{\beta}}(u_i, v_i) = \left( \mathbf{X}^T \mathbf{W}(u_i, v_i) \mathbf{X} \right)^{-1} \mathbf{X}^T \mathbf{W}(u_i, v_i) \mathbf{y}$$
+  using cross-validation to select the optimal adaptive kernel bandwidth.
+* **Empirical Housing Market Study:** Apply to real-world Greater Toronto Area (GTA) or Canadian Census housing/demographic datasets. Produce spatial heatmaps in R (`sf`, `ggplot2`) demonstrating how the marginal value of school quality, transit proximity, and income shifts across urban vs suburban sub-markets.
+
+### 3. Why This Impresses Professors & Employers
+* Demonstrates mastery of generalized least squares (GLS) and non-diagonal error covariance structures.
+* Critical for urban planning, real estate investment analytics, environmental science, and geospatial consulting.
+
+---
+
+## 📋 Summary: How to Choose Your STAC67 Project
+
+| Project | Primary Focus | Best Suited For | Key Tools |
+| :--- | :--- | :--- | :--- |
+| **Option 1: Robust Breakdown** | Heavy Tails & Outlier Masking | Students aiming for quantitative finance & econometrics | R, IRLS, Monte Carlo, Fama-French |
+| **Option 2: De-biased LASSO** | High-Dimensional ($p \gg n$) Inference | Students aiming for biostatistics, ML & genomics | R/Python, LASSO, FDR, Asymptotics |
+| **Option 3: Spatial GWR** | Spatial Covariance & Urban Economics | Students aiming for geospatial analytics & economics | R, `sf`, Moran's $I$, Maximum Likelihood |
