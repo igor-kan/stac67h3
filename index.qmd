@@ -17,7 +17,7 @@ Course schedule and theoretical derivations.
 
 ::: {.course-card}
 ### ✏️ [Problem Sets & Projects](problems/index.qmd)
-Assignments, quizzes, and case study projects.
+Assignments and case studies (I will consult the professor if and when solutions can be published).
 :::
 
 ::: {.course-card}

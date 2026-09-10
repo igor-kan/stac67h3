@@ -16,3 +16,8 @@ listing:
   page-size: 15
 page-layout: full
 ---
+
+::: {.callout-note}
+### Publishing Notice
+I will consult with the professor regarding if and when I can publish solutions to textbook problems or problem sets. In the meantime, unreleased solutions remain in private drafts.
+:::
