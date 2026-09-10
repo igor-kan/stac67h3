@@ -1,6 +1,5 @@
 ---
-title: "STAC67 Problem Sets, Quizzes & Projects"
-subtitle: "Homework assignments (A1–A3), tutorial quizzes, R Markdown case study project, and exams."
+title: "Problem Sets & Projects"
 listing:
   contents: "*.qmd"
   sort:
@@ -10,18 +9,10 @@ listing:
   categories: true
   sort-ui: [title, date, date-modified]
   filter-ui: [title, date, categories]
-  fields: [date, date-modified, title, subtitle, categories, reading-time]
+  fields: [date, title, categories, reading-time]
   field-display-names:
-    date: "Created"
-    date-modified: "Modified"
+    date: "Date"
     reading-time: "Read Time"
   page-size: 15
 page-layout: full
 ---
-
-This section houses all official problem sets, tutorial quiz guides, case study datasets, and examination review materials for STAC67.
-
-### Course Policy Highlights
-- **Late Submissions:** Late assignment submissions are strictly not accepted.
-- **Quizzes:** 3 in-tutorial quizzes; best 2 of 3 count towards final grade.
-- **Project Grade Boost:** The Case Study Project counts only when it increases your course standing relative to the final exam.

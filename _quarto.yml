@@ -19,12 +19,13 @@ website:
         text: Code & Simulations
       - href: reference/index.qmd
         text: Reference & Math
-  page-footer: 
-    left: "<span style='font-size: 0.8em;'>&copy; 2026 Igor Kan</span>"
+  page-footer: "© 2026 Igor Kan"
 
 format:
   html:
-    theme: flatly
+    theme:
+      light: cosmo
+      dark: darkly
     css: styles.css
     toc: true
     toc-depth: 3

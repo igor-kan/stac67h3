@@ -7,28 +7,27 @@ page-layout: full
 ::: {.hero-banner}
 # STAC67H3: Regression Analysis
 ### University of Toronto Scarborough · Fall 2026
-Comprehensive course portal featuring the official course schedule, analytical lecture derivations, R Markdown case studies, interactive statistical simulations, and mathematical reference toolkits.
 :::
 
 ::: {.card-grid}
 ::: {.course-card}
 ### 📊 [Lecture Notes & Schedule](notes/index.qmd)
-Course schedule, Gauss-Markov theorem, hat matrix $\mathbf{H}$, geometry of least squares, multicollinearity, and regularized regression (Ridge / LASSO).
+Course schedule and theoretical derivations.
 :::
 
 ::: {.course-card}
 ### ✏️ [Problem Sets & Projects](problems/index.qmd)
-Assignments A1–A3, tutorial quizzes (Q1–Q3), and complete guidelines for the R Markdown Case Study Project.
+Assignments, quizzes, and case study projects.
 :::
 
 ::: {.course-card}
 ### 💻 [Code & Simulations](simulations/index.qmd)
-Interactive in-browser statistical simulations (dynamic OLS, leverage sensitivity, Cook's distance), R ggplot2 diagnostics, and Python models.
+Interactive regression models and R scripts.
 :::
 
 ::: {.course-card}
 ### 📐 [Reference & Math](reference/index.qmd)
-Matrix algebra theorems (idempotent matrices, quadratic forms), ANOVA identities, R & R Markdown cheat sheets, and course bibliography.
+Matrix algebra toolkits and cheat sheets.
 :::
 :::
 

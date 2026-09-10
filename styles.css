@@ -1,39 +1,280 @@
-/* STAC67 Course Styling */
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color: #2c3e50;
+/* ==========================================================================
+   Notion.so Theme for Quarto (Light & Dark)
+   ========================================================================== */
+
+/* Global Typography & Reset */
+:root {
+  --notion-font: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+/* Light Mode (Default & body.quarto-light) */
+:root, body.quarto-light, [data-bs-theme="light"] {
+  --notion-bg: #ffffff;
+  --notion-text: #37352f;
+  --notion-text-muted: #787774;
+  --notion-surface: #f7f6f3;
+  --notion-border: #edece9;
+  --notion-border-subtle: rgba(55, 53, 47, 0.09);
+  --notion-hover: rgba(55, 53, 47, 0.06);
+  --notion-link: #37352f;
+  --notion-link-hover: #0b6e99;
+  --notion-code-bg: #f7f6f3;
+  --notion-code-color: #eb5757;
+  --notion-tag-bg: rgba(227, 226, 224, 0.5);
+  --notion-nav-bg: #ffffff;
+}
+
+/* Dark Mode (body.quarto-dark) */
+body.quarto-dark, [data-bs-theme="dark"] {
+  --notion-bg: #191919;
+  --notion-text: #d4d4d4;
+  --notion-text-muted: #9b9b9b;
+  --notion-surface: #202020;
+  --notion-border: #2e2e2e;
+  --notion-border-subtle: rgba(255, 255, 255, 0.09);
+  --notion-hover: rgba(255, 255, 255, 0.055);
+  --notion-link: #d4d4d4;
+  --notion-link-hover: #529cca;
+  --notion-code-bg: #222222;
+  --notion-code-color: #ff7b72;
+  --notion-tag-bg: rgba(255, 255, 255, 0.08);
+  --notion-nav-bg: #191919;
+}
+
+/* Base Document Styling */
+body {
+  font-family: var(--notion-font);
+  background-color: var(--notion-bg) !important;
+  color: var(--notion-text) !important;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--notion-nav-bg) !important;
+  border-bottom: 1px solid var(--notion-border) !important;
+  box-shadow: none !important;
+}
+
+.navbar .navbar-brand {
+  color: var(--notion-text) !important;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.navbar .nav-link {
+  color: var(--notion-text) !important;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  padding: 0.35rem 0.65rem !important;
+  transition: background-color 0.15s ease;
+}
+
+.navbar .nav-link:hover {
+  background-color: var(--notion-hover) !important;
+  color: var(--notion-text) !important;
+}
+
+.navbar-toggler {
+  border-color: var(--notion-border) !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--notion-text) !important;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Links */
+a {
+  color: var(--notion-link);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--notion-link-hover);
+  text-decoration: underline;
+}
+
+/* Sidebar & TOC */
+#quarto-sidebar, .sidebar {
+  background-color: var(--notion-bg) !important;
+  border-right: 1px solid var(--notion-border) !important;
+}
+
+#quarto-margin-sidebar .nav-link, .toc-actions .nav-link {
+  color: var(--notion-text-muted) !important;
+}
+
+#quarto-margin-sidebar .nav-link.active, .toc-actions .nav-link.active {
+  color: var(--notion-text) !important;
+  font-weight: 500;
+}
+
+/* Code & Preformatted */
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background-color: var(--notion-code-bg);
+  color: var(--notion-code-color);
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+  font-size: 85%;
+}
+
+pre {
+  background-color: var(--notion-code-bg) !important;
+  border: 1px solid var(--notion-border) !important;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+pre code {
+  color: var(--notion-text) !important;
+  background: transparent !important;
+  padding: 0;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+  color: var(--notion-text) !important;
+}
+
+th, td {
+  border: 1px solid var(--notion-border) !important;
+  padding: 0.6rem 0.8rem;
+}
+
+th {
+  background-color: var(--notion-surface) !important;
+  font-weight: 600;
+}
+
+/* Inputs, Filter Bars & Search Boxes */
+input.form-control, 
+.form-select,
+.quarto-listing-filter,
+#quarto-search input,
+.search-input {
+  background-color: var(--notion-surface) !important;
+  border: 1px solid var(--notion-border) !important;
+  color: var(--notion-text) !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+}
+
+input.form-control:focus, 
+.form-select:focus {
+  border-color: var(--notion-link-hover) !important;
+  background-color: var(--notion-surface) !important;
+  color: var(--notion-text) !important;
+}
+
+input::placeholder {
+  color: var(--notion-text-muted) !important;
+}
+
+/* Listings (Search, Filters, Tables, Categories) */
+.quarto-listing-category {
+  background-color: var(--notion-tag-bg) !important;
+  color: var(--notion-text) !important;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.85rem;
+  border: 1px solid var(--notion-border-subtle);
+}
+
+.quarto-listing-category:hover {
+  background-color: var(--notion-hover) !important;
+}
+
+.quarto-listing-table tr:hover {
+  background-color: var(--notion-hover) !important;
+}
+
+/* Notion-Style Minimal Hero Banner */
 .hero-banner {
-  padding: 2.5rem 1.5rem;
-  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-  color: white;
-  border-radius: 8px;
-  margin-bottom: 2rem;
+  padding: 1.75rem 1.5rem;
+  background-color: var(--notion-surface);
+  color: var(--notion-text);
+  border: 1px solid var(--notion-border);
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
 }
 
 .hero-banner h1 {
-  color: #ffffff;
-  font-weight: 700;
+  color: var(--notion-text) !important;
+  margin-bottom: 0.25rem;
+  font-size: 1.75rem;
 }
 
+.hero-banner h3 {
+  color: var(--notion-text-muted) !important;
+  font-weight: 400;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+/* Notion-Style Cards */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.85rem;
+  margin-top: 1rem;
+  margin-bottom: 1.75rem;
 }
 
 .course-card {
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 1.5rem;
-  background-color: #ffffff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid var(--notion-border);
+  border-radius: 6px;
+  padding: 1rem;
+  background-color: var(--notion-bg);
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
 }
 
 .course-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 15px -3px rgba(32, 58, 67, 0.2);
+  background-color: var(--notion-surface);
+  border-color: var(--notion-text-muted);
+  transform: translateY(-2px);
+}
+
+.course-card h3 {
+  margin-top: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.course-card p {
+  color: var(--notion-text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+
+/* Callouts */
+.callout {
+  border-radius: 6px !important;
+  border-left-width: 3px !important;
+  background-color: var(--notion-surface) !important;
+  border-color: var(--notion-border) !important;
+}
+
+/* Footer */
+footer.footer, .nav-footer {
+  background-color: var(--notion-bg) !important;
+  border-top: 1px solid var(--notion-border) !important;
+  color: var(--notion-text-muted) !important;
+  padding: 1.25rem 0;
+  font-size: 0.85rem;
+}
+
+.nav-footer-center p {
+  margin-bottom: 0;
+  color: var(--notion-text-muted) !important;
 }

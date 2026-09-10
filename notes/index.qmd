@@ -1,6 +1,5 @@
 ---
-title: "STAC67 Lecture Notes & Schedule"
-subtitle: "Matrix derivations, Gauss-Markov theorem, geometry of least squares, and model diagnostics."
+title: "Lecture Notes & Schedule"
 listing:
   contents: "*.qmd"
   sort:
@@ -10,13 +9,10 @@ listing:
   categories: true
   sort-ui: [title, date, date-modified]
   filter-ui: [title, date, categories]
-  fields: [date, date-modified, title, subtitle, categories, reading-time]
+  fields: [date, title, categories, reading-time]
   field-display-names:
-    date: "Created"
-    date-modified: "Modified"
+    date: "Date"
     reading-time: "Read Time"
   page-size: 15
 page-layout: full
 ---
-
-This section houses the course schedule and analytical lecture notes following Kutner et al.'s *Applied Linear Regression Models* for STAC67. Use the category filters below to locate specific theoretical derivations.
