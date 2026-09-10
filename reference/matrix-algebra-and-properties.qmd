@@ -3,6 +3,7 @@ title: "Matrix Algebra, Idempotency & Quadratic Forms"
 subtitle: "Expectation and covariance of random vectors, projection matrices, and Cochran's theorem."
 date: "2026-09-08"
 categories: ["Reference", "Matrix Algebra", "Quadratic Forms", "Proofs"]
+draft: true
 ---
 
 ## 1. Random Vectors: Expectation & Covariance

@@ -3,6 +3,7 @@ title: "Regression Case Study Project Guidelines"
 subtitle: "Real-world dataset analysis, exploratory data analysis, R Markdown report, and presentations."
 date: "2026-10-09"
 categories: ["Projects", "Case Study", "R Markdown"]
+draft: true
 ---
 
 ## 🎯 Overview & Objectives

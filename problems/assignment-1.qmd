@@ -6,6 +6,7 @@ categories: ["Diagnostics", "Leverage", "Cook's Distance"]
 format:
   html:
     math: true
+draft: true
 ---
 
 ## Problem: Bounds on Leverage Values

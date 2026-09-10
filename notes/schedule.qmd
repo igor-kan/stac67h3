@@ -3,6 +3,7 @@ title: "STAC67 Official Schedule, Timeline & Readings"
 subtitle: "12-Week Roadmap of Lectures, Kutner Readings, and Tutorial Assessments"
 date: "2026-09-08"
 categories: ["Schedule", "Course Roadmap"]
+draft: true
 ---
 
 This timeline outlines the topics covered, suggested textbook readings, and important assessments for each week.

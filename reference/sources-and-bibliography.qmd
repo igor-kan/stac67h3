@@ -3,6 +3,7 @@ title: "Regression Analysis Sources & Bibliography"
 subtitle: "Textbooks, reference manuals, R documentation, and statistical packages for STAC67."
 date: "2026-09-08"
 categories: ["Reference", "Bibliography", "Sources"]
+draft: true
 ---
 
 ## 📚 Textbooks

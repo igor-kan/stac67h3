@@ -6,6 +6,7 @@ categories: ["Simulations", "Regression", "Diagnostics", "Interactive"]
 format:
   html:
     math: true
+draft: true
 ---
 
 ## 🎯 Theoretical Framework: Leverage vs. Influence

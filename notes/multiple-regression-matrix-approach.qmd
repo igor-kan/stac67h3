@@ -6,6 +6,7 @@ categories: ["Linear Models", "Matrix Algebra", "Inference"]
 format:
   html:
     math: true
+draft: true
 ---
 
 ## 1. The General Linear Model
