@@ -9,6 +9,12 @@ page-layout: full
 ### University of Toronto Scarborough · Fall 2026
 :::
 
+
+::: {.callout-tip}
+### 🚀 Featured Masterclass: Matrix Foundations & Quadratic Forms
+Dive into our newly published comprehensive notes on the [Matrix Formulation of Multiple Linear Regression](notes/multiple-regression-matrix-approach.qmd), covering normal equations, projection hat matrices, Craig's and Cochran's theorems on quadratic forms, positive definiteness of Gramian matrices, and numerical Cholesky solutions.
+:::
+
 ::: {.card-grid}
 ::: {.course-card}
 ### 📊 [Lecture Notes & Schedule](notes/index.qmd)
