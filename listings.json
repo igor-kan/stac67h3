@@ -13,6 +13,8 @@
   },
   {
     "listing": "/notes/index.html",
-    "items": []
+    "items": [
+      "/notes/multiple-regression-matrix-approach.html"
+    ]
   }
 ]
