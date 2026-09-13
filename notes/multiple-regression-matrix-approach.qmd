@@ -6,7 +6,6 @@ categories: ["Linear Models", "Matrix Algebra", "Inference"]
 format:
   html:
     math: true
-draft: true
 ---
 
 ## 1. The General Linear Model
@@ -199,3 +198,66 @@ The hat matrix $\mathbf{H} = \mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T
 3. **Spectral Decomposition**:
    $$\mathbf{H} = \mathbf{Q} \begin{pmatrix} \mathbf{I}_p & \mathbf{0} \\ \mathbf{0} & \mathbf{0}_{n-p} \end{pmatrix} \mathbf{Q}^T = \sum_{i=1}^p \mathbf{q}_i \mathbf{q}_i^T$$
    where $\{\mathbf{q}_1, \dots, \mathbf{q}_p\}$ forms an orthonormal basis for $\operatorname{Col}(\mathbf{X})$.
+
+
+---
+
+## 7. Singular Value Decomposition (SVD) and Multicollinearity
+
+The Singular Value Decomposition of the design matrix $\mathbf{X} \in \mathbb{R}^{n \times p}$:
+$$\mathbf{X} = \mathbf{U} \boldsymbol{\Sigma} \mathbf{V}^T$$
+provides deep insight into the stability of the normal equations:
+- $\mathbf{U} \in \mathbb{R}^{n \times p}$ contains orthonormal basis vectors for $\operatorname{Col}(\mathbf{X})$.
+- $\boldsymbol{\Sigma} = \operatorname{diag}(\sigma_1, \dots, \sigma_p)$ contains singular values $\sigma_1 \ge \sigma_2 \ge \dots \ge \sigma_p > 0$.
+- $\mathbf{V} \in \mathbb{R}^{p \times p}$ is orthogonal.
+
+The Gram matrix decomposes as:
+$$\mathbf{X}^T \mathbf{X} = (\mathbf{V} \boldsymbol{\Sigma} \mathbf{U}^T)(\mathbf{U} \boldsymbol{\Sigma} \mathbf{V}^T) = \mathbf{V} \boldsymbol{\Sigma}^2 \mathbf{V}^T$$
+and its inverse is:
+$$(\mathbf{X}^T \mathbf{X})^{-1} = \mathbf{V} \boldsymbol{\Sigma}^{-2} \mathbf{V}^T = \sum_{j=1}^p \frac{1}{\sigma_j^2} \mathbf{v}_j \mathbf{v}_j^T$$
+
+The **Condition Number** $\kappa(\mathbf{X}) = \frac{\sigma_1}{\sigma_p}$ governs numerical sensitivity. When severe multicollinearity exists, the smallest singular value $\sigma_p \approx 0$, causing $\frac{1}{\sigma_p^2} \to \infty$ and inflating the variance of $\hat{\boldsymbol{\beta}}$ along direction $\mathbf{v}_p$.
+
+---
+
+## 8. Computational Verification in Python
+
+```python
+import numpy as np
+import scipy.linalg as la
+
+# Generate synthetic linear model data: y = X beta + epsilon
+np.random.seed(42)
+n, p = 100, 4
+X = np.hstack([np.ones((n, 1)), np.random.randn(n, p - 1)])
+true_beta = np.array([2.5, -1.8, 3.2, 0.5])
+sigma_noise = 1.2
+y = X @ true_beta + np.random.normal(0, sigma_noise, size=n)
+
+# 1. Cholesky Solution of Normal Equations
+XtX = X.T @ X
+Xty = X.T @ y
+L = np.linalg.cholesky(XtX)
+z = la.solve_triangular(L, Xty, lower=True)
+beta_hat = la.solve_triangular(L.T, z, lower=False)
+print("Estimated Coefficients (Cholesky):\n", beta_hat)
+
+# 2. Hat Matrix and Idempotence
+H = X @ np.linalg.inv(XtX) @ X.T
+assert np.allclose(H @ H, H), "Hat matrix is not idempotent!"
+assert np.allclose(H, H.T), "Hat matrix is not symmetric!"
+
+# 3. Spectral Decomposition of Hat Matrix
+eigvals_H = np.linalg.eigvalsh(H)
+num_ones = np.sum(np.isclose(eigvals_H, 1.0))
+num_zeros = np.sum(np.isclose(eigvals_H, 0.0))
+print(f"Hat Matrix Eigenvalues: {num_ones} ones (rank p={p}), {num_zeros} zeros (rank n-p={n-p})")
+
+# 4. Craig's Theorem Verification: A_R * A_E == 0
+J = np.ones((n, n))
+A_R = H - (1.0 / n) * J
+A_E = np.eye(n) - H
+craig_product = A_R @ A_E
+assert np.allclose(craig_product, 0.0), "Craig's condition violated!"
+print(f"Max absolute element of A_R @ A_E: {np.max(np.abs(craig_product)):.16e} (Identically zero)")
+```
