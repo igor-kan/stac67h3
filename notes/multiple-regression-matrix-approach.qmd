@@ -56,3 +56,36 @@ where $\mathbf{H} = \mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T$ is the 
 3.  **Trace:** $\operatorname{tr}(\mathbf{H}) = \operatorname{tr}(\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T) = \operatorname{tr}((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}) = \operatorname{tr}(\mathbf{I}_p) = p$.
 4.  **Residual Vector:** $\mathbf{e} = \mathbf{y} - \hat{\mathbf{y}} = (\mathbf{I} - \mathbf{H})\mathbf{y}$. 
     Because $\mathbf{X}^T(\mathbf{I} - \mathbf{H}) = \mathbf{0}$, the residual vector is strictly orthogonal to the column space of $\mathbf{X}$ ($\mathbf{X}^T\mathbf{e} = \mathbf{0}$).
+
+
+---
+
+## 4. Quadratic Forms in Regression Analysis
+
+In statistical theory, sums of squares (SSTO, SSR, SSE) are not merely algebraic sums of squared scalars—they are **quadratic forms** of the random response vector $\mathbf{y} \in \mathbb{R}^n$.
+
+::: {.callout-note}
+### Definition: Quadratic Form
+Let $\mathbf{y} \in \mathbb{R}^n$ and let $\mathbf{A} \in \mathbb{R}^{n \times n}$ be a real symmetric matrix ($\mathbf{A} = \mathbf{A}^T$). The scalar function:
+$$Q(\mathbf{y}) = \mathbf{y}^T \mathbf{A} \mathbf{y} = \sum_{i=1}^n \sum_{j=1}^n A_{ij} y_i y_j$$
+is the **quadratic form** associated with matrix $\mathbf{A}$.
+:::
+
+### 4.1 Representation of Regression Sums of Squares
+
+Let $\mathbf{J}_n = \mathbf{1}_n \mathbf{1}_n^T$ denote the $n \times n$ matrix of all ones, and let $\left(\frac{1}{n} \mathbf{J}_n\right)$ be the centering projection matrix. The total, model, and residual sums of squares can be written explicitly as quadratic forms:
+
+1. **Total Sum of Squares (SSTO)**:
+   $$\text{SSTO} = \sum_{i=1}^n (y_i - \bar{y})^2 = \mathbf{y}^T \left(\mathbf{I}_n - \frac{1}{n}\mathbf{J}_n\right) \mathbf{y} = \mathbf{y}^T \mathbf{A}_{\text{TO}} \mathbf{y}$$
+   where $\mathbf{A}_{\text{TO}} = \mathbf{I}_n - \frac{1}{n}\mathbf{J}_n$ is symmetric and idempotent of rank $n - 1$.
+
+2. **Residual / Error Sum of Squares (SSE)**:
+   $$\text{SSE} = \sum_{i=1}^n (y_i - \hat{y}_i)^2 = \mathbf{e}^T \mathbf{e} = [(\mathbf{I} - \mathbf{H})\mathbf{y}]^T [(\mathbf{I} - \mathbf{H})\mathbf{y}] = \mathbf{y}^T (\mathbf{I} - \mathbf{H}) \mathbf{y} = \mathbf{y}^T \mathbf{A}_{\text{E}} \mathbf{y}$$
+   where $\mathbf{A}_{\text{E}} = \mathbf{I} - \mathbf{H}$ is symmetric and idempotent with rank $\operatorname{tr}(\mathbf{I} - \mathbf{H}) = n - p$.
+
+3. **Regression / Model Sum of Squares (SSR)**:
+   $$\text{SSR} = \sum_{i=1}^n (\hat{y}_i - \bar{y})^2 = \mathbf{y}^T \left(\mathbf{H} - \frac{1}{n}\mathbf{J}_n\right) \mathbf{y} = \mathbf{y}^T \mathbf{A}_{\text{R}} \mathbf{y}$$
+   where $\mathbf{A}_{\text{R}} = \mathbf{H} - \frac{1}{n}\mathbf{J}_n$ is symmetric and idempotent with rank $\operatorname{tr}(\mathbf{H}) - \operatorname{tr}(\frac{1}{n}\mathbf{J}) = p - 1$.
+
+The fundamental ANOVA decomposition is therefore an identity of symmetric matrices:
+$$\mathbf{A}_{\text{TO}} = \mathbf{A}_{\text{R}} + \mathbf{A}_{\text{E}} \iff \left(\mathbf{I} - \frac{1}{n}\mathbf{J}\right) = \left(\mathbf{H} - \frac{1}{n}\mathbf{J}\right) + (\mathbf{I} - \mathbf{H})$$
