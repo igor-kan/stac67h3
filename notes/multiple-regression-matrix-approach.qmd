@@ -89,3 +89,57 @@ Let $\mathbf{J}_n = \mathbf{1}_n \mathbf{1}_n^T$ denote the $n \times n$ matrix 
 
 The fundamental ANOVA decomposition is therefore an identity of symmetric matrices:
 $$\mathbf{A}_{\text{TO}} = \mathbf{A}_{\text{R}} + \mathbf{A}_{\text{E}} \iff \left(\mathbf{I} - \frac{1}{n}\mathbf{J}\right) = \left(\mathbf{H} - \frac{1}{n}\mathbf{J}\right) + (\mathbf{I} - \mathbf{H})$$
+
+
+---
+
+## 5. Statistical Properties of Quadratic Forms: Craig's and Cochran's Theorems
+
+### 5.1 Expectation of a General Quadratic Form
+
+::: {.callout-note}
+### Theorem: Mean of a Quadratic Form
+Let $\mathbf{y} \in \mathbb{R}^n$ have mean vector $\boldsymbol{\mu} = \mathbb{E}[\mathbf{y}]$ and covariance matrix $\boldsymbol{\Sigma} = \operatorname{Var}(\mathbf{y})$. For any symmetric matrix $\mathbf{A} \in \mathbb{R}^{n \times n}$:
+$$\mathbb{E}[\mathbf{y}^T \mathbf{A} \mathbf{y}] = \operatorname{tr}(\mathbf{A} \boldsymbol{\Sigma}) + \boldsymbol{\mu}^T \mathbf{A} \boldsymbol{\mu}$$
+:::
+
+#### Proof:
+Since $\mathbf{y}^T \mathbf{A} \mathbf{y}$ is a scalar, it equals its trace:
+$$\mathbb{E}[\mathbf{y}^T \mathbf{A} \mathbf{y}] = \mathbb{E}[\operatorname{tr}(\mathbf{y}^T \mathbf{A} \mathbf{y})] = \mathbb{E}[\operatorname{tr}(\mathbf{A} \mathbf{y} \mathbf{y}^T)] = \operatorname{tr}(\mathbf{A} \mathbb{E}[\mathbf{y} \mathbf{y}^T])$$
+Using $\mathbb{E}[\mathbf{y} \mathbf{y}^T] = \boldsymbol{\Sigma} + \boldsymbol{\mu} \boldsymbol{\mu}^T$:
+$$\mathbb{E}[\mathbf{y}^T \mathbf{A} \mathbf{y}] = \operatorname{tr}(\mathbf{A} \boldsymbol{\Sigma}) + \operatorname{tr}(\mathbf{A} \boldsymbol{\mu} \boldsymbol{\mu}^T) = \operatorname{tr}(\mathbf{A} \boldsymbol{\Sigma}) + \boldsymbol{\mu}^T \mathbf{A} \boldsymbol{\mu} \quad \blacksquare$$
+
+#### Unbiasedness of the Residual Variance Estimator $s^2$:
+For the residual sum of squares $\text{SSE} = \mathbf{y}^T (\mathbf{I} - \mathbf{H}) \mathbf{y}$, where $\boldsymbol{\Sigma} = \sigma^2 \mathbf{I}$ and $\boldsymbol{\mu} = \mathbf{X}\boldsymbol{\beta}$:
+1. $\operatorname{tr}((\mathbf{I} - \mathbf{H})\sigma^2 \mathbf{I}) = \sigma^2 \operatorname{tr}(\mathbf{I} - \mathbf{H}) = \sigma^2 (n - p)$.
+2. $\boldsymbol{\mu}^T (\mathbf{I} - \mathbf{H}) \boldsymbol{\mu} = (\mathbf{X}\boldsymbol{\beta})^T (\mathbf{I} - \mathbf{H}) (\mathbf{X}\boldsymbol{\beta}) = \boldsymbol{\beta}^T \mathbf{X}^T (\mathbf{I} - \mathbf{H}) \mathbf{X} \boldsymbol{\beta} = \mathbf{0}$, since $(\mathbf{I} - \mathbf{H})\mathbf{X} = \mathbf{0}$.
+
+Therefore:
+$$\mathbb{E}[\text{SSE}] = (n - p)\sigma^2 \implies \mathbb{E}\left[\frac{\text{SSE}}{n - p}\right] = \sigma^2$$
+proving that the mean squared error $MSE = s^2 = \frac{\text{SSE}}{n - p}$ is an **unbiased estimator** of $\sigma^2$.
+
+### 5.2 Craig's Theorem and the Independence of SSR and SSE
+
+The construction of the ANOVA $F$-test requires showing that SSR and SSE are statistically independent random variables.
+
+::: {.callout-important}
+### Craig's Theorem
+Let $\mathbf{y} \sim \mathcal{N}_n(\boldsymbol{\mu}, \sigma^2 \mathbf{I})$. Two quadratic forms $Q_1 = \mathbf{y}^T \mathbf{A} \mathbf{y}$ and $Q_2 = \mathbf{y}^T \mathbf{B} \mathbf{y}$ (where $\mathbf{A}, \mathbf{B}$ are real symmetric) are **statistically independent** if and only if:
+$$\mathbf{A} \mathbf{B} = \mathbf{0}$$
+:::
+
+#### Proof that SSR and SSE are Independent:
+Recall $\mathbf{A}_{\text{R}} = \mathbf{H} - \frac{1}{n}\mathbf{J}$ and $\mathbf{A}_{\text{E}} = \mathbf{I} - \mathbf{H}$. We compute their matrix product:
+$$\mathbf{A}_{\text{R}} \mathbf{A}_{\text{E}} = \left(\mathbf{H} - \frac{1}{n}\mathbf{J}\right)(\mathbf{I} - \mathbf{H}) = \mathbf{H}(\mathbf{I} - \mathbf{H}) - \frac{1}{n}\mathbf{J}(\mathbf{I} - \mathbf{H})$$
+
+1. Since $\mathbf{H}$ is idempotent ($\mathbf{H}^2 = \mathbf{H}$):
+   $$\mathbf{H}(\mathbf{I} - \mathbf{H}) = \mathbf{H} - \mathbf{H}^2 = \mathbf{H} - \mathbf{H} = \mathbf{0}$$
+2. For any regression model with an intercept, the column of ones $\mathbf{1}$ is in the column space of $\mathbf{X}$ ($\mathbf{X} = [\mathbf{1} \mid \mathbf{X}_1]$), meaning $\mathbf{H}\mathbf{1} = \mathbf{1}$. Because $\mathbf{J} = \mathbf{1}\mathbf{1}^T$:
+   $$\mathbf{J}\mathbf{H} = (\mathbf{1}\mathbf{1}^T)\mathbf{H} = \mathbf{1}(\mathbf{H}\mathbf{1})^T = \mathbf{1}\mathbf{1}^T = \mathbf{J} \implies \mathbf{J}(\mathbf{I} - \mathbf{H}) = \mathbf{J} - \mathbf{J}\mathbf{H} = \mathbf{0}$$
+
+Combining both parts:
+$$\mathbf{A}_{\text{R}} \mathbf{A}_{\text{E}} = \mathbf{0} - \mathbf{0} = \mathbf{0}$$
+
+By Craig's Theorem, **$\text{SSR}$ and $\text{SSE}$ are strictly independent random variables**. Consequently, the test statistic:
+$$F^* = \frac{\text{SSR} / (p - 1)}{\text{SSE} / (n - p)} \sim F(p - 1, n - p)$$
+is a ratio of independent chi-square variables, rigorously establishing the validity of the overall regression $F$-test.
