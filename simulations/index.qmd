@@ -16,3 +16,8 @@ listing:
   page-size: 15
 page-layout: full
 ---
+
+::: {.callout-note}
+### Computational Statistics Lab Archive
+Interactive regression models, R diagnostics, and simulation scripts are maintained in the private course repository.
+:::

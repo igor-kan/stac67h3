@@ -16,3 +16,8 @@ listing:
   page-size: 15
 page-layout: full
 ---
+
+::: {.callout-note}
+### Lecture Notes & Materials Archive
+Course lecture notes, regression derivations, and syllabus details are archived in the private course repository.
+:::

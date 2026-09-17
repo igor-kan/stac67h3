@@ -16,3 +16,8 @@ listing:
   page-size: 15
 page-layout: full
 ---
+
+::: {.callout-note}
+### Reference Materials Archive
+Matrix algebra properties, R Markdown cheat sheets, and bibliography references are maintained in the private course repository.
+:::

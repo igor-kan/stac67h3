@@ -10,11 +10,6 @@ page-layout: full
 :::
 
 
-::: {.callout-tip}
-### 🚀 Featured Masterclass: Matrix Foundations & Quadratic Forms
-Dive into our newly published comprehensive notes on the [Matrix Formulation of Multiple Linear Regression](notes/multiple-regression-matrix-approach.qmd), covering normal equations, projection hat matrices, Craig's and Cochran's theorems on quadratic forms, positive definiteness of Gramian matrices, and numerical Cholesky solutions.
-:::
-
 ::: {.card-grid}
 ::: {.course-card}
 ### 📊 [Lecture Notes & Schedule](notes/index.qmd)
@@ -63,11 +58,5 @@ Matrix algebra toolkits and cheat sheets.
 
 ::: {.callout-note}
 ### Course Schedule & Grading Notes
-Detailed policy on Quizzes (best 2 of 3 count), the non-punitive Case Study Project formula, and R Markdown submission guidelines are detailed in the official [Course Schedule & Reading Plan](notes/schedule.qmd).
+Detailed policy on Quizzes (best 2 of 3 count), the non-punitive Case Study Project formula, and R Markdown submission guidelines are detailed in the official course syllabus on Quercus and private course materials.
 :::
-
-## 👨‍🏫 Office Hours & Contact
-- **Instructor:** Thibault Randrianarisoa (Office: IA 4064)
-  - Email: `t.randrianarisoa@utoronto.ca` (Subject MUST contain `[STAC67]` and body MUST contain your student number).
-  - Office Hours: Wednesday 10:00–11:00 AM and Friday 15:00–16:00 in IA 4064.
-- **Piazza:** Use Piazza for all course-content questions; email is reserved for personal administrative matters.
