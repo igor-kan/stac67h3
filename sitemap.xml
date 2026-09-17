@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://igor-kan.github.io/stac67h3/reference/index.html</loc>
-    <lastmod>2026-09-13T20:42:36.647Z</lastmod>
-  </url>
-  <url>
-    <loc>https://igor-kan.github.io/stac67h3/problems/index.html</loc>
-    <lastmod>2026-09-13T20:42:36.647Z</lastmod>
-  </url>
-  <url>
-    <loc>https://igor-kan.github.io/stac67h3/index.html</loc>
-    <lastmod>2026-09-13T20:42:36.645Z</lastmod>
+    <loc>https://igor-kan.github.io/stac67h3/notes/index.html</loc>
+    <lastmod>2026-09-17T22:23:02.593Z</lastmod>
   </url>
   <url>
     <loc>https://igor-kan.github.io/stac67h3/simulations/index.html</loc>
-    <lastmod>2026-09-13T20:42:36.647Z</lastmod>
+    <lastmod>2026-09-17T22:23:02.593Z</lastmod>
   </url>
   <url>
-    <loc>https://igor-kan.github.io/stac67h3/notes/index.html</loc>
-    <lastmod>2026-09-13T20:42:36.646Z</lastmod>
+    <loc>https://igor-kan.github.io/stac67h3/index.html</loc>
+    <lastmod>2026-09-17T22:23:02.593Z</lastmod>
   </url>
   <url>
-    <loc>https://igor-kan.github.io/stac67h3/notes/multiple-regression-matrix-approach.html</loc>
-    <lastmod>2026-09-13T20:42:36.646Z</lastmod>
+    <loc>https://igor-kan.github.io/stac67h3/problems/index.html</loc>
+    <lastmod>2026-09-17T22:23:02.593Z</lastmod>
+  </url>
+  <url>
+    <loc>https://igor-kan.github.io/stac67h3/reference/index.html</loc>
+    <lastmod>2026-09-17T22:23:02.593Z</lastmod>
   </url>
 </urlset>

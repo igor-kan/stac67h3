@@ -1,10 +1,6 @@
 [
   {
-    "listing": "/reference/index.html",
-    "items": []
-  },
-  {
-    "listing": "/problems/index.html",
+    "listing": "/notes/index.html",
     "items": []
   },
   {
@@ -12,9 +8,11 @@
     "items": []
   },
   {
-    "listing": "/notes/index.html",
-    "items": [
-      "/notes/multiple-regression-matrix-approach.html"
-    ]
+    "listing": "/problems/index.html",
+    "items": []
+  },
+  {
+    "listing": "/reference/index.html",
+    "items": []
   }
 ]
